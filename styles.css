@@ -18,6 +18,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--light-bg);
+    padding-top: 70px;
 }
 
 .container {
@@ -30,9 +31,12 @@ body {
 header {
     background: var(--white);
     box-shadow: var(--shadow);
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 100;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
 .navbar {
