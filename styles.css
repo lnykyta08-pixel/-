@@ -19,6 +19,7 @@ body {
     color: var(--text-color);
     background-color: var(--light-bg);
     padding-top: 70px;
+	overflow-x: hidden;
 }
 
 .container {
