@@ -903,11 +903,14 @@ footer {
         min-width: unset;
     }
 }
+
 @media (min-width: 768px) {
     .call-link {
         pointer-events: none;
     }
-}   .call-link img {
+}
+
+    .call-link img {
         display: block;
         width: 100%;
-    }
+}
