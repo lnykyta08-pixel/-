@@ -13,7 +13,7 @@
                 <div class="logo">🌸 Квіти</div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Головна</a></li>
-                    <li><a href="#catalog" class="nav-link">Каталог</a></li>
+                    <li><a href="#catalog" class="nav-link">Пропозиції</a></li>
                     <li><a href="#about" class="nav-link">Про нас</a></li>
                     <li><a href="#contact" class="nav-link">Контакти</a></li>
                     <li><a href="#cart" class="nav-link cart-link">🛒 Кошик <span id="cart-count">(0)</span></a></li>
@@ -38,10 +38,39 @@
         </div>
     </section>
 
-    <!-- Каталог -->
+    <!-- Популярні категорії -->
+    <section class="popular-categories">
+        <div class="container">
+            <h2>Популярні категорії</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="openSubcategories('Букети')">
+                    <div class="category-icon">💐</div>
+                    <h3>Букети</h3>
+                </div>
+                <div class="category-card" onclick="openSubcategories('Троянди')">
+                    <div class="category-icon">🌹</div>
+                    <h3>Троянди</h3>
+                </div>
+                <div class="category-card" onclick="openSubcategories('Тюльпани')">
+                    <div class="category-icon">🌷</div>
+                    <h3>Тюльпани</h3>
+                </div>
+                <div class="category-card" onclick="openSubcategories('Лілії')">
+                    <div class="category-icon">🌺</div>
+                    <h3>Лілії</h3>
+                </div>
+                <div class="category-card" onclick="openSubcategories('Гвоздики')">
+                    <div class="category-icon">🌸</div>
+                    <h3>Гвоздики</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Пропозиції -->
     <section id="catalog" class="catalog">
         <div class="container">
-            <h2>Наш каталог</h2>
+            <h2>Наші пропозиції</h2>
             <div class="filters">
                 <input type="text" id="search-input" placeholder="Пошук квітів..." class="search-box">
                 <select id="category-filter" class="filter-select">
@@ -82,23 +111,29 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>Контакти</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>📍 Адреса</h3>
-                    <p>вул. Квітова, 42<br>м. Київ, 03000</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Адреса</h3>
+                        <p>вул. Квітова, 42<br>м. Київ, 03000</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Телефон</h3>
+                        <p>+38 (097) 123-45-67<br>+38 (050) 234-56-78</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>✉️ Email</h3>
+                        <p>info@kwitkovyyray.com<br>orders@kwitkovyyray.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕐 Час роботи</h3>
+                        <p>Пн-Пт: 09:00 - 20:00<br>Сб-Нд: 10:00 - 19:00</p>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <h3>📞 Телефон</h3>
-                    <p>+38 (097) 123-45-67<br>+38 (050) 234-56-78</p>
-                </div>
-                <div class="contact-item">
-                    <h3>✉️ Email</h3>
-                    <p>info@kwitkovyyray.com<br>orders@kwitkovyyray.com</p>
-                </div>
-                <div class="contact-item">
-                    <h3>🕐 Час роботи</h3>
-                    <p>Пн-Пт: 09:00 - 20:00<br>Сб-Нд: 10:00 - 19:00</p>
-                </div>
+                <div class="contact-image">
+				    <a href="tel:+380665160627" class="call-link">
+                        <img src="d108f450a381a4d3211bfe5111f40c25-Photoroom.png" alt="Кот з квіткою">
+                </a>
             </div>
         </div>
     </section>
@@ -117,6 +152,17 @@
             <div class="cart-actions">
                 <button class="btn btn-secondary" onclick="closeCart()">Продовжити покупки</button>
                 <button class="btn btn-primary" id="checkout-btn" onclick="checkout()">Оформити замовлення</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальне вікно підкатегорій -->
+    <div id="subcategory-modal" class="modal">
+        <div class="modal-content modal-subcategory">
+            <span class="close-btn" onclick="closeSubcategoryModal()">&times;</span>
+            <h2 id="subcategory-title"></h2>
+            <div id="subcategory-items" class="subcategory-grid">
+                <!-- Підкатегорії будуть завантажені сюди -->
             </div>
         </div>
     </div>
