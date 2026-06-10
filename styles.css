@@ -917,8 +917,8 @@ footer {
 
     .call-hint {
 		position: absolute;
-		top: -80px;
-		right: -40px;
+		top: -90px;
+		right: -50px;
 		display: none;
 		z-index: 10;
 		text-align: center;
@@ -934,6 +934,21 @@ footer {
 	
 @media (max-width: 768px) {
 	.call-hint {
+		display: block;
+	}
+}
+
+    .call-text {
+		display: none;
+		text-align: center;
+		color: var(--primary-color);
+		font-weight: bold;
+		front-size: 0.85rem;
+		marign-top: 0.5rem;
+	}
+	
+@media (max-width: 768px) {
+	.call-text {
 		display: block;
 	}
 }
