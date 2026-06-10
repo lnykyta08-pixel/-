@@ -465,6 +465,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+	position: relative;
+	flex-direction: column;
 }
 
 .contact-image img {
