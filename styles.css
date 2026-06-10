@@ -918,7 +918,7 @@ footer {
     .call-hint {
 		position: absolute;
 		top: -90px;
-		left: -40px;
+		right: -10px;
 		display: none;
 		z-index: 10;
 		text-align: center;
