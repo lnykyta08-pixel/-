@@ -943,8 +943,8 @@ footer {
 		text-align: center;
 		color: var(--primary-color);
 		font-weight: bold;
-		front-size: 0.85rem;
-		marign-top: 0.5rem;
+		font-size: 0.85rem;
+		margin-top: 0.5rem;
 	}
 	
 @media (max-width: 768px) {
