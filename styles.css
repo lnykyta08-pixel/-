@@ -907,4 +907,7 @@ footer {
     .call-link {
         pointer-events: none;
     }
-}
+}   .call-link img {
+        display: block;
+        width: 100%;
+    }
