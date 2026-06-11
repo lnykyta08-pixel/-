@@ -7,23 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">🌸 Квіти</div>
-                <ul class="nav-menu">
-				    <li>
-					    <a href="#catalog" class="nav-link">🔍</a>
-					</li>
-					<li>
-                        <a href="#cart" class="nav-link cart-link">
-						    🛒 Кошик <span id="cart-count">(0)</span>
-						</a>
-					</li>	
-                </ul>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand">
+                <a href="#home">🌸 Квіти</a>
             </div>
-        </nav>
-    </header>
+			<div class="header-actions">
+			    <a href="#catalog" class="cart-btn">🔍</a>
+                <a href="#cart" class="cart-btn" onlick="openCart()">
+					🛒 <span class="cart-count" id="cart-count">(0)</span>
+						</a>
+					</div>	
+                </div>
+            </div>
+        </header>
 
     <!-- Головна сторінка -->
     <section id="home" class="hero">
