@@ -64,6 +64,10 @@ body {
 	letter-spacing: 1px;
 }
 
+.header-brand {
+	flex: 1;
+}
+
 .header-actions {
     display: flex;
     align-items: center;
@@ -83,14 +87,6 @@ body {
 
 .cart-count {
     font-size: 14px;
-}
-
-.cart-link {
-    background: var(--primary-color);
-    color: var(--white) !important;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    cursor: pointer;
 }
 
 #cart-count {
