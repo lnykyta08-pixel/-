@@ -97,15 +97,39 @@ body {
 
 /* Hero секція */
 .hero {
-    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
-    padding: 120px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 500px;
+    min-height: 400px;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 1.5rem 0 1rem;
+    letter-spacing: 2px;
+}
+
+.hero-filters {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-select {
+    padding: 0.7rem 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background: white;
+    cursor: pointer;
+    min-width: 200px;
 }
 
 .hero-flowers {
