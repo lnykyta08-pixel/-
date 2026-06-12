@@ -580,7 +580,7 @@ function filterByFlower(value) {
     if (!value) return;
     document.getElementById('category-filter').value = value;
     filterProducts();
-    scrollToSection('catalog');
+    setTimeout(() => scrollToSection('catalog'), 100);
 }
 
 function filterByOccasion(value) {
