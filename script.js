@@ -220,6 +220,18 @@ function filterProducts() {
     });
 }
 
+function filterByFlower(value) {
+    if (!value) return;
+    document.getElementById('category-filter').value = value;
+    filterProducts();
+    scrollToSection('catalog');
+}
+
+function filterByOccasion(value) {
+    if (!value) return;
+    scrollToSection('catalog');
+}
+
 // Відкриття модального вікна товару
 function openProductModal(product) {
     currentProduct = product;
