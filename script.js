@@ -110,9 +110,17 @@ let products = [
     }
 ];
 
-// Ініціалізація
-let cart = [];
-let currentProduct = null;
+// Дані про підкатегорії
+const subcategories = {
+    'Троянди': ['Білі', 'Червоні', 'Рожеві', 'Жовті'],
+    'Тюльпани': ['Білі', 'Червоні', 'Жовті', 'Фіолетові'],
+    'Гвоздики': ['Червоні', 'Рожеві', 'Білі', 'Мікс'],
+    'Лілії': ['Рожеві', 'Білі', 'Червоні', 'Фіолетові'],
+    'Букети': ['Весняні', 'Романтичні', 'Яскраві', 'Святкові']
+};
+
+let currentSubcategoryParent = null;
+let selectedColor = null;
 
 // Завантаження даних з localStorage при завантаженні сторінки
 window.addEventListener('DOMContentLoaded', function() {
@@ -136,6 +144,9 @@ function setupEventListeners() {
         if (event.target === cartModal) closeCart();
         if (event.target === productModal) closeProductModal();
         if (event.target === checkoutModal) closeCheckout();
+        
+        const subcategoryModal = document.getElementById('subcategory-modal');
+        if (event.target === subcategoryModal) closeSubcategoryModal();
     });
 }
 
@@ -178,7 +189,8 @@ function filterProducts() {
         const matchesSearch = product.name.toLowerCase().includes(searchText) || 
                             product.description.toLowerCase().includes(searchText);
         const matchesCategory = category === '' || product.category === category;
-        return matchesSearch && matchesCategory;
+        const matchesColor = selectedColor === null || selectedColor === '' || product.color === selectedColor;
+        return matchesSearch && matchesCategory && matchesColor;
     });
     
     if (filtered.length === 0) {
@@ -485,12 +497,42 @@ function loadCartFromStorage() {
     }
 }
 
-// Функція для прокрутки до секції
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
+// Відкриття модалю підкатегорій
+function openSubcategories(category) {
+    currentSubcategoryParent = category;
+    document.getElementById('subcategory-title').textContent = category;
+    
+    const items = subcategories[category] || [];
+    const container = document.getElementById('subcategory-items');
+    container.innerHTML = '';
+    
+    items.forEach(item => {
+        const subcatItem = document.createElement('div');
+        subcatItem.className = 'subcategory-item';
+        subcatItem.onclick = () => selectSubcategory(category, item);
+        subcatItem.innerHTML = `
+            <span class="subcat-icon">•</span>
+            <span class="subcat-name">${item}</span>
+        `;
+        container.appendChild(subcatItem);
+    });
+    
+    document.getElementById('subcategory-modal').classList.add('active');
+}
+
+// Закриття модалю підкатегорій
+function closeSubcategoryModal() {
+    document.getElementById('subcategory-modal').classList.remove('active');
+    currentSubcategoryParent = null;
+}
+
+// Вибір підкатегорії
+function selectSubcategory(category, subcategory) {
+    document.getElementById('category-filter').value = category;
+    selectedColor = subcategory;
+    filterProducts();
+    closeSubcategoryModal();
+    scrollToSection('catalog');
 }
 
 // Відкриття кошика при клику на кнопку в навбарі
@@ -503,3 +545,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function filterByFlower(value) {
+    if (!value) return;
+    document.getElementById('category-filter').value = value;
+    filterProducts();
+    scrollToSection('catalog');
+}
+
+function filterByOccasion(value) {
+    if (!value) return;
+    document.getElementById('category-filter').value = value;
+    filterProducts();
+    scrollToSection('catalog');
+}
