@@ -20,7 +20,7 @@ let products = [
     },
     {
         id: 3,
-        name: "Мікс гвоздик",
+        name: "Гвоздики",
         category: "Гвоздики",
         price: 149,
         emoji: "🌻",
@@ -74,7 +74,7 @@ let products = [
     },
     {
         id: 9,
-        name: "Біля букет",
+        name: "Букет",
         category: "Букети",
         price: 459,
         emoji: "🌷",
