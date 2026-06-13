@@ -1,4 +1,5 @@
 // Дані про товари
+let cart = [];
 let products = [
     {
         id: 1,
@@ -124,9 +125,7 @@ let selectedColor = null;
 
 // Завантаження даних з localStorage при завантаженні сторінки
 window.addEventListener('DOMContentLoaded', function() {
-    loadCartFromStorage();
     loadProducts();
-    updateCartCount();
     setupEventListeners();
 });
 
