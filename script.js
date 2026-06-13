@@ -166,7 +166,6 @@ function loadProducts() {
                 <p class="product-description">${product.description}</p>
                 <div class="product-footer">
                     <span class="price">${product.price} грн</span>
-                    <button class="btn btn-primary btn-small" onclick="event.stopPropagation(); addToCart(${product.id})">Додати</button>
                 </div>
             </div>
         `;
