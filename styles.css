@@ -98,7 +98,7 @@ body {
 /* Hero секція */
 .hero {
     min-height: 400px;
-    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    background: url(block.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
