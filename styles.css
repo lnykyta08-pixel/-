@@ -949,7 +949,7 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
     .call-link {
         pointer-events: none;
     }
