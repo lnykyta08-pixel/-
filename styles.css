@@ -96,7 +96,7 @@ body {
 
 /* Hero секція */
 .hero {
-    min-height: 750px;
+    min-height: 480px;
     background: #F3EFEA;
     display: flex;
     align-items: center;
@@ -1058,8 +1058,8 @@ html {
 }
 
 .feature-item img {
-    height: 60px;
-    width: 60px;
+    height: 120px;
+    width: 120px;
     object-fit: contain;
 }
 
