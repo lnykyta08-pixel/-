@@ -108,8 +108,10 @@ body {
 }
 
 .hero-image {
-    flex-shrink: 0;
-    height: 380px;
+    position: absolute;
+    right: -50px;
+    bottom: 0;
+    height: 110%;
 }
 
 .hero-image img {
@@ -119,7 +121,7 @@ body {
 
 .hero-content {
 	flex: 1;
-	text-align: left;
+	text-align: center;
 }
 
 .hero-subtitle {
