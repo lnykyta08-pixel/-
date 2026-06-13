@@ -146,35 +146,6 @@
         </div>
     </section>
 
-    <!-- Кошик (Модальне вікно) -->
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeCart()">&times;</span>
-            <h2>Ваш кошик</h2>
-            <div id="cart-items" class="cart-items">
-                <!-- Товари в кошику будуть тут -->
-            </div>
-            <div class="cart-summary">
-                <h3>Всього: <span id="total-price">0 грн</span></h3>
-            </div>
-            <div class="cart-actions">
-                <button class="btn btn-secondary" onclick="closeCart()">Продовжити покупки</button>
-                <button class="btn btn-primary" id="checkout-btn" onclick="checkout()">Оформити замовлення</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Модальне вікно підкатегорій -->
-    <div id="subcategory-modal" class="modal">
-        <div class="modal-content modal-subcategory">
-            <span class="close-btn" onclick="closeSubcategoryModal()">&times;</span>
-            <h2 id="subcategory-title"></h2>
-            <div id="subcategory-items" class="subcategory-grid">
-                <!-- Підкатегорії будуть завантажені сюди -->
-            </div>
-        </div>
-    </div>
-
     <!-- Модальне вікно товару -->
     <div id="product-modal" class="modal">
         <div class="modal-content modal-product">
@@ -195,49 +166,6 @@
                     <button class="btn btn-primary" onclick="addToCartFromModal()">Додати в кошик</button>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Форма замовлення -->
-    <div id="checkout-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeCheckout()">&times;</span>
-            <h2>Оформлення замовлення</h2>
-            <form id="checkout-form" onsubmit="submitOrder(event)">
-                <div class="form-group">
-                    <label for="name">ПІБ:</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Телефон:</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Адреса доставки:</label>
-                    <textarea id="address" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="delivery">Тип доставки:</label>
-                    <select id="delivery" required>
-                        <option value="">Виберіть...</option>
-                        <option value="Кур'єр">Кур'єр (+50 грн)</option>
-                        <option value="Укрпошта">Укрпошта (+30 грн)</option>
-                        <option value="Самовивіз">Самовивіз (Безкоштовно)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="notes">Примітки до замовлення:</label>
-                    <textarea id="notes" placeholder="Наприклад, побажання щодо дизайну букета"></textarea>
-                </div>
-                <div class="checkout-total">
-                    <h3>До сплати: <span id="checkout-total">0 грн</span></h3>
-                </div>
-                <button type="submit" class="btn btn-primary btn-large">Підтвердити замовлення</button>
-            </form>
         </div>
     </div>
 
