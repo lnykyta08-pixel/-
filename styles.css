@@ -110,8 +110,8 @@ body {
 .hero-image {
     position: absolute;
     right: -50px;
-    bottom: 0;
-    height: 140%;
+    bottom: -60px;
+    height: 150%;
 }
 
 .hero-image img {
