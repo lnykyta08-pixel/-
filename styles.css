@@ -99,7 +99,6 @@ body {
 .hero {
     min-height: 400px;
     background: #F8E8EC;
-	background: linear-gradient(90deg, rgba(248, 232, 236, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
