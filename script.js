@@ -1,5 +1,4 @@
 // Дані про товари
-let cart = [];
 let products = [
     {
         id: 1,
@@ -210,7 +209,6 @@ function filterProducts() {
                 <p class="product-description">${product.description}</p>
                 <div class="product-footer">
                     <span class="price">${product.price} грн</span>
-                    <button class="btn btn-primary btn-small" onclick="event.stopPropagation(); addToCart(${product.id})">Додати</button>
                 </div>
             </div>
         `;
