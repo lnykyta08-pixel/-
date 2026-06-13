@@ -179,6 +179,9 @@ function loadProducts() {
 function filterProducts() {
     const searchText = document.getElementById('search-input').value.toLowerCase();
     const category = document.getElementById('category-filter').value;
+	if (searchText) {
+		document.getElementById('category-filter').value = '';
+	}
     
     const container = document.getElementById('products-container');
     container.innerHTML = '';
@@ -187,8 +190,7 @@ function filterProducts() {
         const matchesSearch = product.name.toLowerCase().includes(searchText) || 
                             product.description.toLowerCase().includes(searchText);
         const matchesCategory = category === '' || product.category === category;
-        const matchesColor = selectedColor === null || selectedColor === '' || product.color === selectedColor;
-        return matchesSearch && matchesCategory && matchesColor;
+        return matchesSearch && matchesCategory;
     });
     
     if (filtered.length === 0) {
