@@ -109,15 +109,15 @@ body {
 
 .hero-image {
     position: absolute;
-    right: -50px;
-    bottom: -120px;
+    right: -80px;
+    bottom: -150px;
     height: 150%;
 }
 
 .hero-image img {
     height: 100%;
     object-fit: contain;
-	transform: rotate(-25deg);
+	transform: rotate(-10deg);
 }
 
 .hero-content {
