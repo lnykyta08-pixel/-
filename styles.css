@@ -117,7 +117,7 @@ body {
 .hero-image img {
     height: 100%;
     object-fit: contain;
-	transform: rotate(25deg);
+	transform: rotate(-25deg);
 }
 
 .hero-content {
