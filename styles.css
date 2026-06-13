@@ -96,12 +96,12 @@ body {
 
 /* Hero секція */
 .hero {
-    min-height: 480px;
+    min-height: 600px;
     background: #F3EFEA;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 60px 80px;
+    padding: 30px 80px;
     position: relative;
     overflow-x:	hidden;
 	overflow-y: hidden;
