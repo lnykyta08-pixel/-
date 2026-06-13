@@ -101,21 +101,25 @@ body {
     background: #F8E8EC;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 20px;
+    justify-content: space-between;
+    padding: 60px 80px;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-image {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	height: 100%;
+    flex-shrink: 0;
+    height: 380px;
 }
 
 .hero-image img {
-	height: 100%;
-	object-fit: contain;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero-content {
+	flex: 1;
+	text-align: left;
 }
 
 .hero-subtitle {
