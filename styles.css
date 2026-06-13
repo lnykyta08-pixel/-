@@ -1037,3 +1037,33 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+
+.features {
+    background: #fff;
+    padding: 30px 80px;
+    border-top: 1px solid #f0e8e8;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature-item img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+.feature-item p {
+    font-size: 0.9rem;
+    color: #7A6D68;
+}
