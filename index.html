@@ -3,44 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Квіти</title>
+    <title>Квіти</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Головна сторінка -->
+    <!-- Головна секція -->
     <section id="home" class="hero">
-	    <div class="hero-logo">
-		    <img src="kvity_golovna.png" alt="Квіти">
-		</div>
+        <div class="hero-logo">
+            <img src="kvity_golovna.png" alt="Квіти">
+        </div>
+
         <div class="hero-content">
             <h1>Квіти найкращої якості</h1>
-		<div class="hero-filter-box">
-            <p class="hero-subtitle">ЗНАЙДІТЬ СВІЙ ІДЕАЛЬНИЙ БУКЕТ</p>
-            <div class="hero-filters">
-    <div class="custom-select" id="flower-select">
-        <div class="custom-select-trigger">ОБЕРІТЬ КВІТИ <span class="arrow">▾</span></div>
-        <div class="custom-options">
-            <div class="custom-option" onclick="filterByFlower('Троянди'); setSelect('flower-select', 'Троянди')">Троянди</div>
-            <div class="custom-option" onclick="filterByFlower('Тюльпани'); setSelect('flower-select', 'Тюльпани')">Тюльпани</div>
-            <div class="custom-option" onclick="filterByFlower('Гвоздики'); setSelect('flower-select', 'Гвоздики')">Гвоздики</div>
-            <div class="custom-option" onclick="filterByFlower('Лілії'); setSelect('flower-select', 'Лілії')">Лілії</div>
-            <div class="custom-option" onclick="filterByFlower('Букети'); setSelect('flower-select', 'Букети')">Букети</div>
+            <div class="hero-filter-box">
+                <p class="hero-subtitle">ЗНАЙДІТЬ СВІЙ ІДЕАЛЬНИЙ БУКЕТ</p>
+                <div class="hero-filters">
+
+                    <div class="custom-select" id="flower-select">
+                        <div class="custom-select-trigger">ОБЕРІТЬ КВІТИ <span class="arrow">▾</span></div>
+                        <div class="custom-options">
+                            <div class="custom-option" onclick="filterByFlower('Троянди'); setSelect('flower-select', 'Троянди')">Троянди</div>
+                            <div class="custom-option" onclick="filterByFlower('Тюльпани'); setSelect('flower-select', 'Тюльпани')">Тюльпани</div>
+                            <div class="custom-option" onclick="filterByFlower('Гвоздики'); setSelect('flower-select', 'Гвоздики')">Гвоздики</div>
+                            <div class="custom-option" onclick="filterByFlower('Лілії'); setSelect('flower-select', 'Лілії')">Лілії</div>
+                            <div class="custom-option" onclick="filterByFlower('Букети'); setSelect('flower-select', 'Букети')">Букети</div>
+                        </div>
+                    </div>
+
+                    <span>або</span>
+
+                    <div class="custom-select" id="occasion-select">
+                        <div class="custom-select-trigger">ОБЕРІТЬ НАГОДУ <span class="arrow">▾</span></div>
+                        <div class="custom-options">
+                            <div class="custom-option" onclick="filterByOccasion('Весілля'); setSelect('occasion-select', 'Весілля')">Весілля</div>
+                            <div class="custom-option" onclick="filterByOccasion('День народження'); setSelect('occasion-select', 'День народження')">День народження</div>
+                            <div class="custom-option" onclick="filterByOccasion('Без приводу'); setSelect('occasion-select', 'Без приводу')">Без приводу</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-    </div>
-    <span>або</span>
-    <div class="custom-select" id="occasion-select">
-        <div class="custom-select-trigger">ОБЕРІТЬ НАГОДУ <span class="arrow">▾</span></div>
-        <div class="custom-options">
-            <div class="custom-option" onclick="filterByOccasion('Весілля'); setSelect('occasion-select', 'Весілля')">Весілля</div>
-            <div class="custom-option" onclick="filterByOccasion('День народження'); setSelect('occasion-select', 'День народження')">День народження</div>
-            <div class="custom-option" onclick="filterByOccasion('Без приводу'); setSelect('occasion-select', 'Без приводу')">Без приводу</div>
-        </div>
-    </div>
-</div>
-        </div>
+
         <div class="hero-image">
-            <img src="Kvity_na_pochatky.png" alt="букет">
+            <img src="Kvity_na_pochatky.png" alt="Букет квітів">
         </div>
     </section>
 
@@ -73,7 +80,7 @@
         </div>
     </section>
 
-    <!-- Пропозиції -->
+    <!-- Каталог -->
     <section id="catalog" class="catalog">
         <div class="container">
             <h2>Наші пропозиції</h2>
@@ -89,7 +96,7 @@
                 </select>
             </div>
             <div id="products-container" class="products-grid">
-                <!-- Продукти будуть завантажені сюди -->
+                <!-- Продукти завантажуються через script.js -->
             </div>
         </div>
     </section>
@@ -137,13 +144,14 @@
                     </div>
                 </div>
                 <div class="contact-image">
-				    <div class="call-hint">
-					    <img src="arrow.jpg" alt="стрілка">
-					</div>
-				    <a href="tel:+380665160627" class="call-link">
+                    <div class="call-hint">
+                        <img src="arrow.jpg" alt="стрілка">
+                    </div>
+                    <a href="tel:+380665160627" class="call-link">
                         <img src="./d108f450a381a4d3211bfe5111f40c25-Photoroom.png" alt="Кот з квіткою">
-                </a>
-				<span class="call-text">тицяй сюди, щоб подзвонити</span>
+                    </a>
+                    <span class="call-text">тицяй сюди, щоб подзвонити</span>
+                </div>
             </div>
         </div>
     </section>
