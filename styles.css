@@ -56,7 +56,7 @@ body {
 }
 
 .header-brand a {
-    font-size: 24px;
+    font-size: 12px;
     font-weight: bold;
 	text-decoration: none;
     color: var(--primary-color);
@@ -112,8 +112,6 @@ body {
     top: 20px;
     left: 30px;
     z-index: 10;
-	padding-bottom: 10px;
-	border-bottom: 1px solid rgba(233, 30, 90, 0.2);
 }
 
 .hero-logo img {
@@ -126,6 +124,7 @@ body {
     right: -160px;
     bottom: -150px;
     height: 150%;
+	z-index: 1;
 }
 
 .hero-image img {
@@ -138,6 +137,8 @@ body {
 .hero-content {
 	flex: 1;
 	text-align: center;
+	position: relative;
+	z-index: 5;
 }
 
 .hero-subtitle {
@@ -160,7 +161,11 @@ body {
     position: relative;
     min-width: 200px;
     cursor: pointer;
-	z-index: 999;
+	z-index: 10;
+}
+
+.custom-select.open {
+	z-index: 1000;
 }
 
 .custom-select-trigger {
@@ -1088,10 +1093,10 @@ footer {
 }
 
 .hero-content h1 {
-    font-size: 2.6rem;
+    font-size: 1.9rem;
 	line-height: 1.1;
-	margin-bottom: 30px;
-	margin-top: 40px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 .hero-subtitle {
