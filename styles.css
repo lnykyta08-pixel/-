@@ -160,13 +160,14 @@ body {
     position: relative;
     min-width: 200px;
     cursor: pointer;
+	z-index: 999;
 }
 
 .custom-select-trigger {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.5rem;
+    padding: 0 0 0 1.5rem;
     height: 48px;
     background: #fff;
     border: 1px solid #D8D0CA;
@@ -182,11 +183,14 @@ body {
 }
 
 .arrow {
-    font-size: 0.7rem;
-    margin-left: 1rem;
-    transform: rotate(180deg);
-    display: inline-block;
-    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-left: 1px solid #D8D0CA;
+    font-size: 1rem;
+    flex-shrink: 0;
 }
 
 .custom-select.open .arrow {
@@ -203,7 +207,7 @@ body {
     border: 1px solid #D8D0CA;
     border-radius: 10px;
     overflow: visible;
-    z-index: 100;
+    z-index: 999;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
