@@ -1027,6 +1027,7 @@ footer {
     flex-direction: column;
     padding: 20px;
     min-height: auto;
+	margin-top: 0;
 }
 
 .hero-image {
@@ -1065,6 +1066,12 @@ footer {
 
 .custom-select {
     width: 100%;
+}
+
+.custom-select-trigger {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #3d3d3d;
 }
 
 .hero-image img {
