@@ -216,7 +216,7 @@ body {
 }
 
 #occasion-select .custom-options {
-    z-index: 1:
+    z-index: 1;
 }
 
 .custom-select.open .custom-options {
@@ -248,7 +248,8 @@ body {
     }
     
     .hero-filters span {
-        text-align: flex-start;
+        text-align: center;
+        width: 100%;
     }
 }
 
