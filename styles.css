@@ -104,7 +104,7 @@ body {
     padding: 20px 80px;
     position: relative;
     overflow-x:	hidden;
-	overflow-y: hidden;
+	overflow-y: visible;
 }
 
 .hero-logo {
@@ -218,6 +218,7 @@ body {
 .custom-select-trigger:hover {
     border-color: #e91e63;
     color: #e91e63;
+    background: #ede8e3;
 }
 
 .custom-option {
@@ -966,7 +967,7 @@ footer {
 }
 
 /* Відповідний дизайн */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .nav-menu {
         gap: 1rem;
         font-size: 0.9rem;
@@ -1051,6 +1052,20 @@ footer {
 
 .custom-options {
     z-index: 9999;
+}
+
+.custom-select {
+    width: 100%;
+}
+
+.hero-image img {
+    width: 80%;
+    height: auto;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
 }
   }
 
