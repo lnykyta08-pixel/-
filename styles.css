@@ -1030,13 +1030,13 @@ footer {
 	
 	.hero {
     flex-direction: column;
-    padding: 120px 20px 0;
+    padding: 80px 20px 0;
     min-height: auto;
 	position: relative;
 }
 
 .hero-image {
-    position: relative;
+    position: absolute;
     right: auto;
     bottom: auto;
     width: 100%;
@@ -1044,6 +1044,7 @@ footer {
 	margin-top: 20px;
     text-align: center;
 	order: 2;
+	z-index: 2;
 }
 
 .hero-image img {
@@ -1060,7 +1061,7 @@ footer {
 }
 
 .hero-logo img {
-    height: 90px;
+    height: 55px;
 }
 
 .hero-filters {
@@ -1081,7 +1082,7 @@ footer {
     border-radius: 16px;
     padding: 20px;
     width: 90%;
-	margin: -120px auto 0;
+	margin: -60px auto 0;
 	position: relative;
 	z-index: 30;
 }
