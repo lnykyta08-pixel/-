@@ -585,3 +585,25 @@ function filterByOccasion(value) {
     if (!value) return;
     scrollToSection('catalog');
 }
+
+document.querySelectorAll('.custom-select-trigger').forEach(trigger => {
+    trigger.addEventListener('click', function() {
+        const parent = this.parentElement;
+        document.querySelectorAll('.custom-select').forEach(s => {
+            if (s !== parent) s.classList.remove('open');
+        });
+        parent.classList.toggle('open');
+    });
+});
+
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.custom-select')) {
+        document.querySelectorAll('.custom-select').forEach(s => s.classList.remove('open'));
+    }
+});
+
+function setSelect(id, value) {
+    const sel = document.getElementById(id);
+    sel.querySelector('.custom-select-trigger').childNodes[0].textContent = value + ' ';
+    sel.classList.remove('open');
+}

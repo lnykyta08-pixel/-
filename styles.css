@@ -156,6 +156,73 @@ body {
     flex-wrap: wrap;
 }
 
+.custom-select {
+    position: relative;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.custom-select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 48px;
+    background: #fff;
+    border: 1px solid #D8D0CA;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #7A6D68;
+    letter-spacing: 0.05em;
+}
+
+.custom-select.open .custom-select-trigger {
+    border-color: #e91e63;
+    color: #e91e63;
+}
+
+.arrow {
+    font-size: 0.7rem;
+    margin-left: 1rem;
+    transform: rotate(180deg);
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.custom-select.open .arrow {
+    transform: rotate(0deg);
+}
+
+.custom-options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #D8D0CA;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.custom-select.open .custom-options {
+    display: block;
+}
+
+.custom-option {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    color: #7A6D68;
+    transition: background 0.15s;
+}
+
+.custom-option:hover {
+    background: #fdf0f5;
+    color: #e91e63;
+}
+
 @media (max-width: 480px) {
     .hero-filters {
         flex-direction: column;
@@ -260,7 +327,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: #7A6D68;
     margin-bottom: 2rem;
 }
