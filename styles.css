@@ -1068,12 +1068,11 @@ footer {
     width: 100%;
 }
 
-.hero-content {
-    background: white;
+.hero-filter-box {
+    background: #EDE8E3;
     border-radius: 16px;
     padding: 20px;
     width: 90%;
-    margin: 0 auto;
 }
 
 .hero-image img {
