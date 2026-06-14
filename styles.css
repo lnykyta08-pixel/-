@@ -972,7 +972,6 @@ footer {
 }
 
 .hero-filters {
-    flex-direction: row;
     align-items: flex-start;
 }
 
@@ -987,7 +986,7 @@ footer {
 .hero-filter-box {
     background: #EDE8E3;
     border-radius: 16px;
-    padding: 12px 16px;
+    padding: 5px 12px 16px;
     width: 90%;
 	margin: 20px auto 0;
 	position: relative;
