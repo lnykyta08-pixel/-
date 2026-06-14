@@ -556,36 +556,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function filterByFlower(value) {
-    if (!value) return;
-    document.getElementById('category-filter').value = value;
-    filterProducts();
-    scrollToSection('catalog');
-}
-
-function filterByOccasion(value) {
-    if (!value) return;
-    document.getElementById('category-filter').value = value;
-    filterProducts();
-    scrollToSection('catalog');
-}
-
-function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-}
-
-function filterByFlower(value) {
-    if (!value) return;
-    document.getElementById('category-filter').value = value;
-    filterProducts();
-    scrollToSection('catalog');
-}
-
-function filterByOccasion(value) {
-    if (!value) return;
-    scrollToSection('catalog');
-}
-
 document.querySelectorAll('.custom-select-trigger').forEach(trigger => {
     trigger.addEventListener('click', function() {
         const parent = this.parentElement;

@@ -345,11 +345,6 @@ body {
     }
 }
 
-.hero-content {
-    position: relative;
-    z-index: 10;
-}
-
 .hero-content h1 {
     font-size: 5rem;
     color: #7A6D68;
@@ -1036,15 +1031,11 @@ footer {
 }
 
 .hero-image {
-    position: absolute;
-    right: auto;
-    bottom: auto;
+    position: relative;
     width: 100%;
-    height: auto;
 	margin-top: 20px;
     text-align: center;
 	order: 2;
-	z-index: 2;
 }
 
 .hero-image img {
