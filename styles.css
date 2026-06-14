@@ -104,7 +104,7 @@ body {
     padding: 20px 80px;
     position: relative;
     overflow-x:	hidden;
-	overflow-y: visible;
+	overflow-y: hidden;
 }
 
 .hero-logo {
