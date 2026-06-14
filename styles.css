@@ -211,6 +211,14 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
+#flower-select .custom-options {
+    z-index: 9999;
+}
+
+#occasion-select .custom-options {
+    z-index: 1:
+}
+
 .custom-select.open .custom-options {
     display: block;
 }
