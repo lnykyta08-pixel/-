@@ -101,7 +101,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 80px;
+    padding: 20px 80px;
     position: relative;
     overflow-x:	hidden;
 	overflow-y: hidden;
@@ -173,11 +173,18 @@ body {
     border-radius: 10px;
 	height: 48px;
 	background: #ffffff;
-	border: 1px solid #D8DOCA
+	border: 1px solid #D8DOCA;
     font-size: 1.1rem;
     background: white;
     cursor: pointer;
     min-width: 200px;
+	cursor: pointer;
+	transition: border-color 0.2s;
+}
+
+.hero-select:hover {
+    border-color: #e91e63;
+    color: #e91e63;
 }
 
 .hero-flowers {
@@ -253,7 +260,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 5rem;
+    font-size: 3.5rem;
     color: #7A6D68;
     margin-bottom: 2rem;
 }
