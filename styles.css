@@ -102,8 +102,8 @@ body {
 .hero-subtitle {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #A38A81;
-    margin: 0 0 1rem;
+    color: #594E49;
+    margin: 0 0 1.5rem;
     letter-spacing: 2px;
 	font-family: 'Lora', serif;
 }
@@ -111,7 +111,7 @@ body {
 .hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 3.5rem;
-    color: #4A0E17;
+    color: #2B211C;
     margin-bottom: 0.3rem;
 }
 
@@ -144,7 +144,7 @@ body {
     border: 1px solid #D8D0CA;
     border-radius: 10px;
     font-size: 1rem;
-    color: #e91e63;
+    color: #594E49;
     letter-spacing: 0.05em;
 }
 
