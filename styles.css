@@ -65,7 +65,7 @@ body {
 /* Змінено тут: колір рожевий, без ліній, видно всюди */
 .logo-phone {
     font-size: 0.9rem;
-    color: var(--primary-color) !important;
+    color: color: #7A6D68 !important;
     text-decoration: none !important;
     margin-top: 5px;
     font-weight: bold;
