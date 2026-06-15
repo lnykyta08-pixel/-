@@ -33,7 +33,7 @@ body {
 
 /* Hero секція */
 .hero {
-    min-height: 750px;
+    min-height: 748px;
     background: #F3EFEA;
     display: flex;
     align-items: center;
