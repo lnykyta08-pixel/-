@@ -1025,7 +1025,6 @@ footer {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: nowrap;
 	justify-content: space-between;
 	width: 100%;
 }
@@ -1056,8 +1055,17 @@ footer {
     }
 }
 
-features-grid {
+.features-grid {
 	grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 769px) {
+    .hero-image {
+        position: absolute;
+        right: -160px;
+        bottom: -150px;
+        height: 150%;
+    }
 }
 
 @media (min-width: 480px) {
