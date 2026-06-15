@@ -684,6 +684,13 @@
     color: var(--primary-color);
 }
 
+footer {
+
+    background: var(--text-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+}
 /* Відповідний дизайн */
 @media (max-width: 768px) {
     .hero {
