@@ -769,14 +769,15 @@ footer {
     .hero-filter-box {
         background: #EDE8E3;
         border-radius: 16px;
-        padding: 5px 12px 22px;
+        padding: 10px 12px 20px;
         width: 90%;
-        margin: 20px auto 0;
+        margin: 5px auto 0;
     }
 
     .hero-subtitle {
         font-size: 0.8rem;
-        margin-bottom: 5px;
+		margin-top: 5px !important;
+        margin-bottom: 10px !important;
     }
 
     .hero-filters {
