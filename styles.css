@@ -984,7 +984,8 @@ footer {
 }
 
 .custom-select {
-    width: 100%;
+    width: auto%;
+	min-width: 150px;
 }
 
 .hero-filter-box {
@@ -1023,6 +1024,7 @@ footer {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	white-space: nowrap;
 }
   }
 
