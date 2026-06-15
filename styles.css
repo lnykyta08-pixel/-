@@ -103,9 +103,16 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     color: #8C817C;
-    margin: 1.5rem 0 1rem;
+    margin: 0 0 1rem;
     letter-spacing: 2px;
 	font-family: 'Lora', serif;
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    color: #7A6D68;
+    margin-bottom: 0.3rem;
 }
 
 .hero-filters {
