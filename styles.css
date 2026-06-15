@@ -947,6 +947,7 @@ footer {
     padding: 20px;
     min-height: auto;
 	position: relative;
+	display: flex;
 }
 
 .hero-image {
@@ -984,7 +985,7 @@ footer {
 }
 
 .custom-select {
-    width: auto%;
+    width: auto;
 	min-width: 150px;
 }
 
