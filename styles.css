@@ -13,11 +13,11 @@
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-html {
+.html {
 	overflow-x: hidden;
 }
 
-body {
+.body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
@@ -682,14 +682,6 @@ body {
 
 .checkout-total h3 {
     color: var(--primary-color);
-}
-
-.footer {
-    background: var(--text-color);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
 }
 
 /* Відповідний дизайн */
