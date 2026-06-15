@@ -1025,6 +1025,8 @@ footer {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	justify-content: space-between;
+	width: 100%;
 }
   }
 
