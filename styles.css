@@ -794,18 +794,9 @@ footer {
     }
 
     .hero-image {
-        width: 80%;
-        text-align: center;
-        margin-top: 10px;
-        position: relative;
+        display: none;
     }
-
-    .hero-image img {
-        width: 100%;
-        height: auto;
-        transform: none;
-    }
-
+	
     /* Каталог */
     .products-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
