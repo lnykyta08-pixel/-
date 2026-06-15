@@ -941,94 +941,6 @@ footer {
     .cart-actions {
         flex-direction: column;
     }
-	
-	.hero {
-    flex-direction: column;
-    padding: 20px;
-    min-height: auto;
-	position: relative;
-	display: flex;
-}
-
-.hero-image {
-    position: relative;
-    width: 100%;
-	margin-top: -120px;
-    text-align: center;
-	order: 2;
-}
-
-.hero-image img {
-	width: 80%;
-    height: auto;
-	transform: none;
-}
-
-.hero-logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 20;
-}
-
-.hero-logo img {
-    height: 55px;
-}
-
-.hero-filters {
-	flex-direction: row;
-    align-items: flex-start;
-}
-
-.custom-options {
-    z-index: 9999;
-}
-
-.custom-select {
-    width: auto;
-	min-width: 150px;
-}
-
-.hero-filter-box {
-    background: #EDE8E3;
-    border-radius: 16px;
-    padding: 0px 12px 12px;
-    width: 90%;
-	margin: 30px auto 0;
-	position: relative;
-	z-index: 30;
-}
-
-.hero-content {
-	margin-top: 0;
-	position: relative;
-	z-index: 10;
-}
-
-.hero-content h1 {
-    font-size: 1.9rem;
-	line-height: 1.1;
-	margin-top: 60px;
-	margin-bottom: 20px;
-}
-
-.hero-subtitle {
-    font-size: 0.85rem;
-}
-
-.custom-select-trigger {
-    font-size: 0.85rem;
-    height: 40px;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 200;
-	font-style: italic;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	justify-content: space-between;
-	width: 100%;
-}
-  }
 
 @media (max-width: 480px) {
     .contact-content {
@@ -1057,15 +969,6 @@ footer {
 
 .features-grid {
 	grid-template-columns: repeat(2, 1fr);
-}
-
-@media (min-width: 769px) {
-    .hero-image {
-        position: absolute;
-        right: -160px;
-        bottom: -150px;
-        height: 150%;
-    }
 }
 
 @media (min-width: 480px) {
