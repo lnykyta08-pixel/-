@@ -103,7 +103,7 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     color: #2B211C;
-    margin: 0 0 0.5rem;
+    margin: 0 0 3rem;
     letter-spacing: 2px;
 	font-family: 'Lora', serif;
 }
@@ -503,50 +503,6 @@ body {
 }
 
 /* Підказка для кота */
-.cat-hint {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    animation: catHintBounce 1.5s ease-in-out infinite;
-}
-
-.hint-arrow {
-    font-size: 24px;
-    animation: arrowPoint 1.5s ease-in-out infinite;
-}
-
-.hint-text {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    font-weight: bold;
-    background: var(--white);
-    padding: 5px 10px;
-    border-radius: 15px;
-    white-space: nowrap;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes catHintBounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-@keyframes arrowPoint {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(5px);
-    }
-}
-
 .contact-image {
     position: relative;
 }
@@ -794,7 +750,7 @@ footer {
         height: 40px;
         font-size: 0.85rem;
         white-space: nowrap;
-		background: #EDE8E3;
+		background: #fff;
     }
 
     .popular-categories {
