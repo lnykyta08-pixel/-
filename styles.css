@@ -941,6 +941,7 @@ footer {
     .cart-actions {
         flex-direction: column;
     }
+}
 
 @media (max-width: 480px) {
     .contact-content {
@@ -1052,4 +1053,14 @@ html {
 .feature-item p {
     font-size: 0.9rem;
     color: #7A6D68;
+}
+
+@media (min-width: 769px) {
+    .hero-image {
+        position: absolute;
+        right: -160px;
+        bottom: -150px;
+        height: 150%;
+        z-index: 1;
+    }
 }
