@@ -57,6 +57,25 @@ body {
     mix-blend-mode: multiply;
 }
 
+.hero-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-phone {
+    font-size: 0.9rem;
+    color: #7A6D68;
+    text-decoration: none;
+    margin-top: 5px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.logo-phone:hover {
+    color: var(--primary-color);
+}
+
 .hero-image {
     position: absolute;
     right: -160px;
