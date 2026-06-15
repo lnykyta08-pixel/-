@@ -68,7 +68,7 @@ body {
     color: var(--primary-color) !important;
     text-decoration: none !important;
     margin-top: 5px;
-    font-weight: 600;
+    font-weight: bold;
     transition: color 0.3s;
     display: block !important;
     white-space: nowrap;
