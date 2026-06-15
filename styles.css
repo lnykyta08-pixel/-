@@ -767,9 +767,9 @@ footer {
     }
 
     .hero-filter-box {
-        background: rgba(237, 232, 227, 0.65);
-        backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
+        background: rgba(237, 232, 227, 0.25);
+        backdrop-filter: blur(4px);
+		-webkit-backdrop-filter: blur(4px);
 		border-radius: 16px;
         padding: 10px 12px 20px;
         width: 90%;
@@ -814,7 +814,6 @@ footer {
 		transform: translateX(50%);
 		height: 70%;
 		z-index: 1;
-		opacity: 0.55;
 		pointer-events: none;
     }
 	
