@@ -710,3 +710,146 @@ footer {
 }
 
 /* Відповідний дизайн */
+@media (max-width: 768px) {
+
+    /* Hero */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 15px 20px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-logo {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        z-index: 20;
+    }
+
+    .hero-logo img {
+        height: 50px;
+    }
+
+    .hero-content {
+        z-index: 10;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-filter-box {
+        background: #EDE8E3;
+        border-radius: 16px;
+        padding: 10px 12px 15px;
+        width: 90%;
+        margin: 10px auto 0;
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+    }
+
+    .hero-filters {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .custom-select {
+        width: 100%;
+    }
+
+    .custom-select-trigger {
+        height: 40px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .hero-image {
+        width: 80%;
+        text-align: center;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        transform: none;
+    }
+
+    /* Каталог */
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .catalog h2,
+    .about h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    /* Модалка */
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    /* Features */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+    .product-modal-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Контакти */
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-image {
+        margin-top: 2rem;
+    }
+
+    /* Каталог */
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .search-box {
+        min-width: unset;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .hero-image {
+        position: absolute;
+        right: -160px;
+        bottom: -150px;
+        height: 150%;
+        z-index: 1;
+    }
+}
