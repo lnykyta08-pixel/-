@@ -13,10 +13,6 @@
     --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.html {
-	overflow-x: hidden;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
