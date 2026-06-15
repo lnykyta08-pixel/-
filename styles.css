@@ -737,11 +737,9 @@ footer {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        padding: 15px 20px;
+        padding: 150px 15px 20px;
         position: relative;
-        justify-content: flex-start;
         align-items: center;
-		padding-top: 150px;
     }
 
     .hero-logo {
