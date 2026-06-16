@@ -846,7 +846,7 @@ footer {
 
     /* Каталог та фільтри */
     .products-grid {
-        grid-template-columns: 1fr; /* На телефонах товари вишикуються в один стовпчик */
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
