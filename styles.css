@@ -865,12 +865,3 @@ footer {
     }
 
 }
-
-@media (min-width: 768px) {
-    .hero-image {
-        position: absolute;
-        right: -160px;
-        bottom: -150px;
-        height: 150%;
-        z-index: 1;
-    }
