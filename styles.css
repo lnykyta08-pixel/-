@@ -461,7 +461,6 @@
 .contact {
     padding: 60px 20px;
     background: var(--white);
-	font-family: 'Montserrat', sans-serif;
 }
 
 .contact h2 {
@@ -469,7 +468,6 @@
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: var(--primary-color);
-	font-family: 'Cormorant Garamond', serif;
 }
 
 .contact-content {
@@ -492,15 +490,19 @@
 .contact-item h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-	font-family: 'Cormorant Garamond', serif;
-	font-height: 600;
 }
 
-.contact-item p {
+.contact-item p,
+.contact-item a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: #222;
     line-height: 1.5;
+}
+
+.phone-code {
+    color: #e91e63;
+	font-weight: 700;
 }
 
 .contact-image {
