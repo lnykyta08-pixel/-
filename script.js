@@ -396,49 +396,9 @@ function removeProductFromCart(productId) {
     displayCart();
 }
 
-// Обчислення загальної вартості
-function updateTotalPrice() {
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
-    document.getElementById('total-price').textContent = `${total} грн`;
-}
-
-// Перехід до оформлення замовлення
-function checkout() {
-    if (cart.length === 0) {
-        alert('Ваш кошик порожній!');
-        return;
-    }
-    closeCart();
-    document.getElementById('checkout-modal').classList.add('active');
-    updateCheckoutTotal();
-}
-
 // Закриття модального вікна оформлення
 function closeCheckout() {
     document.getElementById('checkout-modal').classList.remove('active');
-}
-
-// Оновлення суми при зміні доставки
-document.addEventListener('change', function(e) {
-    if (e.target.id === 'delivery') {
-        updateCheckoutTotal();
-    }
-});
-
-// Оновлення загальної суми в оформленні замовлення
-function updateCheckoutTotal() {
-    const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
-    const deliverySelect = document.getElementById('delivery');
-    let deliveryFee = 0;
-    
-    if (deliverySelect.value === 'Кур\'єр') {
-        deliveryFee = 50;
-    } else if (deliverySelect.value === 'Укрпошта') {
-        deliveryFee = 30;
-    }
-    
-    const total = subtotal + deliveryFee;
-    document.getElementById('checkout-total').textContent = `${total} грн`;
 }
 
 // Відправлення замовлення
@@ -535,17 +495,6 @@ function selectSubcategory(category, subcategory) {
     closeSubcategoryModal();
     scrollToSection('catalog');
 }
-
-// Відкриття кошика при клику на кнопку в навбарі
-document.addEventListener('DOMContentLoaded', function() {
-    const cartLink = document.querySelector('.cart-link');
-    if (cartLink) {
-        cartLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            openCart();
-        });
-    }
-});
 
 document.querySelectorAll('.custom-select-trigger').forEach(trigger => {
     trigger.addEventListener('click', function() {
