@@ -220,51 +220,6 @@ function filterByOccasion(value) {
     scrollToSection('catalog');
 }
 
-// Оновлення кількості товару в групі
-function updateQuantityInGroup(productId, newQuantity) {
-    newQuantity = parseInt(newQuantity) || 0;
-    const currentQuantity = cart.filter(item => item.id === productId).length;
-}
-
-    if (newQuantity === 0) {
-        removeProductFromCart(productId);
-    } else if (newQuantity > currentQuantity) {
-        const product = cart.find(item => item.id === productId);
-        for (let i = 0; i < newQuantity - currentQuantity; i++) {
-            cart.push({ ...product, cartItemId: Date.now() + Math.random() });
-        }
-        saveCartToStorage();
-        updateCartCount();
-        displayCart();
-    } else if (newQuantity < currentQuantity) {
-        let removed = 0;
-        for (let i = 0; i < currentQuantity - newQuantity; i++) {
-            const index = cart.findIndex(item => item.id === productId);
-            if (index > -1) {
-                cart.splice(index, 1);
-            }
-        }
-        saveCartToStorage();
-        updateCartCount();
-        displayCart();
-    }
-}
-
-// Закриття модального вікна оформлення
-function closeCheckout() {
-    document.getElementById('checkout-modal').classList.remove('active');
-}
-    
-    // Закриття форми
-    closeCheckout();
-    
-    // Очистка форми
-    document.getElementById('checkout-form').reset();
-    
-    // Повернення на головну
-    window.location.hash = 'home';
-}
-
 document.querySelectorAll('.custom-select-trigger').forEach(trigger => {
     trigger.addEventListener('click', function() {
         const parent = this.parentElement;
