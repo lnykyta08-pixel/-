@@ -438,6 +438,7 @@ html {
     color: #222;
     line-height: 1.6;
     text-indent: 30px;
+	text-align: justify;
 }
 
 .about-features {
