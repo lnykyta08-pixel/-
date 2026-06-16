@@ -438,6 +438,7 @@
 
 .about-features {
     list-style: none;
+	
 }
 
 .about-features li::before {
@@ -445,6 +446,7 @@
     color: #e91e63;
     font-weight: 700;
     margin-right: 8px;
+	display: inline-block;
 }
 
 .about-features li {
@@ -837,4 +839,3 @@ footer {
         height: 150%;
         z-index: 1;
     }
-}
