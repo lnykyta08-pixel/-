@@ -23,6 +23,28 @@ html {
     padding: 0 20px;
 }
 
+/* Кастомний повзунок */
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F3EFEA;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #E2DCD5;
+	border-radius: 20px;
+	border: 3px solid #F3EFEA;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #7A6D68;
+}
+
+
+
 /* Hero секція */
 .hero {
     min-height: 748px;
