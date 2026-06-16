@@ -721,8 +721,8 @@ html {
 
 /* Класичний Чорний Футер */
 footer {
-    background: #F3EFEA;
-    color: 222222;
+    background: #594E49;
+    color: var(--white);
     text-align: center;
     padding: 3rem 2rem;
     margin-top: 0;
