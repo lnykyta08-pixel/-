@@ -489,6 +489,8 @@ html {
     gap: 30px;
 	flex-wrap: wrap;
 	width: 100%;
+	color: #8D7B6D;
+	font-weight: 500;
 }
 
 .contact-item {
