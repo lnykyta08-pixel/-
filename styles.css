@@ -813,12 +813,12 @@ footer {
     }
 
     .custom-select {
-        width: 60%;
+        width: 85%;
     }
 
     .custom-select-trigger {
         height: 40px;
-        font-size: 0.85rem;
+        font-size: 0.60rem;
         white-space: nowrap;
         background: #fff;
     }
