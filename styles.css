@@ -472,7 +472,7 @@
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 250px;
+    grid-template-columns: 1fr auto;
     gap: 3rem;
     align-items: center;
 }
@@ -488,7 +488,7 @@
 }
 
 .contact-item h3 {
-    color: var(--primary-color);
+    color: #111111 !important;
     margin-bottom: 1.2rem;
 	font-size: 1.4rem;
     font-weight: 700;
@@ -497,11 +497,24 @@
 .contact-item p,
 .contact-item a {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 600 !important;
 	font-style: normal !important;
-    color: #222 !important;
+    color: #222222 !important;
 	text-decoration: none !important;
     line-height: 1.6;
+}
+
+/* Підказка для кота */
+.contact-image {
+    position: relative;
+}
+
+.cat-text {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 1rem;
+    color: #222222;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .phone-code {
@@ -523,10 +536,15 @@
     border-radius: 50%;
     box-shadow: 0 4px 15px rgba(233, 30, 99, 0.2);
 }
-
-/* Підказка для кота */
-.contact-image {
-    position: relative;
+@media (min-width: 1024px) {
+    .cat-call-container {
+        display: none !important;
+    }
+    
+    .contact-item a[href^="tel:"] {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
 }
 
 /* Модальні вікна */
