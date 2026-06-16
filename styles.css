@@ -463,7 +463,7 @@ html {
 /* Контакти (Класичний білий стиль) */
 .contact {
     padding: 60px 20px;
-    background: #7A6D68;
+    background: #F3EFEA;
     max-width: 1200px;
     margin: 40px auto;
 	box-shadow: var(--shadow);
@@ -473,7 +473,7 @@ html {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #ffffff;
+    color: var(--primart-color);
 }
 
 .contact-content {
@@ -494,7 +494,7 @@ html {
 }
 
 .contact-item h3 {
-    color: #2B211C !important;
+    color: #7A6D68 !important;
     margin-bottom: 1.2rem;
     font-size: 1.4rem;
     font-weight: 700;
