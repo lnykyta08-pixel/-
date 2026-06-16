@@ -316,17 +316,6 @@ function updateCartCount() {
     document.getElementById('cart-count').textContent = `(${cart.length})`;
 }
 
-// Відкриття кошика
-function openCart() {
-    document.getElementById('cart-modal').classList.add('active');
-    displayCart();
-}
-
-// Закриття кошика
-function closeCart() {
-    document.getElementById('cart-modal').classList.remove('active');
-}
-
 // Відображення товарів у кошику
 function displayCart() {
     const cartItems = document.getElementById('cart-items');
