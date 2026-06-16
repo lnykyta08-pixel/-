@@ -224,7 +224,8 @@ function filterByOccasion(value) {
 function updateQuantityInGroup(productId, newQuantity) {
     newQuantity = parseInt(newQuantity) || 0;
     const currentQuantity = cart.filter(item => item.id === productId).length;
-    
+}
+
     if (newQuantity === 0) {
         removeProductFromCart(productId);
     } else if (newQuantity > currentQuantity) {
