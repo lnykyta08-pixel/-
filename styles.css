@@ -462,9 +462,9 @@ html {
 
 /* Контакти (Класичний білий стиль) */
 .contact {
-    padding: 60px 20px;
+    padding: 80px 20px;
     background: #F3EFEA;
-    margin: 40px 0;
+    margin: 0;
     width: 100%;
 }
 
@@ -840,8 +840,8 @@ footer {
     }
 
     .contact {
-        margin: 40px 15px;
-        padding: 20px 15px;
+        margin: 0;
+        padding: 60px 15px;
     }
 
     .contact-content {
