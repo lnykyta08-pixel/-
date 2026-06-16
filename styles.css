@@ -411,7 +411,7 @@ html {
 /* Про нас */
 .about {
     padding: 60px 20px;
-    background: var(--light-bg);
+    background: #594E49;
 }
 
 .about h2 {
@@ -457,7 +457,7 @@ html {
     color: #222;
 }
 
-/* Контакти (Класичний білий стиль) */
+/* Контакти */
 .contact {
     padding: 80px 20px;
     background: #F3EFEA;
