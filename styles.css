@@ -529,7 +529,9 @@ html {
 .cat-text {
     font-family: 'Montserrat', sans-serif !important;
     font-size: 1rem;
-    color: #222222;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    color: #222222 !important;
     margin-top: 10px;
     text-align: center;
 }
