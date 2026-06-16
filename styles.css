@@ -256,10 +256,6 @@ html {
 	margin-bottom: 0;
 }
 
-.category-card:hover .category-icon {
-    transform: scale(1.2) rotate(10deg);
-}
-
 .category-card h3 {
     color: var(--text-color);
     text-align: center;
