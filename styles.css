@@ -5,7 +5,8 @@
 }
 
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
 
 :root {
     --primary-color: #e91e63;
@@ -31,8 +32,8 @@ html {
     justify-content: space-between;
     padding: 20px 80px;
     position: relative;
-    overflow-x:	hidden;
-	overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .hero-logo {
@@ -73,21 +74,21 @@ html {
     right: -160px;
     bottom: -150px;
     height: 150%;
-	z-index: 1;
+    z-index: 1;
 }
 
 .hero-image img {
     height: 100%;
     object-fit: contain;
-	transform: rotate(-10deg);
-	filter: drop-shadow(0 20px 40px rgba(0,0,0,.12));
+    transform: rotate(-10deg);
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,.12));
 }
 
 .hero-content {
-	flex: 1;
-	text-align: center;
-	position: relative;
-	z-index: 5;
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 5;
 }
 
 .hero-subtitle {
@@ -96,7 +97,7 @@ html {
     color: #2B211C;
     margin: 0 0 3rem;
     letter-spacing: 2px;
-	font-family: 'Lora', serif;
+    font-family: 'Lora', serif;
 }
 
 .hero-title {
@@ -118,11 +119,11 @@ html {
     position: relative;
     min-width: 200px;
     cursor: pointer;
-	z-index: 10;
+    z-index: 10;
 }
 
 .custom-select.open {
-	z-index: 1000;
+    z-index: 1000;
 }
 
 .custom-select-trigger {
@@ -436,12 +437,11 @@ html {
     font-weight: 600;
     color: #222;
     line-height: 1.6;
-	text-indent: 30px;
+    text-indent: 30px;
 }
 
 .about-features {
     list-style: none;
-	list-style-type: none;
 }
 
 .about-features li::before {
@@ -449,7 +449,7 @@ html {
     color: #e91e63;
     font-weight: 700;
     margin-right: 8px;
-	display: inline-block;
+    display: inline-block;
 }
 
 .about-features li {
@@ -460,13 +460,12 @@ html {
     color: #222;
 }
 
-/* Контакти */
+/* Контакти (Класичний білий стиль) */
 .contact {
     padding: 60px 20px;
-    background: #F3EFEA;
-	border-radius: 20px;
-	max-width: 40px auto;
-	box-shadow: var(--shadow);
+    background: #ffffff;
+    max-width: 1200px;
+    margin: 40px auto;
 }
 
 .contact h2 {
@@ -494,9 +493,9 @@ html {
 }
 
 .contact-item h3 {
-    color: #7A6D68 !important;
+    color: #2B211C !important;
     margin-bottom: 1.2rem;
-	font-size: 1.4rem;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
@@ -504,17 +503,13 @@ html {
 .contact-item a {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600 !important;
-	font-style: normal !important;
+    font-style: normal !important;
     color: #222222 !important;
-	text-decoration: none !important;
+    text-decoration: none !important;
     line-height: 1.6;
 }
 
 /* Підказка для кота */
-.contact-image {
-    position: relative;
-}
-
 .cat-call-container {
     display: flex;
     justify-content: center;
@@ -533,25 +528,10 @@ html {
 
 .phone-code {
     color: #e91e63 !important;
-	font-weight: 700 !important;
+    font-weight: 700 !important;
 }
 
 .cat-icon {
-	width: 200px;
-	height: 200px;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.2);
-}
-
-.contact-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	position: relative;
-	flex-direction: column;
-}
-
-.contact-image img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -591,10 +571,6 @@ html {
 
 .modal-product {
     max-width: 700px;
-}
-
-.modal-subcategory {
-    max-width: 500px;
 }
 
 .product-modal-content {
@@ -735,33 +711,30 @@ html {
     color: var(--primary-color);
 }
 
+/* Класичний Чорний Футер */
 footer {
-
-    background: #2B211C !important;
-    color: var(--white) !important;
+    background: #111111;
+    color: var(--white);
     text-align: center;
     padding: 2rem;
-	margin-top: 40px;
+    margin-top: 40px;
 }
 
-/* ГРУПА: ВЕРСІЯ ДЛЯ НОУТБУКІВ ТА КОМП'ЮТЕРІВ (Екрани від 1024px)*/
+/* ГРУПА: ВЕРСІЯ ДЛЯ НОУТБУКІВ ТА КОМП'ЮТЕРІВ (Екрани від 1024px) */
 @media (min-width: 1024px) {
-    /* Прибитрання кота з підказкою дзвінка на ПК */
     .cat-call-container {
         display: none !important;
     }
 
-    /* Вимкнення клікабельності */
     .contact-item a[href^="tel:"] {
         pointer-events: none !important;
         cursor: default !important;
-		text-decoration: none !important;
+        text-decoration: none !important;
     }
 }
 
-/* ГРУПА: ОБ'ЄДНАНА МОБІЛЬНА ВЕРСІЯ (Екрани до 768px)*/
+/* ГРУПА: ОБ'ЄДНАНА МОБІЛЬНА ВЕРСІЯ (Екрани до 768px) */
 @media (max-width: 768px) {
-    /* Секція Hero (Головна) */
     .hero {
         display: flex;
         flex-direction: column;
@@ -831,20 +804,17 @@ footer {
         pointer-events: none;
     }
 
-    /* Популярні категорії */
     .popular-categories {
         padding: 20px 20px;
         margin-bottom: 1.5rem;
     }
 
-    /* Загальні заголовки секцій */
     .catalog h2,
     .about h2,
     .contact h2 {
         font-size: 2rem;
     }
 
-    /* Каталог та фільтри */
     .products-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -858,7 +828,6 @@ footer {
         min-width: unset;
     }
 
-    /* Модальні вікна (Картки товарів) */
     .modal-content {
         width: 95%;
         padding: 1.5rem;
@@ -868,21 +837,15 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Контакти */
     .contact {
-		margin: 20px 15px;
-		padding: 20px 15px;
-	}
-	
-	.contact-content {
+        margin: 20px 15px;
+        padding: 20px 15px;
+    }
+
+    .contact-content {
         grid-template-columns: 1fr;
     }
 
-    .contact-image {
-        margin-top: 2rem;
-    }
-
-    /* Переваги (Features) */
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }
