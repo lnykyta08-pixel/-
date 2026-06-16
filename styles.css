@@ -435,12 +435,19 @@
     list-style: none;
 }
 
+.about-features li::before {
+    content: "✓";
+    color: #e91e63;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
 .about-features li {
     padding: 0.7rem 0;
     font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-	color: #000;
+    color: #222;
 }
 
 /* Контакти */
