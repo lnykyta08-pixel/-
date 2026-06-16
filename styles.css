@@ -438,7 +438,7 @@
 
 .about-features {
     list-style: none;
-	
+	list-style-type: none;
 }
 
 .about-features li::before {
