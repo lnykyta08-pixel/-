@@ -227,6 +227,8 @@ function filterByFlower(value) {
 
 function filterByOccasion(value) {
     if (!value) return;
+	document.getElementById('category-filter').value = value;
+	filterProducts();
     scrollToSection('catalog');
 }
 
@@ -576,4 +578,5 @@ function setSelect(id, value) {
     const sel = document.getElementById(id);
     sel.querySelector('.custom-select-trigger').childNodes[0].textContent = value + ' ';
     sel.classList.remove('open');
+	document.getElementById('catalog').scrollIntoView();
 }

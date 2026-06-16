@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+
 :root {
     --primary-color: #e91e63;
     --secondary-color: #f06292;
@@ -488,7 +491,7 @@
 }
 
 .contact-item h3 {
-    color: #111111 !important;
+    color: #7A6D68 !important;
     margin-bottom: 1.2rem;
 	font-size: 1.4rem;
     font-weight: 700;
@@ -733,6 +736,7 @@ footer {
     .contact-item a[href^="tel:"] {
         pointer-events: none !important;
         cursor: default !important;
+		text-decoration: none !important;
     }
 }
 
