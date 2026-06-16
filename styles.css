@@ -464,8 +464,7 @@ html {
 .contact {
     padding: 60px 20px;
     background: #F3EFEA;
-    max-width: 1200px;
-    margin: 40px auto;
+    margin: 40px;
 	box-shadow: var(--shadow);
 }
 
@@ -477,7 +476,9 @@ html {
 }
 
 .contact-content {
-    display: grid;
+    max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
     grid-template-columns: 1fr auto;
     gap: 3rem;
     align-items: center;
