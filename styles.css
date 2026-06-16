@@ -465,7 +465,7 @@ html {
     padding: 60px 20px;
     background: #F3EFEA;
     margin: 40px;
-	box-shadow: var(--shadow);
+    width: 100%;
 }
 
 .contact h2 {
@@ -840,8 +840,8 @@ footer {
     }
 
     .contact {
-        margin: 20px 15px;
-        padding: 20px 15px;
+        margin: 40px 15px;
+        padding: 20px;
     }
 
     .contact-content {
