@@ -241,12 +241,12 @@ html {
     border-radius: 12px;
     cursor: pointer;
 	overflow: hidden;
-    border: 1px solid #EAE6E2;
+    border: 1px solid #F8BBD0;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
 .category-card:hover {
-    border-color: #7A6D68;
+    border-color: #F06292;
 }
 
 .category-icon {
