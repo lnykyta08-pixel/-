@@ -452,8 +452,8 @@ html {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: #222;
+    font-weight: 500;
+    color: #F3EFEA;
     line-height: 1.6;
     text-indent: 30px;
 	text-align: justify;
@@ -463,20 +463,20 @@ html {
     list-style: none;
 }
 
-.about-features li::before {
-    content: "✓";
-    color: #e91e63;
-    font-weight: 700;
-    margin-right: 8px;
-    display: inline-block;
-}
-
 .about-features li {
     padding: 0.7rem 0;
     font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: #222;
+    font-weight: 500;
+    color: #F3EFEA;
+}
+
+.about-features li::before {
+    content: "✓";
+    color: #F8BBD0;
+    font-weight: 700;
+    margin-right: 12px;
+    display: inline-block;
 }
 
 /* Контакти */
