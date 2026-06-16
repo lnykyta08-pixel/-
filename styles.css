@@ -265,7 +265,7 @@ html {
 /* Каталог */
 .catalog {
     padding: 60px 20px;
-    background: var(--white);
+    background: #F3EFEA;
 }
 
 .catalog h2 {
