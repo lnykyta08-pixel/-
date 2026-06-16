@@ -718,8 +718,8 @@ footer {
     background: #111111;
     color: var(--white);
     text-align: center;
-    padding: 2rem;
-    margin-top: 40px;
+    padding: 3rem 2rem;
+    margin-top: 0;
 }
 
 /* ГРУПА: ВЕРСІЯ ДЛЯ НОУТБУКІВ ТА КОМП'ЮТЕРІВ (Екрани від 1024px) */
