@@ -580,3 +580,11 @@ function setSelect(id, value) {
     sel.classList.remove('open');
 	document.getElementById('catalog').scrollIntoView();
 }
+
+// Функція для плавного прокручування до каталогу
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
