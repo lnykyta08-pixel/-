@@ -463,16 +463,17 @@ html {
 /* Контакти (Класичний білий стиль) */
 .contact {
     padding: 60px 20px;
-    background: #ffffff;
+    background: #7A6D68;
     max-width: 1200px;
     margin: 40px auto;
+	box-shadow: var(--shadow);
 }
 
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--primary-color);
+    color: #ffffff;
 }
 
 .contact-content {
