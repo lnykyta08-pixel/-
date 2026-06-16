@@ -220,7 +220,7 @@ html {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #ffffff;
+    color: #F3EFEA;
 }
 
 .categories-grid {
@@ -272,7 +272,7 @@ html {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: var(--primary-color);
+    color: #594E49;
 }
 
 .filters {
@@ -418,7 +418,7 @@ html {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: var(--primary-color);
+    color: #F3EFEA;
 }
 
 .about-text {
@@ -470,7 +470,7 @@ html {
     font-size: 2.5rem;
 	margin-top: -40px;
     margin-bottom: 3rem;
-    color: var(--primary-color);
+    color: #594E49;
 }
 
 .contact-content {
@@ -717,13 +717,15 @@ html {
     color: var(--primary-color);
 }
 
-/* Класичний Чорний Футер */
+/* Колонтитул нижній */
 footer {
     background: #594E49;
-    color: var(--white);
+    color: #F3EFEA;
     text-align: center;
     padding: 3rem 2rem;
     margin-top: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
 }
 
 /* ГРУПА: ВЕРСІЯ ДЛЯ НОУТБУКІВ ТА КОМП'ЮТЕРІВ (Екрани від 1024px) */
