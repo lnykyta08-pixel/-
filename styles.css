@@ -213,7 +213,7 @@ html {
 /* Популярні категорії */
 .popular-categories {
     padding: 60px 20px;
-    background: var(--white);
+    background: #594E49;
 }
 
 .popular-categories h2 {
