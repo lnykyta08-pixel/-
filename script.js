@@ -253,16 +253,6 @@ function updateQuantityInGroup(productId, newQuantity) {
 function closeCheckout() {
     document.getElementById('checkout-modal').classList.remove('active');
 }
-    
-    // Закриття форми
-    closeCheckout();
-    
-    // Очистка форми
-    document.getElementById('checkout-form').reset();
-    
-    // Повернення на головну
-    window.location.hash = 'home';
-}
 
 document.querySelectorAll('.custom-select-trigger').forEach(trigger => {
     trigger.addEventListener('click', function() {
