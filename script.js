@@ -232,49 +232,6 @@ function filterByOccasion(value) {
     scrollToSection('catalog');
 }
 
-// Відображення товарів у кошику
-function displayCart() {
-    const cartItems = document.getElementById('cart-items');
-    
-    if (cart.length === 0) {
-        cartItems.innerHTML = '<div class="cart-empty">Ваш кошик порожній 😢</div>';
-        document.getElementById('checkout-btn').disabled = true;
-        return;
-    }
-    
-    document.getElementById('checkout-btn').disabled = false;
-    cartItems.innerHTML = '';
-    
-    // Групування товарів по ID для зручного відображення
-    const groupedCart = {};
-    cart.forEach(item => {
-        if (!groupedCart[item.id]) {
-            groupedCart[item.id] = { product: item, quantity: 0, cartItemIds: [] };
-        }
-        groupedCart[item.id].quantity++;
-        groupedCart[item.id].cartItemIds.push(item.cartItemId);
-    });
-    
-    Object.values(groupedCart).forEach(group => {
-        const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <div class="cart-item-info">
-                <div class="cart-item-name">${group.product.name}</div>
-                <div class="cart-item-price">${group.product.price} грн × ${group.quantity}</div>
-            </div>
-            <div class="cart-item-controls">
-                <input type="number" class="quantity-input" value="${group.quantity}" 
-                    onchange="updateQuantityInGroup(${group.product.id}, this.value)">
-                <button class="remove-btn" onclick="removeProductFromCart(${group.product.id})">Видалити</button>
-            </div>
-        `;
-        cartItems.appendChild(cartItem);
-    });
-    
-    updateTotalPrice();
-}
-
 // Оновлення кількості товару в групі
 function updateQuantityInGroup(productId, newQuantity) {
     newQuantity = parseInt(newQuantity) || 0;
