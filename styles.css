@@ -536,16 +536,6 @@
     border-radius: 50%;
     box-shadow: 0 4px 15px rgba(233, 30, 99, 0.2);
 }
-@media (min-width: 1024px) {
-    .cat-call-container {
-        display: none !important;
-    }
-    
-    .contact-item a[href^="tel:"] {
-        pointer-events: none !important;
-        cursor: default !important;
-    }
-}
 
 /* Модальні вікна */
 .modal {
@@ -731,8 +721,25 @@ footer {
     text-align: center;
     padding: 2rem;
 }
-/* Відповідний дизайн */
+
+/* ГРУПА: ВЕРСІЯ ДЛЯ НОУТБУКІВ ТА КОМП'ЮТЕРІВ (Екрани від 1024px)*/
+@media (min-width: 1024px) {
+    /* Прибитрання кота з підказкою дзвінка на ПК */
+    .cat-call-container {
+        display: none !important;
+    }
+
+    /* Вимкнення клікабельності */
+    .contact-item a[href^="tel:"] {
+        pointer-events: none !important;
+        cursor: default !important;
+    }
+}
+
+/* ГРУПА: ОБ'ЄДНАНА МОБІЛЬНА ВЕРСІЯ (Екрани до 768px)*/
 @media (max-width: 768px) {
+
+    /* Секція Hero (Головна) */
     .hero {
         display: flex;
         flex-direction: column;
@@ -747,10 +754,10 @@ footer {
         top: 10px;
         left: 15px;
         z-index: 20;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
     }
 
     .hero-logo img {
@@ -770,7 +777,7 @@ footer {
 
     .hero-subtitle {
         font-size: 0.8rem;
-		margin-top: 5px !important;
+        margin-top: 5px !important;
         margin-bottom: 10px !important;
     }
 
@@ -788,72 +795,37 @@ footer {
         height: 40px;
         font-size: 0.85rem;
         white-space: nowrap;
-		background: #fff;
+        background: #fff;
     }
-
-    .popular-categories {
-		padding: 20px 20px;
-	}
-	
-	.popular-categories {
-		margin-bottom: 1.5rem;
-	}
 
     .hero-image {
         display: block !important;
-		position: absolute;
-		right: 50%;
-		bottom: 0;
-		transform: translateX(50%);
-		height: 70%;
-		z-index: 1;
-		pointer-events: none;
-    }
-	
-    /* Каталог */
-    .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translateX(50%);
+        height: 70%;
+        z-index: 1;
+        pointer-events: none;
     }
 
+    /* Популярні категорії */
+    .popular-categories {
+        padding: 20px 20px;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Загальні заголовки секцій */
     .catalog h2,
     .about h2,
     .contact h2 {
         font-size: 2rem;
     }
 
-    /* Модалка */
-    .modal-content {
-        width: 95%;
-        padding: 1.5rem;
-    }
-
-    /* Features */
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .product-modal-content {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-
-    /* Контакти */
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-image {
-        margin-top: 2rem;
-    }
-
-    /* Каталог */
+    /* Каталог та фільтри */
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* На телефонах товари вишикуються в один стовпчик */
+        gap: 1rem;
     }
 
     .filters {
@@ -864,4 +836,27 @@ footer {
         min-width: unset;
     }
 
+    /* Модальні вікна (Картки товарів) */
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .product-modal-content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Контакти */
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-image {
+        margin-top: 2rem;
+    }
+
+    /* Переваги (Features) */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
