@@ -110,9 +110,6 @@ let products = [
     }
 ];
 
-let currentSubcategoryParent = null;
-let selectedColor = null;
-
 // Завантаження даних з localStorage при завантаженні сторінки
 window.addEventListener('DOMContentLoaded', function() {
     loadProducts();
@@ -320,44 +317,6 @@ function loadCartFromStorage() {
             cart = [];
         }
     }
-}
-
-// Відкриття модалю підкатегорій
-function openSubcategories(category) {
-    currentSubcategoryParent = category;
-    document.getElementById('subcategory-title').textContent = category;
-    
-    const items = subcategories[category] || [];
-    const container = document.getElementById('subcategory-items');
-    container.innerHTML = '';
-    
-    items.forEach(item => {
-        const subcatItem = document.createElement('div');
-        subcatItem.className = 'subcategory-item';
-        subcatItem.onclick = () => selectSubcategory(category, item);
-        subcatItem.innerHTML = `
-            <span class="subcat-icon">•</span>
-            <span class="subcat-name">${item}</span>
-        `;
-        container.appendChild(subcatItem);
-    });
-    
-    document.getElementById('subcategory-modal').classList.add('active');
-}
-
-// Закриття модалю підкатегорій
-function closeSubcategoryModal() {
-    document.getElementById('subcategory-modal').classList.remove('active');
-    currentSubcategoryParent = null;
-}
-
-// Вибір підкатегорії
-function selectSubcategory(category, subcategory) {
-    document.getElementById('category-filter').value = category;
-    selectedColor = subcategory;
-    filterProducts();
-    closeSubcategoryModal();
-    scrollToSection('catalog');
 }
 
 document.querySelectorAll('.custom-select-trigger').forEach(trigger => {
