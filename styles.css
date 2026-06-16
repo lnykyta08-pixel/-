@@ -463,7 +463,10 @@ html {
 /* Контакти */
 .contact {
     padding: 60px 20px;
-    background: var(--white);
+    background: #F3EFEA;
+	border-radius: 20px;
+	max-width: 40px auto;
+	box-shadow: var(--shadow);
 }
 
 .contact h2 {
@@ -512,6 +515,14 @@ html {
     position: relative;
 }
 
+.cat-call-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
 .cat-text {
     font-family: 'Montserrat', sans-serif !important;
     font-size: 1rem;
@@ -523,6 +534,13 @@ html {
 .phone-code {
     color: #e91e63 !important;
 	font-weight: 700 !important;
+}
+
+.cat-icon {
+	width: 200px;
+	height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.2);
 }
 
 .contact-image {
@@ -719,10 +737,11 @@ html {
 
 footer {
 
-    background: var(--text-color);
-    color: var(--white);
+    background: #2B211C !important;
+    color: var(--white) !important;
     text-align: center;
     padding: 2rem;
+	margin-top: 40px;
 }
 
 /* ГРУПА: ВЕРСІЯ ДЛЯ НОУТБУКІВ ТА КОМП'ЮТЕРІВ (Екрани від 1024px)*/
@@ -742,7 +761,6 @@ footer {
 
 /* ГРУПА: ОБ'ЄДНАНА МОБІЛЬНА ВЕРСІЯ (Екрани до 768px)*/
 @media (max-width: 768px) {
-
     /* Секція Hero (Головна) */
     .hero {
         display: flex;
@@ -851,7 +869,12 @@ footer {
     }
 
     /* Контакти */
-    .contact-content {
+    .contact {
+		margin: 20px 15px;
+		padding: 20px 15px;
+	}
+	
+	.contact-content {
         grid-template-columns: 1fr;
     }
 
