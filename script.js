@@ -249,74 +249,19 @@ function updateQuantityInGroup(productId, newQuantity) {
     }
 }
 
-// Видалення всіх товарів продукту з кошика
-function removeProductFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId);
-    saveCartToStorage();
-    updateCartCount();
-    displayCart();
-}
-
 // Закриття модального вікна оформлення
 function closeCheckout() {
     document.getElementById('checkout-modal').classList.remove('active');
 }
-
-// Відправлення замовлення
-function submitOrder(e) {
-    e.preventDefault();
-    
-    const orderData = {
-        id: Date.now(),
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        email: document.getElementById('email').value,
-        address: document.getElementById('address').value,
-        delivery: document.getElementById('delivery').value,
-        notes: document.getElementById('notes').value,
-        items: cart,
-        total: cart.reduce((sum, item) => sum + item.price, 0),
-        date: new Date().toLocaleString('uk-UA')
-    };
-    
-    // Додавання до історії замовлень
-    let orders = JSON.parse(localStorage.getItem('orders') || '[]');
-    orders.push(orderData);
-    localStorage.setItem('orders', JSON.stringify(orders));
-    
-    // Очистка кошика
-    cart = [];
-    saveCartToStorage();
-    updateCartCount();
     
     // Закриття форми
     closeCheckout();
-    
-    // Виведення повідомлення про успіх
-    alert(`Спасибі за замовлення на "Магазин Квіти"!\n\nНомер замовлення: #${orderData.id}\nВаше замовлення буде доставлено за 1-2 дні.\nМи зв'яжемося з вами найскоріше за номером ${orderData.phone}`);
     
     // Очистка форми
     document.getElementById('checkout-form').reset();
     
     // Повернення на головну
     window.location.hash = 'home';
-}
-
-// Збереження кошика у localStorage
-function saveCartToStorage() {
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-// Завантаження кошика з localStorage
-function loadCartFromStorage() {
-    const savedCart = localStorage.getItem('cart');
-    if (savedCart) {
-        try {
-            cart = JSON.parse(savedCart);
-        } catch (e) {
-            cart = [];
-        }
-    }
 }
 
 document.querySelectorAll('.custom-select-trigger').forEach(trigger => {
