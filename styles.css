@@ -960,6 +960,15 @@ footer {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
+    .contact-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-item p,
+    .contact-item a {
+        font-size: 0.85rem;
+    }
+
     .contact iframe {
     width: 100%;
     max-width: 100%;
