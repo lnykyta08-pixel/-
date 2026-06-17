@@ -882,8 +882,17 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .categories-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
 	}
 }
+
+    .category-icon {
+		aspect-ratio: 1 / 1;
+		height: auto;
+	}
