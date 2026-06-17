@@ -750,7 +750,7 @@ footer {
 	font-weight: 500;
 }
 
-/* ГРУПА: ВЕРСІЯ ДЛЯ НОУТБУКІВ ТА КОМП'ЮТЕРІВ (Екрани від 1024px) */
+/* ПК ВЕРСІЯ */
 @media (min-width: 1024px) {
     .cat-call-container {
         display: none !important;
@@ -769,7 +769,7 @@ footer {
         text-decoration: none !important;
     }
 
-/* ГРУПА: ОБ'ЄДНАНА МОБІЛЬНА ВЕРСІЯ (Екрани до 768px) */
+/* МОБІЛЬНА ВЕРСІЯ */
 @media (max-width: 768px) {
     .hero {
         display: flex;
@@ -884,6 +884,11 @@ footer {
 
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
-		gap: 15px;
     }
+
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+	}
 }
