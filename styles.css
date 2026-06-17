@@ -232,20 +232,20 @@ html {
     margin-bottom: 2rem;
 }
 
-/* Популярні категорії */
-.popular-categories {
+/* Бестселери */
+.bessellers {
     padding: 60px 20px;
     background: #594E49;
 }
 
-.popular-categories h2 {
+.bessellers h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: #F3EFEA;
 }
 
-.categories-grid {
+.bestsellers-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -253,7 +253,7 @@ html {
     margin: 0 auto;
 }
 
-.category-card {
+.bestseller-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -262,23 +262,25 @@ html {
     background: #ffffff;
     cursor: pointer;
 	overflow: hidden;
-    border: 1px solid #F8BBD0;
 	border-radius: 0;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    width: 300px;
+    height: 450px;
+    margin: 0 auto;
 }
 
-.category-card:hover {
+.bestseller-card:hover {
     border-color: #F06292;
 }
 
-.category-icon {
-    width: 100%;
-	height: 320px;
+.bestseller-icon {
+    width: 158.41px;
+	height: 158.41px;
 	object-fit: cover;
 	margin-bottom: 0;
 }
 
-.category-card h3 {
+.bestseller-card h3 {
     color: var(--text-color);
     text-align: center;
     font-size: 1.1rem;
@@ -825,6 +827,17 @@ footer {
         gap: 8px;
     }
 
+        .hero-image {
+        display: block !important;
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translateX(50%);
+        height: 70%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
     .custom-select {
         width: 85%;
     }
@@ -836,20 +849,20 @@ footer {
         background: #fff;
     }
 
-    .hero-image {
-        display: block !important;
-        position: absolute;
-        right: 50%;
-        bottom: 0;
-        transform: translateX(50%);
-        height: 70%;
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    .popular-categories {
+    .bestsellers {
         padding: 20px 20px;
     }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+	}
+}
+
+    .category-icon {
+		aspect-ratio: 2 / 3;
+		height: auto;
+	}
 
     .catalog h2,
     .about h2,
@@ -887,14 +900,3 @@ footer {
     .contact-content {
         grid-template-columns: 1fr;
     }
-
-    .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-	}
-}
-
-    .category-icon {
-		aspect-ratio: 2 / 3;
-		height: auto;
-	}
