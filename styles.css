@@ -260,10 +260,10 @@ html {
     justify-content: center;
     padding: 0;
     background: #ffffff;
-    border-radius: 12px;
     cursor: pointer;
 	overflow: hidden;
     border: 1px solid #F8BBD0;
+	border-radius: 0;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
@@ -849,7 +849,6 @@ footer {
 
     .popular-categories {
         padding: 20px 20px;
-        margin-bottom: 1.5rem;
     }
 
     .catalog h2,
@@ -896,6 +895,6 @@ footer {
 }
 
     .category-icon {
-		aspect-ratio: 1 / 1;
+		aspect-ratio: 3 / 4;
 		height: auto;
 	}
