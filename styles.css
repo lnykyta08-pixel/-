@@ -946,8 +946,14 @@ footer {
     .contact-item p,
     .contact-item a {
         font-size: 0.85rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
+    .email-domain {
+        display: block;
+
+    }
     .contact iframe {
         width: 100%;
         max-width: 100%;
