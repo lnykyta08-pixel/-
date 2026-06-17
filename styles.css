@@ -233,12 +233,12 @@ html {
 }
 
 /* Бестселери */
-.bessellers {
+.bestsellers {
     padding: 60px 20px;
     background: #594E49;
 }
 
-.bessellers h2 {
+.bestsellers h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
