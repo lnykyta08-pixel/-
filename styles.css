@@ -763,6 +763,12 @@ footer {
     }
 }
 
+    .logo-phone {
+	    pointer-events: none !important;
+        cursor: default !important;
+        text-decoration: none !important;
+    }
+
 /* ГРУПА: ОБ'ЄДНАНА МОБІЛЬНА ВЕРСІЯ (Екрани до 768px) */
 @media (max-width: 768px) {
     .hero {
