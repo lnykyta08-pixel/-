@@ -132,7 +132,7 @@ function loadProducts() {
         productCard.onclick = () => openProductModal(product);
         
         productCard.innerHTML = `
-            <div class="product-image">${product.emoji}</div>
+            <div class="product-image"></div>
             <div class="product-info">
                 <h3>${product.name}</h3>
                 <p class="product-category">${product.category}</p>
