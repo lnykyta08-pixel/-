@@ -143,7 +143,7 @@ function loadProducts() {
                 </div>
             </div>
         `;
-        
+
         container.appendChild(productCard);
     });
 }
@@ -222,9 +222,8 @@ document.addEventListener('click', function(e) {
     }
 });
 
-function setSelect(id, value) {
+function setSelect(id) {
     const sel = document.getElementById(id);
-    sel.querySelector('.custom-select-trigger').childNodes[0].textContent = value + ' ';
     sel.classList.remove('open');
 	document.getElementById('catalog').scrollIntoView();
 }
