@@ -856,9 +856,10 @@ footer {
 
 
     .bestseller-icon {
-		aspect-ratio: 2 / 3;
-		height: auto;
-	}
+		width: 158.41px;
+        height: 158.41px;
+        object-fit: cover;
+    }
 
     .catalog h2,
     .about h2,
