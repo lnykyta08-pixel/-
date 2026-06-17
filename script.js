@@ -119,7 +119,10 @@ window.addEventListener('DOMContentLoaded', function() {
 // Налаштування обробників подій
 function setupEventListeners() {
     document.getElementById('search-input').addEventListener('input', filterProducts);
-    document.getElementById('category-filter').addEventListener('change', filterProducts);
+    document.getElementById('category-filter').addEventListener('change', function() {
+		document.getElementById('search-input').value = '';
+		filterProducts();
+	});
 }
 
 // Завантаження та відображення товарів
