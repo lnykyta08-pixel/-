@@ -882,11 +882,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
     .categories-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
