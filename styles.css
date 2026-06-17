@@ -592,35 +592,9 @@ html {
     line-height: 1.6;
 }
 
-/* Підказка для кота */
-.cat-call-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    flex-direction: column;
-}
-
-.cat-text {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 1rem;
-    font-weight: 600 !important;
-    font-style: normal !important;
-    color: #222222 !important;
-    margin-top: 10px;
-    text-align: center;
-}
-
 .phone-code {
-    color: #e91e63 !important;
-    font-weight: 700 !important;
-}
-
-.cat-icon {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.2);
+    color: #e91e63;
+    font-weight: 700;
 }
 
 /* Модальні вікна */
@@ -975,9 +949,39 @@ footer {
     }
 
     .contact iframe {
-    width: 100%;
-    max-width: 100%;
-    height: 200px;
-    align-items: center;
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+        align-items: center;
+    }
+
+    .cat-call-container {
+        align-items: center;
+        width: 100%;
+    }
+
+    .cat-call-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+    }
+
+    .cat-text {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 1rem;
+        font-weight: 600 !important;
+        font-style: normal !important;
+        color: #222222 !important;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .cat-icon {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(233, 30, 99, 0.2);
     }
 }
