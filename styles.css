@@ -320,6 +320,13 @@ html {
     border-color: var(--primary-color);
 }
 
+.search-box:hover,
+.filter-select:hover {
+    border-color: #e91e63;
+    color: #e91e63;
+    background: #ede8e3;
+}
+
 .search-box {
     flex: 1;
     min-width: 250px;
@@ -880,10 +887,6 @@ footer {
 
     .contact-content {
         grid-template-columns: 1fr;
-    }
-
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     .categories-grid {
