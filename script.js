@@ -120,6 +120,7 @@ window.addEventListener('DOMContentLoaded', function() {
 function setupEventListeners() {
     document.getElementById('search-input').addEventListener('input', filterProducts);
     document.getElementById('category-filter').addEventListener('change', filterProducts);
+}
 
 // Завантаження та відображення товарів
 function loadProducts() {
