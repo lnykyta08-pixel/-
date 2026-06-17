@@ -944,6 +944,21 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .contact-info {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .contact-item {
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid #e8ddd6;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
     .contact iframe {
     width: 100%;
     max-width: 100%;
