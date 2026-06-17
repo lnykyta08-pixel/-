@@ -546,7 +546,7 @@ html {
 	display: flex;
     flex-direction: column;
     gap: 40px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .contact iframe {
