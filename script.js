@@ -120,21 +120,6 @@ window.addEventListener('DOMContentLoaded', function() {
 function setupEventListeners() {
     document.getElementById('search-input').addEventListener('input', filterProducts);
     document.getElementById('category-filter').addEventListener('change', filterProducts);
-    
-    // Закриття модалей при натисканні на фон
-    window.addEventListener('click', function(event) {
-        const cartModal = document.getElementById('cart-modal');
-        const productModal = document.getElementById('product-modal');
-        const checkoutModal = document.getElementById('checkout-modal');
-        
-        if (event.target === cartModal) closeCart();
-        if (event.target === productModal) closeProductModal();
-        if (event.target === checkoutModal) closeCheckout();
-        
-        const subcategoryModal = document.getElementById('subcategory-modal');
-        if (event.target === subcategoryModal) closeSubcategoryModal();
-    });
-}
 
 // Завантаження та відображення товарів
 function loadProducts() {
