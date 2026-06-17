@@ -766,13 +766,13 @@ footer {
         cursor: default !important;
         text-decoration: none !important;
     }
-}
 
     .logo-phone {
 	    pointer-events: none !important;
         cursor: default !important;
         text-decoration: none !important;
     }
+}
 
 /* МОБІЛЬНА ВЕРСІЯ */
 @media (max-width: 768px) {
