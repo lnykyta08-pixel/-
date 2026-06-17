@@ -322,7 +322,7 @@ html {
 .filter-select:hover {
     border-color: #e91e63;
     color: #e91e63;
-    background: #ede8e3;
+    background: #fff;
 }
 
 .search-box {
