@@ -549,6 +549,16 @@ html {
     align-items: center;
 }
 
+.contact iframe {
+    display: block;
+    margin: 1.5rem auto 0;
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    border-radius: 10px;
+    border: 0;
+}
+
 .contact-info {
     display: flex;
 	flex-direction: row;
