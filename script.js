@@ -122,6 +122,7 @@ function setupEventListeners() {
 
     document.querySelector('.logo-phone').addEventListener('click', function() {
         this.blur();
+        document.activeElement.blur();
     });
 }
 
