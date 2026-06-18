@@ -818,12 +818,6 @@ footer {
         gap: 15px;
 	}
 
-    .bestseller-icon {
-		width: 158.41px;
-        height: 158.41px;
-        object-fit: cover;
-    }
-
     .catalog h2,
     .about h2,
     .contact h2 {
@@ -833,14 +827,6 @@ footer {
     .products-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-    }
-
-    .filters {
-        flex-direction: column;
-    }
-
-    .search-box {
-        min-width: unset;
     }
 
     .modal-content {
