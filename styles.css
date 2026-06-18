@@ -797,7 +797,9 @@ footer {
     }
 
     .custom-select {
-        width: 85%;
+        display: 1;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .custom-select-trigger {
