@@ -189,8 +189,8 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 0 1.5rem;
-    height: 48px;
+    padding: 10px 15px;
+    height: auto;
     background: #fff;
     border: 1px solid #D8D0CA;
     border-radius: 10px;
@@ -727,10 +727,7 @@ footer {
     background: #594E49;
     color: #F3EFEA;
     text-align: center;
-    padding: 3rem 2rem;
-    margin-top: 0;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
+    padding: 2rem 2rem;
 }
 
 /* МОБІЛЬНА ВЕРСІЯ */
@@ -817,6 +814,12 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
 	}
+
+    .bestseller-icon {
+		width: 158.41px;
+        height: 158.41px;
+        object-fit: cover;
+    }
 
     .catalog h2,
     .about h2,
