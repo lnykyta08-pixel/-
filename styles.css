@@ -571,7 +571,7 @@ html {
 }
 
 .contact-item h3 {
-    color: #7A6D68 !important;
+    color: #7A6D68;
     margin-bottom: 1.2rem;
     font-size: 1.4rem;
     font-weight: 700;
@@ -580,11 +580,17 @@ html {
 .contact-item p,
 .contact-item a {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600 !important;
-    font-style: normal !important;
-    color: #222222 !important;
-    text-decoration: none !important;
+    font-weight: 600;
+    font-style: normal;
+    color: #222222;
+    text-decoration: none;
     line-height: 1.6;
+}
+
+.contact-item a[href^="tel:"],
+.logo-phone {
+    pointer-events: none;
+    cursor: default;
 }
 
 .phone-code {
@@ -777,21 +783,9 @@ footer {
 }
 
 /* ПК ВЕРСІЯ */
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
     .cat-call-container {
         display: none !important;
-    }
-
-    .contact-item a[href^="tel:"] {
-        pointer-events: none !important;
-        cursor: default !important;
-        text-decoration: none !important;
-    }
-
-    .logo-phone {
-	    pointer-events: none !important;
-        cursor: default !important;
-        text-decoration: none !important;
     }
 }
 
@@ -825,7 +819,6 @@ footer {
         transform: translateX(50%);
         height: 70%;
         z-index: 1;
-        pointer-events: none;
     }
 
     .hero-logo img {
@@ -944,6 +937,12 @@ footer {
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
+
+    .contact-item a[href^="tel:"],
+    .logo-phone {
+        pointer-events: auto;
+        cursor: pointer;
+}
 
     .email-domain {
         display: block;
