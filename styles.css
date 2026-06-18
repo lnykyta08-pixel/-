@@ -794,16 +794,20 @@ footer {
     }
 
     .custom-select {
-        display: 1;
         flex-direction: column;
         gap: 8px;
     }
 
+#category-select {
+    width: 100%;
+}
+    
     .custom-select-trigger {
         height: 40px;
-        font-size: 0.85rem;
+        font-size: 1rem;
         white-space: nowrap;
         background: #fff;
+        padding: 10px 15px;
     }
 
     .bestsellers {
