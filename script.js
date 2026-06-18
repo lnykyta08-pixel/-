@@ -116,9 +116,13 @@ window.addEventListener('DOMContentLoaded', function() {
 function setupEventListeners() {
     document.getElementById('search-input').addEventListener('input', filterProducts);
     document.getElementById('category-filter').addEventListener('change', function() {
-		document.getElementById('search-input').value = '';
+	document.getElementById('search-input').value = '';
 		filterProducts();
 	});
+
+    document.querySelector('.logo-phone').addEventListener('click', function() {
+        this.blur();
+    });
 }
 
 // Завантаження та відображення товарів
@@ -176,7 +180,7 @@ function filterProducts() {
         productCard.onclick = () => openProductModal(product);
         
         productCard.innerHTML = `
-            <div class="product-image">${product.emoji}</div>
+            <div class="product-image"></div>
             <div class="product-info">
                 <h3>${product.name}</h3>
                 <p class="product-category">${product.category}</p>
