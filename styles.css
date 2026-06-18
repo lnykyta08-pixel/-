@@ -75,24 +75,24 @@ html {
 
 .logo-phone {
     font-size: 0.9rem;
-    color: #7A6D68 !important;
-    text-decoration: none !important;
+    color: #7A6D68;
+    text-decoration: none;
     margin-top: 5px;
     font-weight: bold;
     transition: color 0.3s;
-    display: block !important;
+    display: block;
     white-space: nowrap;
 }
 
 .logo-phone:hover {
-    color: #c2185b !important;
-    text-decoration: none !important;
+    color: #c2185b;
+    text-decoration: none;
 }
 
 /* Мапа сайту */
 .site-map {
     position: absolute;
-    top: 130px;
+    top: 160px;
     left: 30px;
     background: #EDE8E3;
     border: 1px solid #D8D0CA;
@@ -117,16 +117,11 @@ html {
 .site-map-link {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #594E49;
     text-decoration: none;
     padding: 0.15rem 0;
     transition: color 0.2s;
-}
-
-.site-map-link::before {
-    content: "— ";
-    color: #D8D0CA;
 }
 
 .site-map-link:hover {
