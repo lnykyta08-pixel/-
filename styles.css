@@ -610,37 +610,66 @@ footer {
     
 /* Головна сторінка */
     
-    .hero-logo {
-       margin-left: -20px;
+.hero {
+        flex-direction: column;
+        padding: 20px 15px;
+        min-height: auto;
+        align-items: center;
+        justify-content: flex-start;
     }
 
-    .hero-logo img{
-        height: 50px;
+    .hero-logo {
+        position: static;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .hero-logo img {
+        height: 40px;
     }
 
     .site-map {
         display: none;
     }
-    
+
+    .hero-content {
+        flex: none;
+        text-align: center;
+        width: 100%;
+    }
+
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         text-align: center;
     }
 
     .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 0.9rem;
+        margin: 0 0 1.5rem;
         text-align: center;
     }
 
-    .hero-content {
-        text-align: center;
+    .hero-filters {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .custom-select {
         width: 100%;
+        min-width: 0;
+    }
+
+    .custom-select-trigger {
+        height: 40px;
     }
 
     .hero-image {
         position: relative;
+        right: auto;
+        bottom: auto;
         height: auto;
         width: 100%;
+        margin-top: 20px;
     }
 
     .hero-image img {
@@ -650,7 +679,6 @@ footer {
         transform: none;
         filter: none;
     }
-
 /* Бестселери */
 
     .bestsellers {
