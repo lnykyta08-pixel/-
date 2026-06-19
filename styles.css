@@ -611,41 +611,26 @@ footer {
 /* Головна сторінка */
 
     .hero {
-        min-height: auto;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        padding: 150px 15px 20px;
-        position: relative;
-        overflow: hidden;
-        align-items: center;
-        background: #F3EFEA;
+        padding: 20px 15px;
     }
 
     .hero-logo {
-        position: absolute;
-        top: 10px;
-        left: 15px;
-        z-index: 20;
-        display: flex;
-        flex-direction: row;
+        position: static;
+        flex-direction: column;
         align-items: center;
-        gap: 10px;
+        margin-bottom: 15px;
+        z-index: 20;
     }
 
-   .hero-image {
-        display: block;
-        position: relative;
-        right: auto;
-        bottom: auto;
-        height: auto;
-        width: 100%;
-        margin-top: 30px;
+    .hero-image {
+        margin-top: 0;
     }
 
     .hero-image img {
         width: 100%;
         height: auto;
+        max-height: 50vh;
+        object-fit: contain;
         transform: none;
         filter: none;
     }
@@ -669,8 +654,8 @@ footer {
 
     .hero-subtitle {
         font-size: 0.8rem;
-        margin-top: 5px !important;
-        margin-bottom: 10px !important;
+        margin-top: 5px;
+        margin-bottom: 10px;
     }
 
     .hero-filters {
