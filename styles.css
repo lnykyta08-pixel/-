@@ -634,11 +634,19 @@ footer {
     }
 
    .hero-image {
-        display: flex;
+        display: block;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        height: auto;
+        width: 100%;
+        margin-top: 30px;
     }
 
-    .hero-logo img {
-        height: 50px;
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        transform: none;
     }
 
     .site-map {
