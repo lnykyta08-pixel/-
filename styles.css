@@ -609,13 +609,18 @@ footer {
 @media (max-width: 768px) {
     
 /* Головна сторінка */
+    
+    .hero-logo img{
+        height: 40px;
+    }
 
     .site-map {
         display: none;
     }
-    
-    .hero-logo {
-        height: 40px;
+
+    .hero-content {
+        text-align: center;
+        width: 100%;
     }
 
     .hero-image {
