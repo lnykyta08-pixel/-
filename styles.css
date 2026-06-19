@@ -617,7 +617,7 @@ footer {
         position: relative;
         overflow: hidden;
         align-items: center;
-        background: url('na_pochatky_tf.webp') center/cover no-repeat;
+        background: #F3EFEA;
     }
 
     .hero-logo {
