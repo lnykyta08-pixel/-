@@ -620,7 +620,8 @@ footer {
 
     .hero-logo {
         position: static;
-        margin-left: 0;
+        flex-direction: column;
+        margin-left: -20px;
         margin-bottom: 15px;
     }
 
