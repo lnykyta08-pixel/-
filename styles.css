@@ -610,6 +610,10 @@ footer {
     
 /* Головна сторінка */
     
+    .hero-logo {
+       margin-left: -20px;
+    }
+
     .hero-logo img{
         height: 50px;
     }
