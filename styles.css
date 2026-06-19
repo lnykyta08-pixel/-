@@ -612,9 +612,10 @@ footer {
     
 .hero {
         position: relative;
+        overflow: hidden;
         flex-direction: column;
         padding: 20px 15px;
-        min-height: 100vh;
+        min-height: 100dvh;
         align-items: center;
         justify-content: flex-start;
     }
