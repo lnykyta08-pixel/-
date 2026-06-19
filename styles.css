@@ -611,6 +611,8 @@ footer {
 /* Головна сторінка */
 
     .hero {
+        min-height: auto;
+        height: auto;
         display: flex;
         flex-direction: column;
         padding: 150px 15px 20px;
