@@ -647,6 +647,7 @@ footer {
         width: 100%;
         height: auto;
         transform: none;
+        filter: none;
     }
 
     .site-map {
