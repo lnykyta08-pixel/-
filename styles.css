@@ -757,12 +757,6 @@ footer {
         overflow-wrap: break-word;
     }
 
-    .contact-item a[href^="tel:"],
-    .logo-phone {
-        pointer-events: auto;
-        cursor: pointer;
-    }
-
     .email-domain {
         display: block;
 
