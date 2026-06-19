@@ -613,6 +613,10 @@ footer {
     .site-map {
         display: none;
     }
+    
+    .hero-logo {
+        height: 40px;
+    }
 
     .hero-image {
         position: relative;
