@@ -290,11 +290,6 @@ document.getElementById('product-modal').addEventListener('click', function(e) {
     if (e.target === this) closeProductModal();
 });
 
-// Відкрити категорію з бестселерів
-function openSubcategories(category) {
-    filterByFlower(category);
-}
-
 // Плавне прокручування
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);

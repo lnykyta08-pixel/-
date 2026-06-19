@@ -31,7 +31,7 @@
         <div class="hero-content">
             <div class="hero-filter-box">
 			<h1 class="hero-title">Знайди свій букет</h1>
-                <p class="hero-subtitle">ПОЧНИ З ІНІЦІАТИВИ</p>
+                <p class="hero-subtitle">почни з ініціативи</p>
                 <div class="hero-filters">
 
                     <div class="custom-select" id="flower-select">
@@ -64,61 +64,59 @@
     </section>
 
     <!-- Бестселери -->
-    <section id="bestsellers" class="bestsellers">
+    <div id="bestsellers" class="bestsellers">
         <div class="container">
             <h2>Бестселери</h2>
             <div class="bestsellers-grid">
-                <div class="bestseller-card" onclick="openSubcategories('Букети')">
+                <div class="bestseller-card">
 				    <img src="rose.jpg" alt="Букети" class="bestseller-icon">
                 </div>
-                <div class="bestseller-card" onclick="openSubcategories('Троянди')">
+                <div class="bestseller-card">
                     <img src="rose.jpg" alt="Троянди" class="bestseller-icon">
                 </div>
-                <div class="bestseller-card" onclick="openSubcategories('Тюльпани')">
+                <div class="bestseller-card">
                     <img src="rose.jpg" alt="Тюльпани" class="bestseller-icon">
                 </div>
-                <div class="bestseller-card" onclick="openSubcategories('Лілії')">
+                <div class="bestseller-card">
                     <img src="rose.jpg" alt="Лілії" class="bestseller-icon">
                 </div>
-                <div class="bestseller-card" onclick="openSubcategories('Гвоздики')">
+                <div class="bestseller-card">
                     <img src="rose.jpg" alt="Гвоздики" class="bestseller-icon">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Каталог -->
-    <section id="catalog" class="catalog">
-    <div class="container">
-        <h2>Наші пропозиції</h2>
+    <div id="catalog" class="catalog">
+        <div class="container">
+            <h2>Наші пропозиції</h2>
 
-        <div class="filters">
-            <input type="text" id="search-input" placeholder="Пошук квітів..." class="search-box">
-
-            <div class="custom-select" id="category-select">
-                <div class="custom-select-trigger">
-                    Усі категорії <span class="arrow">▾</span>
-                </div>
-
-                <div class="custom-options">
-                    <div class="custom-option" data-category="">Усі категорії</div>
-                    <div class="custom-option" data-category="Троянди">Троянди</div>
-                    <div class="custom-option" data-category="Тюльпани">Тюльпани</div>
-                    <div class="custom-option" data-category="Гвоздики">Гвоздики</div>
-                    <div class="custom-option" data-category="Лілії">Лілії</div>
-                    <div class="custom-option" data-category="Хризантеми">Хризантеми</div>
-                    <div class="custom-option" data-category="Букети">Букети</div>
-                    <div class="custom-option" data-category="Весілля">Весілля</div>
-                    <div class="custom-option" data-category="День народження">День народження</div>
-                    <div class="custom-option" data-category="Без приводу">Без приводу</div>
+            <div class="filters">
+                <input type="text" id="search-input" placeholder="Пошук квітів..." class="search-box">
+            
+                <div class="custom-select" id="category-select">
+                    <div class="custom-select-trigger">
+                        Усі категорії <span class="arrow">▾</span>
+                    </div>
+                    <div class="custom-options">
+                        <div class="custom-option" data-category="">Усі категорії</div>
+                        <div class="custom-option" data-category="Троянди">Троянди</div>
+                        <div class="custom-option" data-category="Тюльпани">Тюльпани</div>
+                        <div class="custom-option" data-category="Гвоздики">Гвоздики</div>
+                        <div class="custom-option" data-category="Лілії">Лілії</div>
+                        <div class="custom-option" data-category="Хризантеми">Хризантеми</div>
+                        <div class="custom-option" data-category="Букети">Букети</div>
+                        <div class="custom-option" data-category="Весілля">Весілля</div>
+                        <div class="custom-option" data-category="День народження">День народження</div>
+                       <div class="custom-option" data-category="Без приводу">Без приводу</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="products-container" class="products-grid">
+            <div id="products-container" class="products-grid"></div>
         </div>
     </div>
-    </section>
 
     <!-- Про нас -->
     <section id="about" class="about">
@@ -153,7 +151,7 @@
                     </div>
                     <div class="contact-item">
                         <h3>Телефон</h3>
-                        <p><a href="tel:+380665160627">+38 <span class="phone-code">066</span> 516-06-27</a></p>
+                        <p><a href="tel:+380665160627">+38 <span class="phone-code">066</span> 516-06-27</a>
                         <span class="contact-phone-hint">(тицяй сюди, щоб подзвонити)</span>
                     </p>
                     </div>
