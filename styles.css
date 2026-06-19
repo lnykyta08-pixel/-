@@ -698,8 +698,9 @@ footer {
 	}
 
     .bestseller-icon {
-		width: 158.41px;
-        height: 158.41px;
+		width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
         object-fit: cover;
     }
 
