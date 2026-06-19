@@ -617,6 +617,7 @@ footer {
         padding: 150px 15px 20px;
         position: relative;
         align-items: center;
+        background: url('na_pochatky.webp') center/cover no-repeat;
     }
 
     .hero-logo {
@@ -631,12 +632,7 @@ footer {
     }
 
    .hero-image {
-        position: absolute;
-        right: 50%;
-        bottom: 0;
-        transform: translateX(50%);
-        height: 70%;
-        z-index: 1;
+        display: none;
     }
 
     .hero-logo img {
@@ -716,6 +712,8 @@ footer {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+
+/* Вікно відкривається у "Наші пропозиції" */
 
     .modal-content {
         width: 95%;
