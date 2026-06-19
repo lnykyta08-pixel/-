@@ -634,7 +634,7 @@ footer {
     }
 
    .hero-image {
-        display: none;
+        display: flex;
     }
 
     .hero-logo img {
