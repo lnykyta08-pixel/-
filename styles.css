@@ -662,6 +662,8 @@ footer {
     .hero-content h1 {
         font-size: 1.8rem;
         margin-bottom: 5px;
+        text-align: center;
+        width: 100%;
     }
 
     .hero-subtitle {
