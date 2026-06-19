@@ -610,75 +610,7 @@ footer {
     
 /* Головна сторінка */
 
-    .hero {
-        padding: 20px 15px;
-    }
 
-    .hero-logo {
-        position: static;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 15px;
-        z-index: 20;
-    }
-
-    .hero-image {
-        margin-top: 0;
-    }
-
-    .hero-image img {
-        width: 100%;
-        height: auto;
-        max-height: 50vh;
-        object-fit: contain;
-        transform: none;
-        filter: none;
-    }
-
-    .site-map {
-        display: none;
-    }
-
-    .hero-content {
-        z-index: 10;
-        text-align: center;
-        width: 100%;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-        margin-bottom: 5px;
-        text-align: center;
-        width: 100%;
-    }
-
-    .hero-subtitle {
-        font-size: 0.8rem;
-        margin-top: 5px;
-        margin-bottom: 10px;
-    }
-
-    .hero-filters {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .custom-select {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-#category-select {
-    width: 100%;
-}
-    
-    .custom-select-trigger {
-        height: 40px;
-        white-space: nowrap;
-        background: #fff;
-        padding: 10px 15px;
-    }
 
 /* Бестселери */
 
