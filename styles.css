@@ -621,6 +621,16 @@ footer {
     .site-map {
         display: none;
     }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        text-align: center;
+    }
 
     .hero-content {
         text-align: center;
