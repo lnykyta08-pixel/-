@@ -610,7 +610,23 @@ footer {
     
 /* Головна сторінка */
 
+    .site-map {
+        display: none;
+    }
 
+    .hero-image {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        transform: none;
+        filter: none;
+    }
 
 /* Бестселери */
 
