@@ -608,7 +608,12 @@ footer {
 /* Головна сторінка */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-.hero { background: #F3EFEA; }
+
+.hero { 
+    background: #F3EFEA;
+    min-height: 100dvh;
+    height: 100dvh;
+}
 
 .hero-logo {
     top: 15px;
