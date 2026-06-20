@@ -630,11 +630,21 @@ footer {
         display: none;
     }
 
-    .hero-image {
-        right: -100px;
-        bottom: -100px;
-        height: 100%;
-    }
+.hero-image {
+    position: absolute;
+    right: -60px;
+    bottom: -40px;
+    width: 80%;
+    height: auto;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: rotate(-10deg);
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,.12));
+}
 
     .hero-content {
         text-align: center;
