@@ -609,11 +609,9 @@ footer {
 
 .hero {
     display: grid;
-    grid-template-rows: 1f auto;
-    flex-direction: column;
+    grid-template-rows: 1fr auto;
     align-items: center;
-    min-height: auto;
-    justify-content: flex-start;
+    justify-items: center;
     padding: 90px 15px 20px 15px;
     min-height: 100dvh;
     background: #F3EFEA;
@@ -634,14 +632,11 @@ footer {
 }
 
 .hero-image {
-    position: relative;
-    right: 0;
-    bottom: 0; 
     width: 100%;
     max-width: 400px;
     display: flex;
     justify-content: center;
-    margin-top: auto;
+    margin-top: -140px;
 }
 
 .hero-image img {
