@@ -612,7 +612,10 @@ footer {
 .hero { 
     background: #F3EFEA;
     min-height: 100dvh;
-    height: 100dvh;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 60px;
 }
 
 .hero-logo {
@@ -674,7 +677,6 @@ footer {
 }
 
 .hero-image {
-    all: unset;
     position: absolute;
     right: -80px;
     bottom: -60px;
@@ -683,9 +685,9 @@ footer {
 }
 
 .hero-image img {
-    all: unset;
     display: block;
     height: 100%;
+    width: auto;
     object-fit: contain;
     transform: rotate(-10deg);
     filter: drop-shadow(0 20px 40px rgba(0,0,0,.12));
