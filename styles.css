@@ -628,7 +628,7 @@ footer {
     position: absolute;
     right: -160px;
     bottom: -150px;
-    height: 150%;
+    height: auto;
 }
 
 .hero-image img {
