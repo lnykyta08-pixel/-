@@ -611,36 +611,39 @@ footer {
 /* Головна сторінка */
     
 
-    .hero {
-        flex-direction: column;
-        padding: 20px 15px;
-        min-height: 100svh;
-        min-height: auto;
-        overflow: hidden;
-        position: relative;
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 90px 15px 0px 15px;
+    min-height: auto;
+    background: #F3EFEA;
+    position: relative;
     }
 
-    .hero-logo {
-        top: 15px;
-        left: 15px;
+.hero-logo {
+    top: 15px;
+     left: 15px;
     }
 
-    .hero-logo img {
-        height: 40px;
+.hero-logo img {
+    height: 40px;
     }
 
-    .site-map {
-        display: none;
+.site-map {
+    display: none;
     }
 
 .hero-image {
-    position: absolute;
-    width: 75vw; 
-    max-width: 360px;
-    height: auto;
-    right: -40px;
-    bottom: -30px;
-    z-index: 1;
+    position: relative;
+    right: 0;
+    bottom: 0; 
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
 }
 
 .hero-image img {
@@ -652,7 +655,10 @@ footer {
 }
 
     .hero-content {
+        width: 100%;
         text-align: center;
+        margin-bottom: 20px;
+        z-index: 5;
     }
 
     .hero-title {
