@@ -641,7 +641,9 @@ footer {
 }
 
 .custom-select {
-    width: px;
+    position: relative;
+    cursor: pointer;
+    width: 189px;
 }
 
 .custom-select-trigger {
