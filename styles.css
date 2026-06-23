@@ -611,10 +611,10 @@ footer {
 
 .hero-image {
     position: relative;
-    right: auto;
-    bottom: auto;
-    height: auto;
-    margin: 0 auto;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    margin: 0;
 }
 
 .hero-content {
