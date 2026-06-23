@@ -604,6 +604,11 @@ footer {
         display: none;
 }
 
+.hero {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .hero-image {
     right: auto;
     bottom: -150%;
