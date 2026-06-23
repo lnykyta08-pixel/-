@@ -164,23 +164,23 @@ html {
 }
 
 /* Система вибору на головній сторінці */
+
 .custom-select {
     position: relative;
-    min-width: 220px;
     cursor: pointer;
-    z-index: 10;
+    width: 189px;
 }
 
 .custom-select.open {
-    z-index: 2000;
+    z-index: 999;
 }
 
 .custom-select-trigger {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
-    height: auto;
+    text-align: left;
+    padding: 11px 12px;
     background: #fff;
     border: 1px solid #D8D0CA;
     border-radius: 10px;
@@ -199,28 +199,17 @@ html {
 .arrow {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 60%;
-    border-left: 1px solid #D8D0CA;
-    flex-shrink: 0;
+    justify-content: flex-start;
 }
 
 .custom-options {
     display: none;
     position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    right: 0;
+    width: 100%;
     background: #fff;
     border: 1px solid #D8D0CA;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    z-index: 999;
-}
-
-.custom-select.open .custom-options {
-    display: block;
 }
 
 .custom-option {
@@ -235,6 +224,10 @@ html {
 .custom-option:hover {
     background: #fdf0f5;
     color: #e91e63;
+}
+
+.custom-select.open .custom-options {
+    display: block;
 }
 
 /* Бестселери */
@@ -607,91 +600,51 @@ footer {
     
 /* Головна сторінка */
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-.hero { 
-    background: #F3EFEA;
-    min-height: 100dvh;
-    height: auto;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 60px;
-}
-
-.hero-logo {
-    top: 15px;
-    left: 15px;
-}
-
-.hero-logo img {
-    height: 40px;
-}
-
 .site-map {
-    display: none;
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    position: relative;
-    z-index: 5;
-}
-
-.hero-title {
-    font-size: 1.8rem;
-    text-align: center;
-    width: 100%;
-}
-
-.hero-subtitle {
-    font-size: 0.9rem;
-    margin: 0 0 1.5rem;
-    text-align: center;
-    width: 100%;
-}
-
-.hero-filters {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.custom-select {
-    width: 100%;
-    max-width: 280px;
-    margin: 0 auto;
-}
-
-.custom-select-trigger {
-    height: 40px;
+        display: none;
 }
 
 .hero-image {
-    position: absolute;
-    right: -80px;
-    bottom: -60px;
-    height: 360px;
-    z-index: 1;
+    right: auto;
+    bottom: -150%;
+    height: auto;
 }
 
-.hero-image img {
-    display: block;
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    transform: rotate(-10deg);
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,.12));
+.hero-content {
+        /* розташування контенту */
 }
+
+.hero-title {
+    font-size: rem;
+}
+
+.hero-subtitle {
+    font-size: rem;
+    margin: 0 0 rem;
+}
+
+.hero-filters {
+    gap: rem;
+}
+
+.custom-select {
+    width: px;
+}
+
+.custom-select-trigger {
+    padding: px px;
+    font-size: rem;
+}
+
+.custom-options {
+        /* позиція списку */
+}
+
+.custom-option {
+    padding: rem rem;
+    font-size: rem;
+}
+
 
 /* Бестселери */
 
@@ -783,6 +736,4 @@ footer {
     width: 100%;
     max-width: 100%;
     height: 200px;
-}
-
 }
