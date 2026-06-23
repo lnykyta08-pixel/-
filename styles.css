@@ -140,19 +140,19 @@ html {
     z-index: 5;
 }
 
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    color: #594E49;
+    margin-bottom: 0.3rem;
+}
+
 .hero-subtitle {
     font-size: 1.8rem;
     color: #2B211C;
     margin: 0 0 3rem;
     letter-spacing: 2px;
     font-family: 'Lora', serif;
-}
-
-.hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    color: #594E49;
-    margin-bottom: 0.3rem;
 }
 
 .hero-filters {
@@ -610,23 +610,26 @@ footer {
 }
 
 .hero-image {
-    position: static;
-    bottom: auto;
-    height: auto;
-    margin: 0 auto;
+    position: center;
 }
 
 .hero-content {
-        /* розташування контенту */
+    text-align: center;
 }
 
 .hero-title {
-    font-size: rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: #594E49;
+    margin-bottom: 0.3rem;
 }
 
 .hero-subtitle {
-    font-size: rem;
-    margin: 0 0 rem;
+    font-size: 1.4rem;
+    color: #2B211C;
+    margin: 0 0 3rem;
+    letter-spacing: 2px;
+    font-family: 'Lora', serif;
 }
 
 .hero-filters {
