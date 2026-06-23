@@ -619,13 +619,13 @@ footer {
 
 .hero-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #594E49;
     margin-bottom: 0.3rem;
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: #2B211C;
     margin: 0 0 3rem;
     letter-spacing: 2px;
@@ -633,7 +633,11 @@ footer {
 }
 
 .hero-filters {
-    gap: rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .custom-select {
