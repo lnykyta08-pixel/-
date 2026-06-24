@@ -601,7 +601,7 @@ footer {
 /* Головна сторінка */
 
 .site-map {
-        display: none;
+    display: none;
 }
 
 .hero {
@@ -609,8 +609,13 @@ footer {
     justify-content: flex-start;
 }
 
+.hero-logo {
+    left: 10px;
+}
+
 .hero-image {
     position: center;
+    height: 250;
 }
 
 .hero-content {
