@@ -635,8 +635,9 @@ footer {
 }
 
 .hero-content {
-    position: relative;
-    z-index: 5;
+    text-align: center;
+    width: 100%;
+    padding-top: 150px;
 }
 
 .hero-title {
