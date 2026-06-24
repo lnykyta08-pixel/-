@@ -654,8 +654,8 @@ footer {
 }
 
 .hero-filters {
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .custom-select {
