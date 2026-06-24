@@ -614,8 +614,15 @@ footer {
 }
 
 .hero-image {
-    position: center;
-    height: 250;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    height: 250px;
+}
+
+.hero-image img {
+    height: 100%;
+    transform: none;
 }
 
 .hero-content {
