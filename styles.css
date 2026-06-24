@@ -606,11 +606,18 @@ footer {
 
 .hero {
     flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
+    padding: 80px 20px 30px;
 }
 
 .hero-logo {
-    left: 10px;
+    top: 20px;
+    left: 15px;
+}
+
+.hero-logo img {
+    height: 55px;
 }
 
 .hero-image {
@@ -633,18 +640,16 @@ footer {
 }
 
 .hero-title {
-    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
     font-size: 2rem;
-    color: #594E49;
     margin-bottom: 0.3rem;
 }
 
 .hero-subtitle {
     font-size: 1.1rem;
-    color: #2B211C;
     margin: 0 0 3rem;
     letter-spacing: 2px;
-    font-family: 'Lora', serif;
+    text-align: center;
 }
 
 .hero-filters {
