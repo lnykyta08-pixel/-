@@ -646,21 +646,6 @@ footer {
     width: 189px;
 }
 
-.custom-select-trigger {
-    padding: px px;
-    font-size: rem;
-}
-
-.custom-options {
-        /* позиція списку */
-}
-
-.custom-option {
-    padding: rem rem;
-    font-size: rem;
-}
-
-
 /* Бестселери */
 
 .bestsellers {
@@ -751,4 +736,5 @@ footer {
     width: 100%;
     max-width: 100%;
     height: 200px;
+}
 }
