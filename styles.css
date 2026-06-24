@@ -659,8 +659,6 @@ footer {
 }
 
 .custom-select {
-    position: relative;
-    cursor: pointer;
     width: 189px;
 }
 
