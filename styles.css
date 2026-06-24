@@ -637,7 +637,7 @@ footer {
 .hero-content {
     text-align: center;
     width: 100%;
-    padding-top: 150px;
+    padding-top: 110px;
 }
 
 .hero-title {
@@ -654,11 +654,8 @@ footer {
 }
 
 .hero-filters {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .custom-select {
