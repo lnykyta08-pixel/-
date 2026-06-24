@@ -609,6 +609,7 @@ footer {
     align-items: center;
     justify-content: flex-start;
     padding: 80px 20px 30px;
+    overflow: visible;
 }
 
 .hero-logo {
@@ -648,7 +649,7 @@ footer {
 
 .hero-subtitle {
     font-size: 1.1rem;
-    margin: 0 0 3rem;
+    margin: 0 0 2rem;
     letter-spacing: 2px;
     text-align: center;
 }
