@@ -4,6 +4,8 @@
     box-sizing: border-box; 
 }
 
+@media (min-width: 1200px) {
+
 html {
     scroll-behavior: smooth;
 }
@@ -593,6 +595,7 @@ footer {
     color: #F3EFEA;
     text-align: center;
     padding: 2rem 2rem;
+}
 }
 
 /* МОБІЛЬНА ВЕРСІЯ */
