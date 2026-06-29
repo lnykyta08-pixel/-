@@ -608,8 +608,9 @@ footer {
     background-image: url('tf_photo_golovna.webp');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;;
-    
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .hero-logo {
