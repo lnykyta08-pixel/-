@@ -102,3 +102,27 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         }
     });
 });
+
+// Після натискання на зв'язатися з нами підсвічує номер на секунду
+const contactUsBtn = document.getElementById('contact-us-btn');
+if (contactUsBtn) {
+    contactUsBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const phoneRow = document.getElementById('footer-phone');
+        if (!phoneRow) return;
+
+        phoneRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        let scrollStopTimer;
+        function onScroll() {
+            clearTimeout(scrollStopTimer);
+            scrollStopTimer = setTimeout(() => {
+                window.removeEventListener('scroll', onScroll);
+                phoneRow.classList.add('phone-blink');
+                setTimeout(() => phoneRow.classList.remove('phone-blink'), 1000);
+            }, 150);
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+    });
+}

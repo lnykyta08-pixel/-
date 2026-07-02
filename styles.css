@@ -55,6 +55,31 @@ body {
     line-height: 1.6;
 }
 
+/* Повзунок сайту */
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--emerald) var(--sand);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--sand);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--emerald);
+    border-radius: 10px;
+    border: 2px solid var(--sand);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--forest-mid);
+}
+
 img {
     max-width: 100%;
     display: block; 
@@ -998,6 +1023,21 @@ footer {
     color: var(--emerald);
     font-size: .9rem;
     flex-shrink: 0;
+}
+
+#footer-phone {
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin: -4px -8px;
+}
+
+#footer-phone.phone-blink {
+    animation: phoneHighlight 1s ease;
+}
+
+@keyframes phoneHighlight {
+    0% { background: var(--emerald); }
+    100% { background: transparent; }
 }
 
 .footer-bottom {
