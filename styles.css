@@ -738,6 +738,7 @@ ul {
     color: var(--text-mid);
     line-height: 1.8;
     margin-bottom: 16px;
+    text-indent: 32px;
 }
 
 .about-features {
