@@ -216,6 +216,7 @@ ul {
     font-weight: 700;
     color: var(--white);
     transition: color .35s;
+    margin-left: -180px;
 }
 
 .nav.scrolled .nav-logo {
