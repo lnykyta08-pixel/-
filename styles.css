@@ -216,7 +216,6 @@ ul {
     font-weight: 700;
     color: var(--white);
     transition: color .35s;
-    margin-left: -180px;
 }
 
 .nav.scrolled .nav-logo {
@@ -253,10 +252,6 @@ ul {
 
 .nav-links a:hover {
     color: var(--emerald);
-}
-
-.nav-cta {
-    margin-right: -180px;
 }
 
 .hamburger {
@@ -1075,6 +1070,17 @@ footer {
 
 .footer-grid { 
     grid-template-columns: 1fr 1fr;
+}
+}
+
+@media (min-width: 769px) {
+
+.nav-logo {
+    margin-left: -180px;
+}
+    
+.nav-cta {
+   margin-right: -180px;
 }
 }
 
