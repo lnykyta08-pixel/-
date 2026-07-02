@@ -1,585 +1,432 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Квіти — квітковий магазин у Запоріжжі. Свіжі букети, композиції, індивідуальне пакування та швидка доставка." />
-  <title>Квіти — Знайди свій букет</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Квіти — квітковий магазин у Запоріжжі. Свіжі букети, композиції, індивідуальне пакування та швидка доставка." />
+    <title>Квіти — Знайди свій букет</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<!-- Навігація -->
 
-<!-- ─── Navigation ──────────────────────────────────────── -->
 <nav class="nav" id="navbar" aria-label="Головна навігація">
-  <div class="container">
-    <a href="#" class="nav-logo" aria-label="Квіти — на початок">
-      <div class="nav-logo-icon" aria-hidden="true">🌿</div>
-      Квіти
-    </a>
-
-    <ul class="nav-links" role="list">
-      <li><a href="#bestsellers">Бестселери</a></li>
-      <li><a href="#services">Послуги</a></li>
-      <li><a href="#reviews">Відгуки</a></li>
-      <li><a href="#about">Про нас</a></li>
-      <li><a href="#info">Контакти</a></li>
-    </ul>
-    <a href="tel:+380671234567" class="btn btn-primary nav-cta" style="padding:10px 22px;font-size:.85rem;">
-      📞 Замовити
-    </a>
-
-    <button class="hamburger" id="hamburger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+    <div class="container">
+        <a href="#" class="nav-logo" aria-label="Квіти — на початок">
+            <div class="nav-logo-icon" aria-hidden="true">🌿</div>
+            Квіти
+        </a>
+        <ul class="nav-links" role="list">
+            <li><a href="#bestsellers">Бестселери</a></li>
+            <li><a href="#services">Послуги</a></li>
+            <li><a href="#about">Про нас</a></li>
+            <li><a href="#info">Контакти</a></li>
+        </ul>
+        <a href="tel:+380671234567" class="btn btn-primary nav-cta" style="padding:10px 22px;font-size:.85rem;">
+            📞 Замовити
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- Мобільне меню -->
+
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Мобільне меню">
-  <a href="#bestsellers" class="mobile-link">Бестселери</a>
-  <a href="#services" class="mobile-link">Послуги</a>
-  <a href="#reviews" class="mobile-link">Відгуки</a>
-  <a href="#about" class="mobile-link">Про нас</a>
-  <a href="#info" class="mobile-link">Контакти</a>
-  <a href="tel:+380671234567" class="btn btn-primary" style="margin-top:8px;">📞 +38 067 123 45 67</a>
+    <a href="#bestsellers" class="mobile-link">Бестселери</a>
+    <a href="#services" class="mobile-link">Послуги</a>
+    <a href="#about" class="mobile-link">Про нас</a>
+    <a href="#info" class="mobile-link">Контакти</a>
+    <a href="tel:+380671234567" class="btn btn-primary" style="margin-top:8px;">📞 +38 066 516 06 27</a>
 </div>
 
+<!-- Головний блок -->
 
-<!-- ─── Hero ─────────────────────────────────────────────── -->
 <section class="hero" id="hero" aria-label="Головний банер">
-  <div class="hero-bg" role="img" aria-label="Красиві свіжі квіти"></div>
-  <div class="hero-content">
-    <span class="hero-eyebrow">🌺 Квітковий магазин · Запоріжжя</span>
-    <h1>Знайди свій<br /><em>ідеальний букет</em></h1>
-    <p class="hero-sub">
-      Починаючи з ініціативи — ваш задум, наша майстерність.
-      Свіжі квіти, живі композиції та справжній підхід до кожного замовлення.
-    </p>
-    <div class="hero-actions">
-      <a href="#bestsellers" class="btn btn-primary">🌷 Переглянути букети</a>
-      <a href="#info" class="btn btn-outline">Зв'язатися з нами</a>
-    </div>
-  </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <span>↓</span>
-    <span style="font-size:.65rem;letter-spacing:.12em;">ГОРТАТИ</span>
-  </div>
-</section>
-
-
-<!-- ─── Stats ────────────────────────────────────────────── -->
-<section class="stats" aria-label="Наша статистика">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <strong class="stat-number" data-target="8">0</strong>
-        <div class="stat-label">Років досвіду</div>
-      </div>
-      <div class="stat-item reveal" style="transition-delay:.1s">
-        <strong class="stat-number" data-target="4200">0</strong>
-        <div class="stat-label">Щасливих замовлень</div>
-      </div>
-      <div class="stat-item reveal" style="transition-delay:.2s">
-        <strong class="stat-number" data-target="150">0</strong>
-        <div class="stat-label">Видів квітів</div>
-      </div>
-      <div class="stat-item reveal" style="transition-delay:.3s">
-        <strong class="stat-number" data-target="98">0</strong>
-        <div class="stat-label">% задоволених клієнтів</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─── Bestsellers ──────────────────────────────────────── -->
-<section class="bestsellers" id="bestsellers" aria-labelledby="bestsellers-title">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">🏆 Найпопулярніші</span>
-      <h2 class="section-title" id="bestsellers-title">Бестселери тижня</h2>
-      <p class="section-sub">Букети, які обирають найчастіше — вже готові або під ваш запит.</p>
-    </div>
-
-    <div class="products-grid">
-      <!-- Product 1 -->
-      <article class="product-card reveal" style="transition-delay:.05s">
-        <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1490750967868-88df5691166c?w=500&h=375&fit=crop&auto=format" alt="Рожева ніжність — букет із піонів та троянд" loading="lazy" />
-          <span class="product-badge">Хіт</span>
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <span class="hero-eyebrow">🌺 Квітковий магазин · Запоріжжя</span>
+        <h1>Знайди свій<br /><em>ідеальний букет</em></h1>
+        <p class="hero-sub">
+            Починаючи з ініціативи – вашої ідеї та нашої майстерності, народжується диво.
+        </p>
+        <div class="hero-actions">
+            <a href="#bestsellers" class="btn btn-primary">🌷 Переглянути букети</a>
+            <a href="#info" class="btn btn-outline">Зв'язатися з нами</a>
         </div>
-        <div class="product-body">
-          <h3 class="product-name">Рожева ніжність</h3>
-          <p class="product-desc">Піони, лізіантус і трояндки в пастельній палітрі. Ідеально для привітань.</p>
-          <div class="product-footer">
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+        <span>↓</span>
+        <span style="font-size:.65rem;letter-spacing:.12em;">ГОРТАТИ</span>
+    </div>
+</section>
+
+<!-- Статистика -->
+
+<section class="stats" aria-label="Наша статистика">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <strong class="stat-number" data-target="8">0</strong>
+                <div class="stat-label">Років досвіду</div>
+            </div>
+            <div class="stat-item reveal" style="transition-delay:.1s">
+                <strong class="stat-number" data-target="100">0</strong><span class="stat-percent">%</span>
+                <div class="stat-label">Свіжі квіти</div>
+            </div>
+            <div class="stat-item reveal" style="transition-delay:.2s">
+                <strong class="stat-number" data-target="30">0</strong><span class="stat-min">хв</span>
+                <div class="stat-label">Час доставки</div>
+            </div>
+            <div class="stat-item reveal" style="transition-delay:.3s">
+                <strong class="stat-number" data-target="98">0</strong>
+                <div class="stat-label">% задоволених клієнтів</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Бестселери -->
+
+<section class="bestsellers" id="bestsellers" aria-labelledby="bestsellers-title">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">Найпопулярніші</span>
+            <h2 class="section-title" id="bestsellers-title">Бестселери</h2>
+            <p class="section-sub">Те, без чого свято не буде самим собою</p>
+        </div>
+        <div class="products-grid">
+
+<!-- Продукт 1 -->
+
+<article class="product-card reveal" style="transition-delay:.05s">
+    <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1490750967868-88df5691166c?w=500&h=375&fit=crop&auto=format" alt="Рожева ніжність — букет із піонів та троянд" loading="lazy" />
+        <span class="product-badge">Хіт</span>
+    </div>
+    <div class="product-body">
+        <h3 class="product-name">Рожева ніжність</h3>
+        <p class="product-desc">Піони, лізіантус і трояндки в пастельній палітрі. Ідеально для привітань.</p>
+        <div class="product-footer">
             <span class="product-price">680 ₴ <span>від</span></span>
             <button class="product-btn" aria-label="Замовити Рожева ніжність" onclick="addToCart('Рожева ніжність')">+</button>
-          </div>
         </div>
-      </article>
+    </div>
+</article>
 
-      <!-- Product 2 -->
-      <article class="product-card reveal" style="transition-delay:.1s">
-        <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=500&h=375&fit=crop&auto=format" alt="Лісова казка — букет з польових квітів" loading="lazy" />
-          <span class="product-badge">Новинка</span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-name">Лісова казка</h3>
-          <p class="product-desc">Польові квіти, евкаліпт і гілки верби — живий запах лісу прямо у вазі.</p>
-          <div class="product-footer">
+<!-- Продукт 2 -->
+
+<article class="product-card reveal" style="transition-delay:.1s">
+    <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=500&h=375&fit=crop&auto=format" alt="Лісова казка — букет з польових квітів" loading="lazy" />
+        <span class="product-badge">Новинка</span>
+    </div>
+    <div class="product-body">
+        <h3 class="product-name">Лісова казка</h3>
+        <p class="product-desc">Польові квіти, евкаліпт і гілки верби — живий запах лісу прямо у вазі.</p>
+        <div class="product-footer">
             <span class="product-price">520 ₴ <span>від</span></span>
             <button class="product-btn" aria-label="Замовити Лісова казка" onclick="addToCart('Лісова казка')">+</button>
-          </div>
         </div>
-      </article>
+    </div>
+</article>
 
-      <!-- Product 3 -->
-      <article class="product-card reveal" style="transition-delay:.15s">
-        <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=375&fit=crop&auto=format" alt="Сонячний день — жовті соняшники та тюльпани" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <h3 class="product-name">Сонячний день</h3>
-          <p class="product-desc">Соняшники, жовті тюльпани і зелень. Заряд радості на весь день.</p>
-          <div class="product-footer">
+<!-- Продукт 3 -->
+
+<article class="product-card reveal" style="transition-delay:.15s">
+    <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=375&fit=crop&auto=format" alt="Сонячний день — жовті соняшники та тюльпани" loading="lazy" />
+    </div>
+    <div class="product-body">
+        <h3 class="product-name">Сонячний день</h3>
+        <p class="product-desc">Соняшники, жовті тюльпани і зелень. Заряд радості на весь день.</p>
+        <div class="product-footer">
             <span class="product-price">440 ₴ <span>від</span></span>
             <button class="product-btn" aria-label="Замовити Сонячний день" onclick="addToCart('Сонячний день')">+</button>
-          </div>
         </div>
-      </article>
+    </div>
+</article>
 
-      <!-- Product 4 -->
-      <article class="product-card reveal" style="transition-delay:.2s">
-        <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=500&h=375&fit=crop&auto=format" alt="Королівська троянда — преміум букет із червоних троянд" loading="lazy" />
-          <span class="product-badge">Преміум</span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-name">Королівська троянда</h3>
-          <p class="product-desc">25 або 51 оксамитова червона троянда в атласній стрічці та крафт-папері.</p>
-          <div class="product-footer">
+<!-- Продукт 4 -->
+
+<article class="product-card reveal" style="transition-delay:.2s">
+    <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=500&h=375&fit=crop&auto=format" alt="Королівська троянда — преміум букет із червоних троянд" loading="lazy" />
+        <span class="product-badge">Преміум</span>
+    </div>
+    <div class="product-body">
+        <h3 class="product-name">Королівська троянда</h3>
+        <p class="product-desc">25 або 51 оксамитова червона троянда в атласній стрічці та крафт-папері.</p>
+        <div class="product-footer">
             <span class="product-price">1 200 ₴ <span>від</span></span>
             <button class="product-btn" aria-label="Замовити Королівська троянда" onclick="addToCart('Королівська троянда')">+</button>
-          </div>
         </div>
-      </article>
+    </div>
+</article>
 
-      <!-- Product 5 -->
-      <article class="product-card reveal" style="transition-delay:.25s">
-        <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500&h=375&fit=crop&auto=format" alt="Весняний вітер — мікс тюльпанів" loading="lazy" />
-        </div>
-        <div class="product-body">
-          <h3 class="product-name">Весняний вітер</h3>
-          <p class="product-desc">Різнобарвні тюльпани в легкому упакуванні. Класика сезону.</p>
-          <div class="product-footer">
+<!-- Продукт 5 -->
+
+<article class="product-card reveal" style="transition-delay:.25s">
+    <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500&h=375&fit=crop&auto=format" alt="Весняний вітер — мікс тюльпанів" loading="lazy" />
+    </div>
+    <div class="product-body">
+        <h3 class="product-name">Весняний вітер</h3>
+        <p class="product-desc">Різнобарвні тюльпани в легкому упакуванні. Класика сезону.</p>
+        <div class="product-footer">
             <span class="product-price">380 ₴ <span>від</span></span>
             <button class="product-btn" aria-label="Замовити Весняний вітер" onclick="addToCart('Весняний вітер')">+</button>
-          </div>
         </div>
-      </article>
+    </div>
+</article>
 
-      <!-- Product 6 -->
-      <article class="product-card reveal" style="transition-delay:.3s">
-        <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1548094878-84ced0f59d5c?w=500&h=375&fit=crop&auto=format" alt="Вечірня орхідея — моноботанічний букет з орхідей" loading="lazy" />
-          <span class="product-badge">Ексклюзив</span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-name">Вечірня орхідея</h3>
-          <p class="product-desc">Фаленопсис і dendrobium у чорній коробці. Витонченість без слів.</p>
-          <div class="product-footer">
+<!-- Продукт 6 -->
+
+<article class="product-card reveal" style="transition-delay:.3s">
+    <div class="product-img-wrap">
+        <img src="https://images.unsplash.com/photo-1548094878-84ced0f59d5c?w=500&h=375&fit=crop&auto=format" alt="Вечірня орхідея — моноботанічний букет з орхідей" loading="lazy" />
+        <span class="product-badge">Ексклюзив</span>
+    </div>
+    <div class="product-body">
+        <h3 class="product-name">Вечірня орхідея</h3>
+        <p class="product-desc">Фаленопсис і dendrobium у чорній коробці. Витонченість без слів.</p>
+        <div class="product-footer">
             <span class="product-price">890 ₴ <span>від</span></span>
             <button class="product-btn" aria-label="Замовити Вечірня орхідея" onclick="addToCart('Вечірня орхідея')">+</button>
-          </div>
         </div>
-      </article>
     </div>
-  </div>
+</article>
+
+        </div>
+    </div>
 </section>
 
+<!-- Послуги -->
 
-<!-- ─── Services ─────────────────────────────────────────── -->
 <section class="services" id="services" aria-labelledby="services-title">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">✨ Що ми пропонуємо</span>
-      <h2 class="section-title" id="services-title">Наші послуги</h2>
-      <p class="section-sub">Усе необхідне для квіткового подарунка — в одному місці.</p>
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-eyebrow">✨ Що ми пропонуємо ✨</span>
+            <h2 class="section-title" id="services-title">Наші послуги</h2>
+            <p class="section-sub">Усе, що треба для квіткового подарунка – в одному місці</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal" style="transition-delay:.05s">
+                <div class="service-icon" aria-hidden="true">🌸</div>
+                <h3 class="service-name">Свіжі квіти</h3>
+                <p class="service-desc">Постачання зрізаних квітів з перевірених плантацій та місцевих теплиць</p>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.15s">
+                <div class="service-icon" aria-hidden="true">💐</div>
+                <h3 class="service-name">Авторські букети</h3>
+                <p class="service-desc">Ваша ідея – наша реалізація. Розкажіть, що хочете, і ми створимо унікальний букет</p>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.2s">
+                <div class="service-icon" aria-hidden="true">🎁</div>
+                <h3 class="service-name">Пакування</h3>
+                <p class="service-desc">Крафт, корейський папір, шляпні коробки – оформимо так, щоб запам'яталось</p>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.25s">
+                <div class="service-icon" aria-hidden="true">🎈</div>
+                <h3 class="service-name">Гелеві кульки</h3>
+                <p class="service-desc">Однотонні та фольговані кульки. Відмінне доповнення до букету на будь-яке свято</p>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.3s">
+                <div class="service-icon" aria-hidden="true">🧸</div>
+                <h3 class="service-name">М'які іграшки</h3>
+                <p class="service-desc">Іграшкові ведмедики та зайчики є гарним подарунком</p>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.35s">
+                <div class="service-icon" aria-hidden="true">🚀</div>
+                <h3 class="service-name">Швидка доставка</h3>
+                <p class="service-desc">Букет прилетить так швидко, що пелюстки не встигнуть зів'янути</p>
+            </div>
+        </div>
     </div>
-
-    <div class="services-grid">
-      <div class="service-card reveal" style="transition-delay:.05s">
-        <div class="service-icon" aria-hidden="true">🌸</div>
-        <h3 class="service-name">Свіжі квіти</h3>
-        <p class="service-desc">Щоденне постачання зрізаних квітів з перевірених плантацій та місцевих господарств.</p>
-      </div>
-      <div class="service-card reveal" style="transition-delay:.1s">
-        <div class="service-icon" aria-hidden="true">🎨</div>
-        <h3 class="service-name">Композиції</h3>
-        <p class="service-desc">Авторські флористичні аранжування для дому, офісу та свят.</p>
-      </div>
-      <div class="service-card reveal" style="transition-delay:.15s">
-        <div class="service-icon" aria-hidden="true">💐</div>
-        <h3 class="service-name">Індивідуальні букети</h3>
-        <p class="service-desc">Ваша ідея — наша реалізація. Розкажіть, що хочете, і ми створимо унікальний букет.</p>
-      </div>
-      <div class="service-card reveal" style="transition-delay:.2s">
-        <div class="service-icon" aria-hidden="true">🎁</div>
-        <h3 class="service-name">Пакування</h3>
-        <p class="service-desc">Крафт, атлас, корейський папір, шляпні коробки — оформимо так, щоб запам'яталось.</p>
-      </div>
-      <div class="service-card reveal" style="transition-delay:.25s">
-        <div class="service-icon" aria-hidden="true">🎈</div>
-        <h3 class="service-name">Гелеві кульки</h3>
-        <p class="service-desc">Однотонні та тематичні набори. Відмінне доповнення до букета на будь-яке свято.</p>
-      </div>
-      <div class="service-card reveal" style="transition-delay:.3s">
-        <div class="service-icon" aria-hidden="true">🧸</div>
-        <h3 class="service-name">М'які іграшки</h3>
-        <p class="service-desc">Плюшеві ведмедики, зайчики та авторські букети-іграшки — ніжний подарунок для дітей.</p>
-      </div>
-      <div class="service-card reveal" style="transition-delay:.35s">
-        <div class="service-icon" aria-hidden="true">🚀</div>
-        <h3 class="service-name">Швидка доставка</h3>
-        <p class="service-desc">Доставляємо по Запоріжжю впродовж 2 годин. Зателефонуйте — узгодимо час.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
+<!-- Про нас -->
 
-<!-- ─── Testimonials ──────────────────────────────────────── -->
-<section class="testimonials" id="reviews" aria-labelledby="reviews-title">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">💬 Відгуки</span>
-      <h2 class="section-title" id="reviews-title">Що кажуть клієнти</h2>
-    </div>
-
-    <div class="slider-wrap reveal">
-      <div class="slider-track" id="slider-track" aria-live="polite">
-
-        <div class="slide" role="group" aria-label="Відгук 1 з 4">
-          <div class="slide-stars" aria-label="Оцінка 5 з 5">★★★★★</div>
-          <blockquote class="slide-text">
-            «Замовляла букет на день народження мамі. Результат перевершив очікування — піони були свіжими, пакування бездоганним. Мама плакала від радості!»
-          </blockquote>
-          <div class="slide-author">
-            <img src="https://i.pravatar.cc/48?img=1" alt="Портрет Олени К." class="slide-avatar" />
-            <div class="slide-info">
-              <div class="slide-name">Олена К.</div>
-              <div class="slide-role">постійна клієнтка · Запоріжжя</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slide" role="group" aria-label="Відгук 2 з 4">
-          <div class="slide-stars" aria-label="Оцінка 5 з 5">★★★★★</div>
-          <blockquote class="slide-text">
-            «Звернувся за годину до події. Подзвонив, описав стиль — і через 90 хвилин кур'єр привіз саме те, що я уявляв. Ціна цілком справедлива.»
-          </blockquote>
-          <div class="slide-author">
-            <img src="https://i.pravatar.cc/48?img=12" alt="Портрет Максима Т." class="slide-avatar" />
-            <div class="slide-info">
-              <div class="slide-name">Максим Т.</div>
-              <div class="slide-role">новий клієнт</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slide" role="group" aria-label="Відгук 3 з 4">
-          <div class="slide-stars" aria-label="Оцінка 5 з 5">★★★★★</div>
-          <blockquote class="slide-text">
-            «Щомісяця беру квіти для офісу. Завжди погоджують дату, завжди свіжо. Особливо подобається, що можна самій обрати зелень і пакування.»
-          </blockquote>
-          <div class="slide-author">
-            <img src="https://i.pravatar.cc/48?img=5" alt="Портрет Ірини М." class="slide-avatar" />
-            <div class="slide-info">
-              <div class="slide-name">Ірина М.</div>
-              <div class="slide-role">корпоративний клієнт</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slide" role="group" aria-label="Відгук 4 з 4">
-          <div class="slide-stars" aria-label="Оцінка 5 з 5">★★★★★</div>
-          <blockquote class="slide-text">
-            «Брали квіти на весілля: прикраси столів, бутоньєрка і букет нареченої. Флористи дуже уважно вислухали та запропонували чудове рішення. Гості питали, де ми замовляли!»
-          </blockquote>
-          <div class="slide-author">
-            <img src="https://i.pravatar.cc/48?img=9" alt="Портрет Анни та Андрія В." class="slide-avatar" />
-            <div class="slide-info">
-              <div class="slide-name">Анна та Андрій В.</div>
-              <div class="slide-role">весілля · 2024</div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /slider-track -->
-    </div><!-- /slider-wrap -->
-
-    <div class="slider-controls">
-      <button class="slider-btn" id="slider-prev" aria-label="Попередній відгук">←</button>
-      <div class="slider-dots" id="slider-dots" role="tablist" aria-label="Навігація по відгукам"></div>
-      <button class="slider-btn" id="slider-next" aria-label="Наступний відгук">→</button>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─── About ─────────────────────────────────────────────── -->
 <section class="about" id="about" aria-labelledby="about-title">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-img-stack reveal-left">
-        <img
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&h=750&fit=crop&auto=format"
-          alt="Флорист за роботою у квітковому магазині"
-          class="about-img-main"
-          loading="lazy"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=300&h=300&fit=crop&auto=format"
-          alt="Красиво оформлений букет у крафт-папері"
-          class="about-img-accent"
-          loading="lazy"
-        />
-        <div class="about-badge" aria-label="8 років на ринку">
-          <strong>8+</strong>
-          <span>років<br>на ринку</span>
-        </div>
-      </div>
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-img-stack reveal-left">
+                <img
+                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&h=750&fit=crop&auto=format"
+                    alt="Флорист за роботою у квітковому магазині"
+                    class="about-img-main"
+                    loading="lazy"
+                />
+                <img
+                    src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=300&h=300&fit=crop&auto=format"
+                    alt="Красиво оформлений букет у крафт-папері"
+                    class="about-img-accent"
+                    loading="lazy"
+                />
+                <div class="about-badge" aria-label="8 років на ринку">
+                    <strong>15+</strong>
+                    <span>років<br>на ринку</span>
+                </div>
+            </div>
 
-      <div class="about-text">
-        <div class="section-header reveal-right">
-          <span class="section-eyebrow">🌿 Про нас</span>
-          <h2 class="section-title" id="about-title">Маленький магазин.<br/>Великий досвід.</h2>
+            <div class="about-text">
+                <div class="section-header reveal-right">
+                    <span class="section-eyebrow">🌿 Про нас</span>
+                    <h2 class="section-title" id="about-title">Маленький магазин.<br/>Великий досвід.</h2>
+                </div>
+                <p class="about-body reveal-right" style="transition-delay:.1s">
+                    Ми — невеликий квітковий магазин у серці Запоріжжя. Попри скромні розміри, наша команда
+                    флористів має понад 8 років практики і щиро захоплюється своєю справою.
+                </p>
+                <p class="about-body reveal-right" style="transition-delay:.15s">
+                    Кожен букет — це діалог. Розкажіть нам свою ідею, і ми втілимо її в квітах, підберемо
+                    пакування та додамо ту дрібничку, яка зробить подарунок незабутнім.
+                </p>
+                <div class="about-features">
+                    <div class="about-feat reveal-right" style="transition-delay:.2s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Тільки свіжі квіти</strong>
+                            <span>Поставки тричі на тиждень від перевірених постачальників</span>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal-right" style="transition-delay:.25s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Ваш задум — наша робота</strong>
+                            <span>Завжди відкриті до ваших побажань щодо вигляду та пакування</span>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal-right" style="transition-delay:.3s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Доставка по місту</strong>
+                            <span>Кур'єрська служба протягом 2 годин по Запоріжжю</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#info" class="btn btn-dark reveal-right" style="transition-delay:.35s;margin-top:8px;">
+                    📍 Знайти нас
+                </a>
+            </div>
         </div>
-        <p class="about-body reveal-right" style="transition-delay:.1s">
-          Ми — невеликий квітковий магазин у серці Запоріжжя. Попри скромні розміри, наша команда
-          флористів має понад 8 років практики і щиро захоплюється своєю справою.
-        </p>
-        <p class="about-body reveal-right" style="transition-delay:.15s">
-          Кожен букет — це діалог. Розкажіть нам свою ідею, і ми втілимо її в квітах, підберемо
-          пакування та додамо ту дрібничку, яка зробить подарунок незабутнім.
-        </p>
-
-        <div class="about-features">
-          <div class="about-feat reveal-right" style="transition-delay:.2s">
-            <div class="about-feat-icon" aria-hidden="true">✓</div>
-            <div class="about-feat-text">
-              <strong>Тільки свіжі квіти</strong>
-              <span>Поставки тричі на тиждень від перевірених постачальників</span>
-            </div>
-          </div>
-          <div class="about-feat reveal-right" style="transition-delay:.25s">
-            <div class="about-feat-icon" aria-hidden="true">✓</div>
-            <div class="about-feat-text">
-              <strong>Ваш задум — наша робота</strong>
-              <span>Завжди відкриті до ваших побажань щодо вигляду та пакування</span>
-            </div>
-          </div>
-          <div class="about-feat reveal-right" style="transition-delay:.3s">
-            <div class="about-feat-icon" aria-hidden="true">✓</div>
-            <div class="about-feat-text">
-              <strong>Доставка по місту</strong>
-              <span>Кур'єрська служба протягом 2 годин по Запоріжжю</span>
-            </div>
-          </div>
-        </div>
-        <a href="#info" class="btn btn-dark reveal-right" style="transition-delay:.35s;margin-top:8px;">
-          📍 Знайти нас
-        </a>
-      </div>
     </div>
-  </div>
 </section>
 
+<!-- Деталі -->
 
-<!-- ─── Hours & Address ──────────────────────────────────── -->
-<section class="info-section" id="info" aria-labelledby="info-title">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">📍 Де нас знайти</span>
-      <h2 class="section-title" id="info-title">Адреса та графік роботи</h2>
-    </div>
+<section class="info-section" id="info">
+    <div class="container">
+        <div class="info-grid">
 
-    <div class="info-grid">
-      <!-- Hours -->
-      <div class="info-card reveal-left">
-        <h3 class="info-card-title"><span aria-hidden="true">🕐</span> Години роботи</h3>
-        <ul class="hours-list">
-          <li class="hours-row">
-            <span class="hours-day">Понеділок — П'ятниця</span>
-            <span class="hours-time">08:00 — 20:00</span>
-          </li>
-          <li class="hours-row">
-            <span class="hours-day">Субота</span>
-            <span class="hours-time">09:00 — 19:00</span>
-          </li>
-          <li class="hours-row">
-            <span class="hours-day">Неділя</span>
-            <span class="hours-time">10:00 — 17:00</span>
-          </li>
-          <li class="hours-row">
-            <span class="hours-day">Свята</span>
-            <span class="hours-time">За запитом</span>
-          </li>
-        </ul>
-        <p style="margin-top:20px;font-size:.82rem;color:var(--text-light);">
-          Замовлення на свята та корпоративні заходи — узгоджуємо індивідуально. Телефонуйте!
-        </p>
-      </div>
+<!-- Адреса та карта -->
 
-      <!-- Address & Map -->
-      <div class="info-card reveal-right">
-        <h3 class="info-card-title"><span aria-hidden="true">📌</span> Контакти та адреса</h3>
-        <div class="address-info">
-          <div class="address-row">
-            <div class="address-icon" aria-hidden="true">📍</div>
-            <div class="address-row-body">
-              <strong>Адреса</strong>
-              <span>вул. Соборна, 14, Запоріжжя, 69000</span>
-            </div>
-          </div>
-          <div class="address-row">
-            <div class="address-icon" aria-hidden="true">📞</div>
-            <div class="address-row-body">
-              <strong>Телефон</strong>
-              <a href="tel:+380671234567">+38 067 123 45 67</a>
-            </div>
-          </div>
-          <div class="address-row">
-            <div class="address-icon" aria-hidden="true">💬</div>
-            <div class="address-row-body">
-              <strong>Viber / Telegram</strong>
-              <a href="https://t.me/kvity_zp" target="_blank" rel="noopener">@kvity_zp</a>
-            </div>
-          </div>
-          <div class="address-row">
-            <div class="address-icon" aria-hidden="true">📧</div>
-            <div class="address-row-body">
-              <strong>Email</strong>
-              <a href="mailto:hello@kvity.zp.ua">hello@kvity.zp.ua</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="map-wrap">
-          <iframe
+<div class="info-card reveal-right">
+    <h3 class="info-card-title"><span aria-hidden="true">📌</span> Геолокація</h3>
+    <div class="map-wrap">
+        <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41880.64699929765!2d35.10547297832031!3d47.83897800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc673dfa85bb5f%3A0xfc4b4c8e5fc6fc5!2z0JfQsNC_0L7RgNGW0LbQttGP!5e0!3m2!1suk!2sua!4v1700000000000"
             title="Карта розташування магазину Квіти у Запоріжжі"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen
-          ></iframe>
+        ></iframe>
+    </div>
+</div>
+
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
+<!-- Низ сайту -->
 
-<!-- ─── Newsletter ───────────────────────────────────────── -->
-<section class="newsletter" aria-labelledby="newsletter-title">
-  <div class="container">
-    <div class="newsletter-inner reveal">
-      <h2 id="newsletter-title">Отримуйте сезонні пропозиції 🌺</h2>
-      <p>Підпишіться — і ми будемо надсилати вам акції, нові надходження та ідеї для подарунків раз на тиждень.</p>
-      <div class="newsletter-form">
-        <label for="email-sub" class="sr-only">Ваша електронна адреса</label>
-        <input
-          type="email" id="email-sub" class="newsletter-input"
-          placeholder="ваш@email.com"
-          aria-required="true"
-        />
-        <button class="btn btn-primary" id="subscribe-btn" aria-label="Підписатися на розсилку">
-          Підписатись
-        </button>
-      </div>
-      <p class="newsletter-success" id="newsletter-success" role="alert" aria-live="polite">
-        ✅ Дякуємо! Ви підписані на наші новини.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─── Footer ───────────────────────────────────────────── -->
 <footer>
-  <div class="container">
-    <div class="footer-grid">
-      <!-- Brand -->
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <div class="footer-logo-icon" aria-hidden="true">🌿</div>
-          Квіти
-        </div>
-        <p class="footer-desc">
-          Квітковий магазин у Запоріжжі. Знайди свій букет — починаючи з ініціативи.
-          Свіжі квіти, живі ідеї та щирий підхід.
-        </p>
-        <div class="footer-social" aria-label="Соціальні мережі">
-          <a href="https://instagram.com/kvity_zp" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+    <div class="container">
+        <div class="footer-grid">
+
+<!-- Бренд -->
+
+<div class="footer-brand">
+    <div class="footer-logo">
+        <div class="footer-logo-icon" aria-hidden="true">🌿</div>
+        Квіти
+    </div>
+    <p class="footer-desc">
+        Квітковий магазин у Запоріжжі. Знайди свій букет – починаючи з ініціативи.
+        Свіжі квіти, живі ідеї та щирий підхід.
+    </p>
+    <div class="footer-social" aria-label="Соціальні мережі">
+        <a href="https://instagram.com/kvity_zp" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="https://facebook.com/kvity.zp" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook">
+        </a>
+        <a href="https://facebook.com/kvity.zp" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="https://t.me/kvity_zp" class="social-btn" target="_blank" rel="noopener" aria-label="Telegram">
+        </a>
+        <a href="https://t.me/kvity_zp" class="social-btn" target="_blank" rel="noopener" aria-label="Telegram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 13.988 4.28 13.08c-.656-.204-.67-.656.136-.97l10.3-3.97c.545-.197 1.02.133.843.97l.335-.889z"/></svg>
-          </a>
+        </a>
+    </div>
+</div>
+
+<!-- Швидкі посилання -->
+
+<nav class="footer-col" aria-label="Посилання сайту">
+    <h4>Сторінки</h4>
+    <ul>
+        <li><a href="#bestsellers">Бестселери</a></li>
+        <li><a href="#services">Послуги</a></li>
+        <li><a href="#about">Про нас</a></li>
+        <li><a href="#info">Контакти</a></li>
+    </ul>
+</nav>
+
+<!-- Послуги -->
+
+<nav class="footer-col" aria-label="Список послуг">
+    <h4>Послуги</h4>
+    <ul>
+        <li><a href="#services">Свіжі квіти</a></li>
+        <li><a href="#services">Авторські букети</a></li>
+        <li><a href="#services">Пакування</a></li>
+        <li><a href="#services">Гелеві кульки</a></li>
+        <li><a href="#services">М'які іграшки</a></li>
+        <li><a href="#services">Доставка</a></li>
+    </ul>
+</nav>
+
+<!-- Контакти -->
+
+<div class="footer-col">
+    <h4>Контакти</h4>
+    <ul class="footer-contact">
+        <li><span>📍</span><span>вул. Професора Толока, 29а,<br>Запоріжжя</span></li>
+        <li><span>📞</span><a href="tel:+380665160627" style="color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--emerald)'" onmouseout="this.style.color='inherit'">+38 066 516 06 27</a></li>
+        <li><span>📧</span><a href="mailto:lipinskaia8309@gmail.com" style="color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--emerald)'" onmouseout="this.style.color='inherit'">lipinskaia8309@gmail.com</a></li>
+        <li><span>🕐</span><span>Пн–Нд: 08:00–18:00</span></li>
+    </ul>
+</div>
+
         </div>
-      </div>
 
-      <!-- Quick links -->
-      <nav class="footer-col" aria-label="Посилання сайту">
-        <h4>Сторінки</h4>
-        <ul>
-          <li><a href="#bestsellers">Бестселери</a></li>
-          <li><a href="#services">Послуги</a></li>
-          <li><a href="#reviews">Відгуки</a></li>
-          <li><a href="#about">Про нас</a></li>
-          <li><a href="#info">Контакти</a></li>
-        </ul>
-      </nav>
-
-      <!-- Services -->
-      <nav class="footer-col" aria-label="Список послуг">
-        <h4>Послуги</h4>
-        <ul>
-          <li><a href="#services">Свіжі квіти</a></li>
-          <li><a href="#services">Композиції</a></li>
-          <li><a href="#services">Індивідуальні букети</a></li>
-          <li><a href="#services">Пакування</a></li>
-          <li><a href="#services">Доставка</a></li>
-        </ul>
-      </nav>
-
-      <!-- Contact -->
-      <div class="footer-col">
-        <h4>Контакти</h4>
-        <ul class="footer-contact">
-          <li><span>📍</span><span>вул. Соборна, 14,<br>Запоріжжя, 69000</span></li>
-          <li><span>📞</span><a href="tel:+380671234567" style="color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--emerald)'" onmouseout="this.style.color='inherit'">+38 067 123 45 67</a></li>
-          <li><span>📧</span><a href="mailto:hello@kvity.zp.ua" style="color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--emerald)'" onmouseout="this.style.color='inherit'">hello@kvity.zp.ua</a></li>
-          <li><span>🕐</span><span>Пн–Пт: 08:00–20:00</span></li>
-        </ul>
-      </div>
+        <div class="footer-bottom">
+            <span>© 2026 Квіти. Усі права захищені.</span>
+        </div>
     </div>
-
-    <div class="footer-bottom">
-      <span>© 2025 Квіти. Усі права захищені.</span>
-      <span>Зроблено з 💚 у Запоріжжі</span>
-    </div>
-  </div>
 </footer>
 
-<!-- ─── Back to top ──────────────────────────────────────── -->
+<!-- Кнопка Нагору -->
+
 <button id="back-to-top" aria-label="Повернутись на початок">↑</button>
 
-<!-- ─── Toast ────────────────────────────────────────────── -->
+<!-- Toast -->
+
 <div id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
