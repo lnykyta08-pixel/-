@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Про нас — квітковий магазин Квіти у Запоріжжі. Наша історія, цінності та підхід до роботи." />
+    <title>Про нас — Квіти</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-about">
+
+<!-- Навігація -->
+
+<nav class="nav scrolled" id="navbar" aria-label="Головна навігація">
+    <div class="container">
+        <a href="index.html" class="nav-logo" aria-label="Квіти — на початок">
+            <div class="nav-logo-icon" aria-hidden="true">🌿</div>
+            Квіти
+        </a>
+        <ul class="nav-links" role="list">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="index.html#bestsellers">Бестселери</a></li>
+            <li><a href="index.html#services">Послуги</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="index.html#info">Контакти</a></li>
+        </ul>
+        <a href="tel:+380665160627" class="btn btn-primary nav-cta" style="padding:10px 22px;font-size:.85rem;">
+            📞 Замовити
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Мобільне меню -->
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Мобільне меню">
+    <a href="index.html" class="mobile-link">Головна</a>
+    <a href="index.html#bestsellers" class="mobile-link">Бестселери</a>
+    <a href="index.html#services" class="mobile-link">Послуги</a>
+    <a href="about.html" class="mobile-link">Про нас</a>
+    <a href="index.html#info" class="mobile-link">Контакти</a>
+    <a href="tel:+380665160627" class="btn btn-primary" style="margin-top:8px;">📞 +38 066 516 06 27</a>
+</div>
+
+<!-- Про нас -->
+
+<section class="about" id="about" aria-labelledby="about-title" style="padding-top:calc(var(--nav-h) + 48px);">
+    <div class="container">
+
+
+        <div class="about-grid">
+            <div class="about-img-stack reveal-left">
+                <img
+                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&h=750&fit=crop&auto=format"
+                    alt="Флорист за роботою у квітковому магазині"
+                    class="about-img-main"
+                    loading="lazy"
+                />
+                <img
+                    src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=300&h=300&fit=crop&auto=format"
+                    alt="Красиво оформлений букет у крафт-папері"
+                    class="about-img-accent"
+                    loading="lazy"
+                />
+                <div class="about-badge" aria-label="15 років на ринку">
+                    <strong>15+</strong>
+                    <span>років<br>на ринку</span>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <div class="section-header reveal-right">
+                    <span class="section-eyebrow">🌿 Про нас</span>
+                    <h2 class="section-title" id="about-title">Маленький магазин<br/>Великий досвід</h2>
+                </div>
+                <p class="about-body reveal-right" style="transition-delay:.1s">
+                    Ми є маленьким магазином квітів у місті Запоріжжя, але, попри скромні розміри, маємо досвід 15 років у створенні композицій з квітів. Завжди відкриті до ваших пропозицій щодо вигляду букетів та їхнього пакування.
+                </p>
+                <p class="about-body reveal-right" style="transition-delay:.15s">
+                    Кожен букет – це діалог. Розкажіть нам вашу ідею, і ми втілимо її в квітах, підберемо
+                    пакування та додамо ту дрібничку, яка зробить подарунок незабутнім.
+                </p>
+                <div class="about-features">
+                    <div class="about-feat reveal-right" style="transition-delay:.2s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Тільки свіжі квіти</strong>
+                            <span>Поставки тричі на тиждень від перевірених постачальників</span>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal-right" style="transition-delay:.25s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Ваш задум — наша робота</strong>
+                            <span>Завжди відкриті до ваших побажань щодо вигляду та пакування</span>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal-right" style="transition-delay:.3s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Доставка по місту</strong>
+                            <span>Кур'єрська служба протягом 2 годин по Запоріжжю</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#info" class="btn btn-dark reveal-right" style="transition-delay:.35s;margin-top:8px;">
+                    📍 Знайти нас
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Футер -->
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon" aria-hidden="true">🌿</div>
+                    Квіти
+                </div>
+                <p style="margin-top:12px;font-size:.85rem;color:rgba(255,255,255,.6);max-width:280px;">
+                    Квітковий магазин у Запоріжжі. Свіжі букети, композиції та швидка доставка.
+                </p>
+            </div>
+
+            <nav class="footer-col" aria-label="Посилання сайту">
+                <h4>Сторінки</h4>
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="index.html#bestsellers">Бестселери</a></li>
+                    <li><a href="index.html#services">Послуги</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="index.html#info">Контакти</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer-col" aria-label="Список послуг">
+                <h4>Послуги</h4>
+                <ul>
+                    <li><a href="index.html#services">Свіжі квіти</a></li>
+                    <li><a href="index.html#services">Авторські букети</a></li>
+                    <li><a href="index.html#services">Пакування</a></li>
+                    <li><a href="index.html#services">Гелеві кульки</a></li>
+                    <li><a href="index.html#services">М'які іграшки</a></li>
+                    <li><a href="index.html#services">Доставка</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-col">
+                <h4>Контакти</h4>
+                <ul class="footer-contact">
+                    <li><span>📍</span><span>вул. Професора Толока, 29а,<br>Запоріжжя</span></li>
+                    <li id="footer-phone"><span>📞</span><a href="tel:+380665160627" style="color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--emerald)'" onmouseout="this.style.color='inherit'">+38 066 516 06 27</a></li>
+                    <li><span>📧</span><a href="mailto:lipinskaia8309@gmail.com" style="color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--emerald)'" onmouseout="this.style.color='inherit'">lipinskaia8309@gmail.com</a></li>
+                    <li><span>🕐</span><span>Пн–Нд: 08:00–18:00</span></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Квіти. Усі права захищені.</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Кнопка Нагору -->
+
+<button id="back-to-top" aria-label="Повернутись на початок">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -21,9 +21,10 @@
             Квіти
         </a>
         <ul class="nav-links" role="list">
+            <li><a href="#hero">Головна</a></li>
             <li><a href="#bestsellers">Бестселери</a></li>
             <li><a href="#services">Послуги</a></li>
-            <li><a href="#about">Про нас</a></li>
+            <li><a href="about.html">Про нас</a></li>
             <li><a href="#info">Контакти</a></li>
         </ul>
         <a href="tel:+380665160627" class="btn btn-primary nav-cta" style="padding:10px 22px;font-size:.85rem;">
@@ -38,9 +39,10 @@
 <!-- Мобільне меню -->
 
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Мобільне меню">
+    <a href="#hero" class="mobile-link">Головна</a>
     <a href="#bestsellers" class="mobile-link">Бестселери</a>
     <a href="#services" class="mobile-link">Послуги</a>
-    <a href="#about" class="mobile-link">Про нас</a>
+    <a href="about.html" class="mobile-link">Про нас</a>
     <a href="#info" class="mobile-link">Контакти</a>
     <a href="tel:+380665160627" class="btn btn-primary" style="margin-top:8px;">📞 +38 066 516 06 27</a>
 </div>
@@ -71,7 +73,7 @@
     <div class="container">
         <div class="stats-grid">
             <div class="stat-item reveal">
-                <strong class="stat-number" data-target="15">0</strong>
+                <strong class="stat-number" data-target="15">0</strong><span class="stat-min">+</span>
                 <div class="stat-label">Років досвіду</div>
             </div>
             <div class="stat-item reveal" style="transition-delay:.1s">
@@ -79,7 +81,7 @@
                 <div class="stat-label">Свіжі квіти</div>
             </div>
             <div class="stat-item reveal" style="transition-delay:.2s">
-                <strong class="stat-number" data-target="30">0</strong><span class="stat-min">хв</span>
+                <strong class="stat-number" data-target="2">0</strong><span class="stat-min">години</span>
                 <div class="stat-label">Час доставки</div>
             </div>
             <div class="stat-item reveal" style="transition-delay:.3s">
@@ -249,73 +251,6 @@
     </div>
 </section>
 
-<!-- Про нас -->
-
-<section class="about" id="about" aria-labelledby="about-title">
-    <div class="container">
-        <div class="about-grid">
-            <div class="about-img-stack reveal-left">
-                <img
-                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&h=750&fit=crop&auto=format"
-                    alt="Флорист за роботою у квітковому магазині"
-                    class="about-img-main"
-                    loading="lazy"
-                />
-                <img
-                    src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=300&h=300&fit=crop&auto=format"
-                    alt="Красиво оформлений букет у крафт-папері"
-                    class="about-img-accent"
-                    loading="lazy"
-                />
-                <div class="about-badge" aria-label="8 років на ринку">
-                    <strong>15+</strong>
-                    <span>років<br>на ринку</span>
-                </div>
-            </div>
-
-            <div class="about-text">
-                <div class="section-header reveal-right">
-                    <span class="section-eyebrow">🌿 Про нас</span>
-                    <h2 class="section-title" id="about-title">Маленький магазин<br/>Великий досвід</h2>
-                </div>
-                <p class="about-body reveal-right" style="transition-delay:.1s">
-                    Ми є маленьким магазином квітів у місті Запоріжжя, але, попри скромні розміри, маємо досвід 15 років у створенні композицій з квітів. Завжди відкриті до ваших пропозицій щодо вигляду букетів та їхнього пакування.
-                </p>
-                <p class="about-body reveal-right" style="transition-delay:.15s">
-                    Кожен букет – це діалог. Розкажіть нам вашу ідею, і ми втілимо її в квітах, підберемо
-                    пакування та додамо ту дрібничку, яка зробить подарунок незабутнім.
-                </p>
-                <div class="about-features">
-                    <div class="about-feat reveal-right" style="transition-delay:.2s">
-                        <div class="about-feat-icon" aria-hidden="true">✓</div>
-                        <div class="about-feat-text">
-                            <strong>Тільки свіжі квіти</strong>
-                            <span>Поставки тричі на тиждень від перевірених постачальників</span>
-                        </div>
-                    </div>
-                    <div class="about-feat reveal-right" style="transition-delay:.25s">
-                        <div class="about-feat-icon" aria-hidden="true">✓</div>
-                        <div class="about-feat-text">
-                            <strong>Ваш задум — наша робота</strong>
-                            <span>Завжди відкриті до ваших побажань щодо вигляду та пакування</span>
-                        </div>
-                    </div>
-                    <div class="about-feat reveal-right" style="transition-delay:.3s">
-                        <div class="about-feat-icon" aria-hidden="true">✓</div>
-                        <div class="about-feat-text">
-                            <strong>Доставка по місту</strong>
-                            <span>Кур'єрська служба протягом 2 годин по Запоріжжю</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="#info" class="btn btn-dark reveal-right" style="transition-delay:.35s;margin-top:8px;">
-                    📍 Знайти нас
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Деталі -->
 
 <section class="info-section" id="info">
@@ -376,9 +311,10 @@
 <nav class="footer-col" aria-label="Посилання сайту">
     <h4>Сторінки</h4>
     <ul>
+        <li><a href="#hero">Головна</a></li>
         <li><a href="#bestsellers">Бестселери</a></li>
         <li><a href="#services">Послуги</a></li>
-        <li><a href="#about">Про нас</a></li>
+        <li><a href="about.html">Про нас</a></li>
         <li><a href="#info">Контакти</a></li>
     </ul>
 </nav>

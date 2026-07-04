@@ -225,6 +225,24 @@ ul {
     box-shadow: var(--shadow-sm);
 }
 
+.page-about .nav {
+    background: rgba(250,250,247,.96);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
+}
+
+.page-about .nav-logo {
+    color: var(--forest);
+}
+
+.page-about .nav-links a {
+    color: var(--text-mid);
+}
+
+.page-about .hamburger span {
+    background: var(--forest);
+}
+
 .nav .container {
     display: flex;
     align-items: center;
@@ -273,6 +291,14 @@ ul {
 
 .nav.scrolled .nav-links a {
     color: var(--text-mid);
+}
+
+.nav.scrolled .nav-links a:hover {
+    color: var(--emerald); 
+}
+
+.page-about .nav-links a:hover {
+    color: var(--emerald);
 }
 
 .nav-links a:hover {
