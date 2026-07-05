@@ -53,6 +53,7 @@ body {
     background: var(--cream);
     overflow-x: hidden;
     line-height: 1.6;
+    max-width: 100vw;
 }
 
 /* Повзунок сайту */
@@ -60,7 +61,6 @@ body {
 html {
     scrollbar-width: thin;
     scrollbar-color: var(--emerald) var(--sand);
-    scrollbar-gutter: stable;
 }
 
 ::-webkit-scrollbar {
@@ -1346,11 +1346,15 @@ footer {
 }
 
 /* Адаптивність */
-
+    
 @media (min-width: 769px) {
 
 .nav-logo {
     margin-left: -180px;
+}
+    
+.nav-cta {
+   margin-right: -180px;
 }
 }
 
