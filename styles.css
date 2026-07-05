@@ -333,6 +333,9 @@ ul {
     display: flex;
     gap: 32px;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -1119,7 +1122,8 @@ footer {
 /* Кнопка кошика в навбарі */
 
 .cart-btn {
-    position: relative;
+    position: absolute;
+    right: 16px;
     display: grid;
     place-items: center;
     width: 44px;
@@ -1488,8 +1492,15 @@ footer {
     display: none;
 }
 
+.cart-btn {
+    order: 2;
+    margin-left: 0;
+    margin-right: 8px;
+}
+
 .hamburger {
     display: flex;
+    order: 3;
 }
 
 .stats-grid {
@@ -1513,7 +1524,6 @@ footer {
 .about-text .section-header {
     text-align: center;
 }
-
 
 .footer-grid {
     grid-template-columns: 1fr 1fr;
