@@ -1123,7 +1123,7 @@ footer {
 
 .cart-btn {
     position: absolute;
-    right: 30px;
+    right: 60px;
     display: grid;
     place-items: center;
     width: 44px;
