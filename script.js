@@ -83,12 +83,150 @@ document.querySelectorAll('.stat-number').forEach(el => statsObs.observe(el));
 const toast = document.getElementById('toast');
 let toastTimer;
 
-function addToCart(name) {
+const CART_KEY = 'kvity-cart';
+
+function loadCart() {
+    try {
+        const raw = localStorage.getItem(CART_KEY);
+        return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function saveCart(cart) {
+    try {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    } catch (e) { /* сховище недоступне — просто ігноруємо */ }
+}
+
+let cart = loadCart();
+
+function formatPrice(n) {
+    return n.toLocaleString('uk-UA') + ' ₴';
+}
+
+function renderCart() {
+    const itemsEl = document.getElementById('cart-items');
+    const footerEl = document.getElementById('cart-footer');
+    const totalEl = document.getElementById('cart-total');
+    const countEl = document.getElementById('cart-count');
+    const checkoutEl = document.getElementById('cart-checkout');
+    if (!itemsEl) return; // на цій сторінці немає розмітки кошика
+
+    const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+    const totalPrice = cart.reduce((s, i) => s + i.qty * i.price, 0);
+
+    countEl.textContent = totalQty;
+    countEl.classList.toggle('show', totalQty > 0);
+
+    if (cart.length === 0) {
+        itemsEl.innerHTML = `
+            <div class="cart-empty" id="cart-empty">
+                <span>🌷</span>
+                <p>Кошик поки порожній</p>
+            </div>`;
+        footerEl.classList.remove('show');
+        return;
+    }
+
+    footerEl.classList.add('show');
+    totalEl.textContent = formatPrice(totalPrice);
+
+    itemsEl.innerHTML = cart.map((item, i) => `
+        <div class="cart-item" data-index="${i}">
+            <div class="cart-item-info">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-price">${formatPrice(item.price)} за шт.</div>
+            </div>
+            <div class="cart-item-qty">
+                <button class="cart-qty-btn" data-action="dec" aria-label="Зменшити кількість">−</button>
+                <span>${item.qty}</span>
+                <button class="cart-qty-btn" data-action="inc" aria-label="Збільшити кількість">+</button>
+            </div>
+            <button class="cart-item-remove" data-action="remove" aria-label="Видалити ${item.name}">✕</button>
+        </div>
+    `).join('');
+
+    if (checkoutEl) {
+        const summary = cart.map(i => `${i.name} x${i.qty}`).join(', ');
+        checkoutEl.setAttribute('aria-label', `Оформити замовлення: ${summary}`);
+    }
+}
+
+function addToCart(name, price) {
+    const existing = cart.find(i => i.name === name);
+    if (existing) {
+        existing.qty += 1;
+    } else {
+        cart.push({ name, price: Number(price) || 0, qty: 1 });
+    }
+    saveCart(cart);
+    renderCart();
+
+    const countEl = document.getElementById('cart-count');
+    if (countEl) {
+        countEl.classList.remove('bump');
+        void countEl.offsetWidth;
+        countEl.classList.add('bump');
+    }
+
     toast.textContent = `✅ «${name}» додано до кошика`;
     toast.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
 }
+
+// Взаємодія всередині панелі кошика (зміна кількості / видалення)
+
+const cartItemsEl = document.getElementById('cart-items');
+if (cartItemsEl) {
+    cartItemsEl.addEventListener('click', e => {
+        const btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+        const row = btn.closest('.cart-item');
+        const index = Number(row.dataset.index);
+        const action = btn.dataset.action;
+
+        if (action === 'inc') cart[index].qty += 1;
+        if (action === 'dec') {
+            cart[index].qty -= 1;
+            if (cart[index].qty <= 0) cart.splice(index, 1);
+        }
+        if (action === 'remove') cart.splice(index, 1);
+
+        saveCart(cart);
+        renderCart();
+    });
+}
+
+// Відкриття / закриття панелі кошика
+
+const cartBtn = document.getElementById('cart-btn');
+const cartDrawer = document.getElementById('cart-drawer');
+const cartOverlay = document.getElementById('cart-overlay');
+const cartClose = document.getElementById('cart-close');
+
+function openCart() {
+    cartDrawer.classList.add('open');
+    cartOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+    cartDrawer.classList.remove('open');
+    cartOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+if (cartBtn) {
+    cartBtn.addEventListener('click', openCart);
+    cartClose.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+}
+
+renderCart();
 
 // Плавний скрол для якірних посилань
 
@@ -104,6 +242,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // Після натискання на зв'язатися з нами підсвічує номер на секунду
+
 const contactUsBtn = document.getElementById('contact-us-btn');
 if (contactUsBtn) {
     contactUsBtn.addEventListener('click', function(e) {

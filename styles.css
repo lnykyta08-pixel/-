@@ -549,9 +549,9 @@ ul {
     margin-top: 6px;
 }
 
-/* Бестселери */
+/* Квіти */
 
-.bestsellers {
+.kvity {
     padding: var(--section-gap) 0;
 }
 
@@ -660,60 +660,6 @@ ul {
     transform: scale(1.1);
 }
 
-/* Послуги */
-
-.services {
-    background: var(--sand);
-    padding: var(--section-gap) 0;
-}
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 24px;
-}
-
-.service-card {
-    background: var(--white);
-    border-radius: var(--radius-md);
-    padding: 32px 24px;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: transform .3s, box-shadow .3s;
-    border-bottom: 3px solid transparent;
-  }
-
-.service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-bottom-color: var(--emerald); 
-}
-
-.service-icon {
-    font-size: 2.2rem;
-    margin-bottom: 14px;
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    background: var(--forest-light);
-    display: grid;
-    place-items: center;
-    margin: 0 auto 16px;
-}
-
-.service-name {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--forest);
-    margin-bottom: 8px;
-}
-    
-.service-desc {
-    font-size: .83rem;
-    color: var(--text-mid);
-    line-height: 1.55;
-}
-
 /* Про нас */
 
 .about {
@@ -777,7 +723,15 @@ ul {
 
 .about-text .section-header {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+}
+
+.about-text .section-title {
+    margin-bottom: 8px;
+}
+
+.about-text .section-eyebrow {
+    margin-bottom: 0;
 }
 
 .about-body {
@@ -796,7 +750,7 @@ ul {
 
 .about-feat {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
 }
 
@@ -833,7 +787,7 @@ ul {
 
 .info-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 48px;
 }
 
@@ -934,11 +888,11 @@ ul {
 }
 
 .map-wrap {
-    margin-top: 32px;
+    margin-top: 0;
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
-    height: 260px;
+    height: 420px;
 }
 
 .map-wrap iframe {
@@ -1020,6 +974,7 @@ footer {
     letter-spacing: .08em;
     text-transform: uppercase;
     margin-bottom: 18px;
+    text-align: center;
 }
 
 .footer-col ul {
@@ -1038,14 +993,14 @@ footer {
     color: var(--emerald);
 }
 
-.footer-contact li {
+.footer-contacts-col li {
     font-size: .85rem;
     display: flex;
     align-items: flex-start;
     gap: 8px;
 }
 
-.footer-contact li span:first-child {
+.footer-contacts-col li span:first-child {
     color: var(--emerald);
     font-size: .9rem;
     flex-shrink: 0;
@@ -1070,8 +1025,9 @@ footer {
     border-top: 1px solid rgba(255,255,255,.08);
     padding: 20px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: .8rem;
     color: rgba(255,255,255,.35);
 }
@@ -1104,6 +1060,267 @@ footer {
 
 #back-to-top:hover {
     transform: translateY(-3px);
+}
+
+/* Кнопка кошика в навбарі */
+
+.cart-btn {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    transition: background .2s;
+}
+
+.cart-btn:hover {
+    background: rgba(16,185,129,.12);
+}
+
+.cart-count {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background: var(--emerald);
+    color: var(--white);
+    font-size: .68rem;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    line-height: 1;
+    transform: scale(0);
+    transition: transform .2s;
+}
+
+.cart-count.show {
+    transform: scale(1);
+}
+
+.cart-count.bump {
+    animation: cartBump .35s ease;
+}
+
+@keyframes cartBump {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+/* Панель кошика */
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    background: rgba(6,78,59,.35);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.cart-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.cart-drawer {
+    position: fixed;
+    top: 0; right: 0;
+    z-index: 1300;
+    width: 420px;
+    max-width: 92vw;
+    height: 100%;
+    background: var(--cream);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+.cart-drawer.open {
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--sand);
+}
+
+.cart-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--forest);
+}
+
+.cart-close {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    color: var(--text-mid);
+    transition: background .2s;
+}
+
+.cart-close:hover {
+    background: var(--sand);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cart-empty {
+    margin: auto;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.cart-empty span {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cart-empty p {
+    font-size: .9rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--sand);
+}
+
+.cart-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cart-item-name {
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--forest);
+    margin-bottom: 2px;
+}
+
+.cart-item-price {
+    font-size: .82rem;
+    color: var(--text-mid);
+}
+
+.cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--sand);
+    border-radius: var(--radius-pill);
+    padding: 4px 6px;
+}
+
+.cart-qty-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--white);
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
+    color: var(--forest);
+    box-shadow: var(--shadow-sm);
+    transition: background .2s;
+}
+
+.cart-qty-btn:hover {
+    background: var(--forest-light);
+}
+
+.cart-item-qty span {
+    min-width: 16px;
+    text-align: center;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.cart-item-remove {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--text-light);
+    font-size: .95rem;
+    transition: background .2s, color .2s;
+    flex-shrink: 0;
+}
+
+.cart-item-remove:hover {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.cart-footer {
+    padding: 20px 24px 24px;
+    border-top: 1px solid var(--sand);
+    display: none;
+}
+
+.cart-footer.show {
+    display: block;
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.cart-total-row strong {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--forest);
+}
+
+.cart-checkout {
+    width: 100%;
+    justify-content: center;
+}
+
+.cart-hint {
+    font-size: .78rem;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+
+.cart-drawer {
+    width: 100%;
+    max-width: 100vw;
+}
 }
 
 /* Спливаюче повідомлення кошика */
@@ -1186,6 +1403,7 @@ footer {
     text-align: center;
 }
 
+
 .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -1206,10 +1424,6 @@ footer {
 
 .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-}
-
-.services-grid {
-    grid-template-columns: 1fr 1fr;
 }
 
 .footer-grid { 
