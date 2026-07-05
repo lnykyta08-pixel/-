@@ -83,7 +83,10 @@ html {
 
 img {
     max-width: 100%;
-    display: block; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    box-sizing: border-box;
 }
 
 a {
