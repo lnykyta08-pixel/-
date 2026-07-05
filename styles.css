@@ -729,6 +729,7 @@ ul {
 
 .about-img-stack {
     position: relative;
+    margin-top: -60px;
 }
 
 .about-img-main {
@@ -741,13 +742,13 @@ ul {
 
 .about-img-accent {
     position: absolute;
-    bottom: -24px;
+    bottom: -200px;
     right: -24px;
     width: 48%;
     border-radius: var(--radius-md);
     aspect-ratio: 1;
     object-fit: cover;
-    border: 6px solid var(--white);
+    border: 3px solid var(--white);
     box-shadow: var(--shadow-md);
 }
 
@@ -1130,7 +1131,7 @@ footer {
 }
 
 .cart-icon {
-    width: 36px;
+    width: 42px;
     height: 36px;
 }
 
