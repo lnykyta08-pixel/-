@@ -60,7 +60,6 @@ body {
 html {
     scrollbar-width: thin;
     scrollbar-color: var(--emerald) var(--sand);
-    scrollbar-gutter: stable;
 }
 
 ::-webkit-scrollbar {
@@ -1347,6 +1346,17 @@ footer {
 
 /* Адаптивність */
     
+@media (min-width: 769px) {
+
+.nav-logo {
+    margin-left: -180px;
+}
+    
+.nav-cta {
+   margin-right: -180px;
+}
+}
+
 @media (max-width: 768px) {
 
 :root {
