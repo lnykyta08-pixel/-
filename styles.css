@@ -413,16 +413,11 @@ ul {
     overflow: hidden;
     overflow-x: hidden;
     touch-action: manipulation;
+    background: url('https://images.unsplash.com/photo-1487530811015-780000000000?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    background-color: var(--forest);
 }
 
-.hero-bg {
-    position: absolute;
-    min-height: 100dvh;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background: url('https://images.unsplash.com/photo-1487530811015-780000000000?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-}
+
     
 /* Резервний градієнт, якщо зображення не завантажилось */
     
