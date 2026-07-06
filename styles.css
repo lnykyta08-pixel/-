@@ -45,19 +45,28 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    overflow-x: hidden;
     overflow: hidden;
+    height: 100%;
 }
 
 body {
     font-family: var(--font-body);
     color: var(--text-dark);
     background: var(--cream);
-    overflow-x: hidden;
     overflow: hidden;
-    -webkit-overflow-scrolling: touch;
+    height: 100%;
     line-height: 1.6;
     width: 100%;
+}
+
+/* Обгортка, яка реально скролиться (виправляє баги з адресним рядком/в'юпортом на мобільних) */
+
+#scroll-area {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Повзунок сайту */
@@ -1452,10 +1461,8 @@ footer {
 }
 
 @media (max-width: 360px) {
-}
-
-
 
 .products-grid {
     grid-template-columns: 1fr;
+}
 }
