@@ -1453,6 +1453,21 @@ footer {
 }
 
 @media (max-width: 360px) {
+}
+
+/* --- FIX: мобільна висота hero --- */
+@media (max-width: 480px) {
+  .hero-bg {
+    height: 420px;
+    min-height: unset;
+  }
+  .hero {
+    min-height: unset;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
 
 .products-grid {
     grid-template-columns: 1fr;
