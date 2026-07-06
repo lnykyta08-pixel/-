@@ -1,16 +1,15 @@
 // Навбар та кнопка "нагору"
 
-const scrollArea = document.getElementById('scroll-area');
 const navbar = document.getElementById('navbar');
 const backTop = document.getElementById('back-to-top');
 
-scrollArea.addEventListener('scroll', () => {
-    const s = scrollArea.scrollTop > 60;
+window.addEventListener('scroll', () => {
+    const s = window.scrollY > 60;
     navbar.classList.toggle('scrolled', s);
-    backTop.classList.toggle('visible', scrollArea.scrollTop > 400);
+    backTop.classList.toggle('visible', window.scrollY > 400);
 }, { passive: true });
 
-backTop.addEventListener('click', () => scrollArea.scrollTo({ top: 0, behavior: 'smooth' }));
+backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // Мобільне меню
 
@@ -236,8 +235,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         const target = document.querySelector(a.getAttribute('href'));
         if (target) {
             e.preventDefault();
-            const offset = target.getBoundingClientRect().top + scrollArea.scrollTop - 80;
-            scrollArea.scrollTo({ top: offset, behavior: 'smooth' });
+            const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top: offset, behavior: 'smooth' });
         }
     });
 });
@@ -257,12 +256,12 @@ if (contactUsBtn) {
         function onScroll() {
             clearTimeout(scrollStopTimer);
             scrollStopTimer = setTimeout(() => {
-                scrollArea.removeEventListener('scroll', onScroll);
+                window.removeEventListener('scroll', onScroll);
                 phoneRow.classList.add('phone-blink');
                 setTimeout(() => phoneRow.classList.remove('phone-blink'), 1000);
             }, 150);
         }
-        scrollArea.addEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll);
         onScroll();
     });
 }
