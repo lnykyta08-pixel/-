@@ -220,10 +220,16 @@ ul {
 /* Навігація */
 
 .nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
     height: var(--nav-h);
-    display: flex; align-items: center;
+    display: flex;
+    align-items: center;
     transition: background .35s, box-shadow .35s;
+    box-sizing: border-box;
 }
 
 .nav.scrolled {
