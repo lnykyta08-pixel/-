@@ -270,6 +270,8 @@ ul {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .nav-logo {
@@ -407,6 +409,7 @@ ul {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    overflow-x: hidden;
     touch-action: manipulation;
 }
 
