@@ -1163,3 +1163,201 @@ ul {
     }
 }
 
+/* Низ сайту */
+
+footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,.7);
+    padding: 48px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-bottom: 36px;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.footer-logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--emerald);
+    display: grid;
+    place-items: center;
+    font-size: .95rem;
+}
+
+.footer-desc {
+    font-size: .85rem;
+    line-height: 1.65;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.2);
+    color: rgba(255,255,255,.6);
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
+    transition: background .2s, border-color .2s, color .2s;
+}
+
+.social-btn:active {
+    transform: scale(0.92);
+}
+
+.footer-col h4 {
+    color: var(--white);
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.footer-col ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-col ul li a {
+    font-size: .85rem;
+    color: rgba(255,255,255,.55);
+    transition: color .2s;
+}
+
+.footer-contacts-col li {
+    font-size: .85rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.footer-contacts-col li span:first-child {
+    color: var(--emerald);
+    font-size: .9rem;
+    flex-shrink: 0;
+}
+
+#footer-phone {
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin: -4px -8px;
+}
+
+#footer-phone.phone-blink {
+    animation: phoneHighlight 1s ease;
+}
+
+@keyframes phoneHighlight {
+    0% { background: var(--emerald); }
+    100% { background: transparent; }
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding: 18px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: .78rem;
+    color: rgba(255,255,255,.35);
+}
+
+/* Hover — тільки для пристроїв з мишею */
+
+@media (hover: hover) {
+    .social-btn:hover {
+        background: var(--emerald);
+        border-color: var(--emerald);
+        color: var(--white);
+    }
+
+    .footer-col ul li a:hover {
+        color: var(--emerald);
+    }
+}
+
+/* Ноут-версія (від 768px) */
+
+@media (min-width: 768px) {
+    footer {
+        padding: 64px 0 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1.2fr;
+        gap: 48px;
+        padding-bottom: 48px;
+        text-align: left;
+    }
+
+    .footer-logo {
+        justify-content: flex-start;
+        font-size: 1.3rem;
+        margin-bottom: 14px;
+    }
+
+    .footer-logo-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+
+    .footer-desc {
+        max-width: 240px;
+        margin: 0;
+    }
+
+    .footer-social {
+        justify-content: flex-start;
+        margin-top: 20px;
+    }
+
+    .social-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-col h4 {
+        text-align: left;
+        margin-bottom: 18px;
+    }
+
+    .footer-col ul {
+        align-items: flex-start;
+    }
+
+    .footer-bottom {
+        font-size: .8rem;
+    }
+}
