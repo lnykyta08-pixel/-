@@ -819,3 +819,172 @@ ul {
     }
 }
 
+/* ===== Про нас (базова — мобільна версія) ===== */
+
+.about {
+    background: var(--sand);
+    padding: var(--section-gap) 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.about-img-stack {
+    position: relative;
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+.about-img-main {
+    border-radius: var(--radius-lg);
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-img-accent {
+    position: absolute;
+    bottom: -20px;
+    right: -16px;
+    width: 44%;
+    border-radius: var(--radius-md);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.about-badge {
+    position: absolute;
+    top: 16px;
+    left: -12px;
+    background: var(--emerald);
+    color: var(--white);
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.about-badge strong {
+    display: block;
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+}
+
+.about-badge span {
+    font-size: .7rem;
+    opacity: .85;
+}
+
+.about-text .section-header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.about-text .section-title {
+    margin-bottom: 8px;
+}
+
+.about-text .section-eyebrow {
+    margin-bottom: 0;
+}
+
+.about-body {
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 14px;
+    text-indent: 24px;
+}
+
+.about-features {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-feat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.about-feat-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--forest-light);
+    color: var(--forest);
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.about-feat-text strong {
+    display: block;
+    font-size: .9rem;
+    color: var(--forest);
+    margin-bottom: 2px;
+}
+
+.about-feat-text span {
+    font-size: .82rem;
+    color: var(--text-mid);
+}
+
+/* ===== Ноут-версія (від 900px) ===== */
+
+@media (min-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+    }
+
+    .about-img-stack {
+        max-width: none;
+        margin: 0;
+    }
+
+    .about-img-accent {
+        bottom: -24px;
+        right: -24px;
+        width: 48%;
+        border-width: 6px;
+    }
+
+    .about-badge {
+        top: 24px;
+        left: -20px;
+        padding: 12px 18px;
+    }
+
+    .about-badge strong {
+        font-size: 1.8rem;
+    }
+
+    .about-badge span {
+        font-size: .75rem;
+    }
+
+    .about-text .section-header {
+        text-align: left;
+    }
+
+    .about-body {
+        line-height: 1.8;
+        margin-bottom: 16px;
+        text-indent: 32px;
+    }
+
+    .about-features {
+        margin: 24px 0;
+    }
+}
