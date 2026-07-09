@@ -1361,3 +1361,50 @@ footer {
         font-size: .8rem;
     }
 }
+
+/* Кнопка нагору */
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 900;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--emerald);
+    color: var(--white);
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, transform .2s;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#back-to-top:active {
+    transform: scale(0.92);
+}
+
+/* Hover — тільки для пристроїв з мишею */
+
+@media (hover: hover) {
+    #back-to-top:hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* Ноут-версія (від 768px) */
+
+@media (min-width: 768px) {
+    #back-to-top {
+        bottom: 28px;
+        right: 28px;
+    }
+}
