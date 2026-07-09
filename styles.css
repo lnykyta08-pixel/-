@@ -408,7 +408,7 @@ ul {
     }
 }
 
-/* ===== Головний блок (Hero) ===== */
+/* Головний блок */
 
 .hero {
     position: relative;
@@ -424,8 +424,6 @@ ul {
     position: absolute;
     inset: 0;
     background-color: var(--forest);
-    /* коли буде реальне фото — сюди додати:
-       background: url('...') center/cover no-repeat, var(--forest); */
 }
 
 .hero-bg::after {
@@ -510,7 +508,6 @@ ul {
     50%      { transform: translateX(-50%) translateY(8px); }
 }
 
-/* Ховаємо стрілку скролу на низьких екранах (наприклад, горизонтальна орієнтація) */
 @media (max-height: 500px) {
     .hero-scroll {
         display: none;
