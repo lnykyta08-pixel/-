@@ -1,0 +1,40 @@
+/* Кастомні CSS-властивості */
+
+:root {
+    --emerald: #10B981;
+    --forest: #064E3B;
+    --forest-mid: #065F46;
+    --forest-light: #D1FAE5;
+    --leaf: #34D399;
+    --cream: #FAFAF7;
+    --sand: #F0EDE6;
+    --text-dark: #1A1A18;
+    --text-mid: #4B5563;
+    --text-light: #9CA3AF;
+    --white: #FFFFFF;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Inter', system-ui, sans-serif;
+
+    --radius-sm:  6px;
+    --radius-md:  12px;
+    --radius-lg:  24px;
+    --radius-pill: 999px;
+
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 16px rgba(6,78,59,.10);
+    --shadow-lg: 0 12px 40px rgba(6,78,59,.15);
+
+    --nav-h: 56px;
+    --section-gap: 56px;
+}
+
+.stat-min {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-weight: 700;
+    color: var(--leaf);
+    display: inline-block;
+    line-height: 1;
+    margin-left: 2px;
+}
