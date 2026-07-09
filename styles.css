@@ -221,3 +221,189 @@ ul {
     transform: translateX(0);
 }
 
+/* Навігація (базова — мобільна версія) */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    transition: background .35s, box-shadow .35s;
+}
+
+.nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav.scrolled,
+.page-about .nav,
+.page-catalog .nav {
+    background: rgba(250,250,247,.96);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Лого */
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    transition: color .35s;
+}
+
+.nav.scrolled .nav-logo,
+.page-about .nav-logo,
+.page-catalog .nav-logo {
+    color: var(--forest);
+}
+
+.nav-logo-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--emerald);
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Гамбургер (за замовчуванням видимий — мобільна версія) */
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--white);
+    transition: transform .3s, opacity .3s, background .35s;
+}
+
+.nav.scrolled .hamburger span,
+.page-about .hamburger span,
+.page-catalog .hamburger span {
+    background: var(--forest);
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Горизонтальне меню (за замовчуванням приховане — з'являється на ноуті)*/
+
+.nav-links {
+    display: none;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: .9rem;
+    font-weight: 500;
+    color: rgba(255,255,255,.85);
+    transition: color .2s;
+}
+
+.nav.scrolled .nav-links a,
+.page-about .nav-links a,
+.page-catalog .nav-links a {
+    color: var(--text-mid);
+}
+
+/* Мобільне меню на весь екран */
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: var(--forest);
+    padding-top: var(--nav-h);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity .3s, transform .3s;
+}
+
+.mobile-menu.open {
+    opacity: 1;
+    transform: translateX(0);
+    display: flex;
+}
+
+.mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    color: var(--white);
+    font-weight: 600;
+    transition: color .2s;
+}
+
+/* Hover-ефекти — тільки для пристроїв з мишею */
+
+@media (hover: hover) {
+    .nav-links a:hover,
+    .nav.scrolled .nav-links a:hover,
+    .page-about .nav-links a:hover,
+    .page-catalog .nav-links a:hover {
+        color: var(--emerald);
+    }
+
+    .mobile-menu a:hover {
+        color: var(--leaf);
+    }
+}
+
+/* Ноут-версія (від 768px) */
+
+@media (min-width: 768px) {
+    .nav-logo {
+        font-size: 1.45rem;
+    }
+
+    .nav-logo-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+}
