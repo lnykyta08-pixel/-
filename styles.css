@@ -608,3 +608,58 @@ ul {
         line-height: 1.7;
     }
 }
+
+/* Смуга статистики — мобільна версія */
+
+.stats {
+    background: var(--forest);
+    padding: 36px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+    text-align: center;
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 7vw, 3.2rem);
+    font-weight: 700;
+    color: var(--leaf);
+    display: inline-block;
+    line-height: 1;
+}
+
+.stat-percent {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 5vw, 1.8rem);
+    font-weight: 700;
+    color: var(--leaf);
+    display: inline-block;
+    line-height: 1;
+}
+
+.stat-label {
+    color: rgba(255,255,255,.65);
+    font-size: .8rem;
+    margin-top: 6px;
+}
+
+/* Ноут-версія */
+
+@media (min-width: 768px) {
+    .stats {
+        padding: 48px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+    }
+
+    .stat-label {
+        font-size: .85rem;
+    }
+}
