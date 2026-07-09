@@ -549,3 +549,62 @@ ul {
         font-size: 1.1rem;
     }
 }
+
+/* Заголовки секцій */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 6vw, 2.8rem);
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1.2;
+}
+
+.section-sub {
+    margin-top: 10px;
+    color: var(--text-mid);
+    font-size: .95rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.65;
+}
+
+/* Ноут-версія */
+
+@media (min-width: 768px) {
+    .section-header {
+        margin-bottom: 56px;
+    }
+
+    .section-eyebrow {
+        font-size: .78rem;
+        letter-spacing: .14em;
+        margin-bottom: 12px;
+    }
+
+    .section-title {
+        line-height: 1.2;
+    }
+
+    .section-sub {
+        margin-top: 12px;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
