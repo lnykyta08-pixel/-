@@ -170,3 +170,24 @@ ul {
     background: var(--forest);
     color: var(--white);
 }
+
+/* Для пристроїв з мишею ноут */
+
+@media (hover: hover) {
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:hover {
+        background: var(--forest-mid);
+    }
+
+    .btn-outline:hover {
+        background: rgba(255,255,255,.15);
+    }
+
+    .btn-dark:hover {
+        background: var(--forest-mid);
+    }
+}
