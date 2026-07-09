@@ -407,3 +407,148 @@ ul {
         display: flex;
     }
 }
+
+/* ===== Головний блок (Hero) ===== */
+
+.hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--forest);
+    /* коли буде реальне фото — сюди додати:
+       background: url('...') center/cover no-repeat, var(--forest); */
+}
+
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(165deg, rgba(6,78,59,.72) 0%, rgba(4,40,30,.82) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 740px;
+    padding: 0 20px;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--leaf);
+    margin-bottom: 16px;
+    background: rgba(52,211,153,.15);
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(52,211,153,.3);
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 8vw, 5rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.hero h1 em {
+    font-style: italic;
+    color: var(--leaf);
+}
+
+.hero-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,.78);
+    max-width: 480px;
+    margin: 0 auto 28px;
+    line-height: 1.65;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,.6);
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+}
+
+.hero-scroll span {
+    font-size: 1rem;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+}
+
+/* Ховаємо стрілку скролу на низьких екранах (наприклад, горизонтальна орієнтація) */
+@media (max-height: 500px) {
+    .hero-scroll {
+        display: none;
+    }
+}
+
+/* Ноут-версія */
+
+@media (min-width: 768px) {
+    .hero-content {
+        padding: 0 24px;
+    }
+
+    .hero-eyebrow {
+        font-size: .78rem;
+        letter-spacing: .15em;
+        margin-bottom: 20px;
+        padding: 6px 16px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.6rem, 6vw, 5rem);
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .hero-sub {
+        font-size: 1.1rem;
+        margin-bottom: 36px;
+        line-height: 1.7;
+    }
+
+    .hero-scroll {
+        bottom: 32px;
+        font-size: .75rem;
+    }
+
+    .hero-scroll span {
+        font-size: 1.1rem;
+    }
+}
