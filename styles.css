@@ -47,11 +47,6 @@
     padding: 0; 
 }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px; 
-}
-
 [id] {
     scroll-margin-top: var(--nav-h);
 }
@@ -69,6 +64,8 @@ body {
 html {
     scrollbar-width: thin;
     scrollbar-color: var(--emerald) var(--sand);
+    scroll-behavior: smooth;
+    font-size: 16px
 }
 
 ::-webkit-scrollbar {
@@ -284,7 +281,7 @@ ul {
     flex-shrink: 0;
 }
 
-/* Гамбургер (за замовчуванням видимий — мобільна версія) */
+/* Гамбургер */
 
 .hamburger {
     display: flex;
@@ -322,7 +319,7 @@ ul {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Горизонтальне меню (за замовчуванням приховане — з'являється на ноуті)*/
+/* Горизонтальне меню (на ноут) */
 
 .nav-links {
     display: none;
@@ -416,6 +413,7 @@ ul {
 
 .hero {
     position: relative;
+    min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
