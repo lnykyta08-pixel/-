@@ -51,23 +51,23 @@
     scroll-margin-top: var(--nav-h);
 }
 
-body {
-    font-family: var(--font-body);
-    color: var(--text-dark);
-    background: var(--cream);
-    overflow-x: hidden;
-    line-height: 1.6;
-    overscroll-behavior: none;
-}
-
-/* Повзунок сайту */
-
 html {
     scrollbar-width: thin;
     scrollbar-color: var(--emerald) var(--sand);
     scroll-behavior: smooth;
     font-size: 16px
 }
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background: var(--cream);
+    overflow-x: hidden;
+    line-height: 1.6;
+    overscroll-behavior-y: none; /* прибирає "гумовий" bounce-ефект зверху/знизу */
+}
+
+/* Повзунок сайту */
 
 ::-webkit-scrollbar {
     width: 12px;
@@ -235,6 +235,8 @@ ul {
     display: flex;
     align-items: center;
     transition: background .35s, box-shadow .35s;
+    will-change: background;
+    transform: translateZ(0); /* окремий GPU-шар — прибирає гальмування blur під час скролу на iOS */
 }
 
 .nav .container {
@@ -414,7 +416,7 @@ ul {
 
 .hero {
     position: relative;
-    min-height: 100svh;
+    min-height: 100svh; /* фіксована висота — не перераховується під час скролу, без ривків на iOS */
     display: flex;
     align-items: center;
     justify-content: center;
