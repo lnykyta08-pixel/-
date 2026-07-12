@@ -1693,6 +1693,20 @@ footer {
     font-family: var(--font-display);
     font-size: 1.15rem;
     color: var(--forest);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-header-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--forest-light);
+    color: var(--forest);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
 }
 
 .cart-close {

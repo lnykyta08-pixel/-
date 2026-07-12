@@ -57,7 +57,7 @@
 <div class="cart-overlay" id="cart-overlay"></div>
 <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Кошик">
     <div class="cart-header">
-        <h3><span aria-hidden="true">🛍️</span> <span>Ваш кошик</span></h3>
+        <h3><span class="cart-header-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.331 8h11.339a2 2 0 0 1 1.977 2.304l-1.255 8.152a3 3 0 0 1 -2.966 2.544h-6.852a3 3 0 0 1 -2.965 -2.544l-1.255 -8.152a2 2 0 0 1 1.977 -2.304z"/><path d="M9 11v-5a3 3 0 0 1 6 0v5"/></svg></span> <span>Ваш кошик</span></h3>
         <button class="cart-close" id="cart-close" aria-label="Закрити кошик">✕</button>
     </div>
     <div class="cart-items" id="cart-items">
@@ -111,7 +111,7 @@
             </div>
 
             <div class="about-text">
-                <span class="section-eyebrow">Про нас</span>
+                <span class="section-eyebrow">🌿 Про нас</span>
                 <p class="about-body reveal-right" style="transition-delay:.1s">
                     Ми є маленьким магазином квітів у місті Запоріжжя, який розпочав свою історію у невеличкому селищі Новомиколаївка. Попри війну, скромні розміри, ми продовжуємо працювати, маючи досвід понад 15 років. Ми завжди відкриті до ваших пропозицій щодо вигляду букетів та їхнього пакування.
                 </p>
@@ -223,6 +223,7 @@
 <button id="back-to-top" aria-label="Повернутись на початок">↑</button>
 
 <!-- Спливаюче повідомлення кошика -->
+
 <div id="toast" role="status" aria-live="polite"></div>
 
 <script src="script.js"></script>
