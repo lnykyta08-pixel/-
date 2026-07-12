@@ -257,7 +257,6 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 18px;
     width: 100%;
     position: relative;
 }
@@ -310,7 +309,6 @@ ul {
     width: 36px;
     height: 36px;
     padding: 4px;
-    margin-left: auto;
 }
 
 .hamburger span {
@@ -1349,6 +1347,7 @@ footer {
     text-align: left;
     column-gap: 32px;
     row-gap: 10px;
+    padding-left: 14px;
 }
 
 .footer-col ul li a {
@@ -1525,6 +1524,7 @@ footer {
 
     .footer-col ul.footer-links {
         justify-content: center;
+        padding-left: 0;
     }
 
     .footer-bottom {
