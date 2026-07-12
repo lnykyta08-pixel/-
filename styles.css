@@ -1330,8 +1330,8 @@ footer {
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
     gap: 6px;
 }
 
@@ -1521,6 +1521,10 @@ footer {
 
     .footer-col ul {
         align-items: center;
+    }
+
+    .footer-col ul.footer-links {
+        justify-content: center;
     }
 
     .footer-bottom {
