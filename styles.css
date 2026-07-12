@@ -63,28 +63,44 @@ body {
 /* Повзунок сайту */
 
 html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--emerald) var(--sand);
     scroll-behavior: smooth;
-    font-size: 16px
+    font-size: 16px;
+    scrollbar-width: none; /* явно вимикаємо кастомний скролбар на мобільному (Firefox) */
 }
 
-::-webkit-scrollbar {
-    width: 12px;
+html::-webkit-scrollbar {
+    display: none; /* явно вимикаємо кастомний скролбар на мобільному (Chrome/Safari) */
 }
 
-::-webkit-scrollbar-track {
-    background: var(--sand);
-}
+/* Повзунок сайту — тільки на ноуті, на телефоні браузери ігнорують ці стилі */
 
-::-webkit-scrollbar-thumb {
-    background: var(--emerald);
-    border-radius: 10px;
-    border: 2px solid var(--sand);
-}
+@media (min-width: 768px) {
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: var(--emerald) var(--sand);
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--forest-mid);
+    html::-webkit-scrollbar {
+        display: block;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--sand);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--emerald);
+        border-radius: 10px;
+        border: 2px solid var(--sand);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--forest-mid);
+    }
 }
 
 img {
@@ -200,7 +216,7 @@ ul {
 .reveal-left,
 .reveal-right {
     opacity: 1;
-    transform: none;
+    transition: none;
 }
 
 /* Анімація появи елементів на ноуті*/
