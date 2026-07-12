@@ -885,6 +885,7 @@ ul {
     position: relative;
     max-width: 340px;
     margin: 0 auto;
+    margin-top: -16px;
     order: 2;
 }
 
@@ -904,8 +905,7 @@ ul {
     border-radius: var(--radius-md);
     aspect-ratio: 1;
     object-fit: cover;
-    border: 2px solid var(--emerald);
-    box-shadow: 0 8px 20px rgba(6,95,70,.25);
+    box-shadow: 0 12px 28px rgba(6,95,70,.28);
 }
 
 .about-badge {
@@ -934,6 +934,7 @@ ul {
 .about-header-block {
     text-align: center;
     margin-bottom: 20px;
+    margin-top: -20px;
     order: 1;
 }
 
@@ -943,11 +944,12 @@ ul {
 
 .about-text {
     order: 3;
+    margin-top: -12px;
 }
 
 .about-text .section-eyebrow {
     display: block;
-    text-align: center;
+    text-align: left;
     font-size: 1rem;
     margin-bottom: 10px;
 }
@@ -1013,7 +1015,9 @@ ul {
         grid-area: header;
         text-align: center;
         margin-bottom: 0;
+        margin-top: 0;
         align-self: end;
+        transform: translateY(16px);
     }
 
     .about-img-stack {
@@ -1025,15 +1029,14 @@ ul {
 
     .about-text {
         grid-area: text;
+        margin-top: 0;
     }
 
     .about-img-accent {
         bottom: -34px;
         right: -24px;
         width: 48%;
-        border-width: 2px;
-        border-color: var(--emerald);
-        box-shadow: 0 10px 26px rgba(6,95,70,.28);
+        box-shadow: 0 16px 34px rgba(6,95,70,.3);
     }
 
     .about-badge {
@@ -1057,6 +1060,7 @@ ul {
     }
 
     .about-text .section-eyebrow {
+        text-align: center;
         font-size: 1.1rem;
         margin-bottom: 14px;
     }
