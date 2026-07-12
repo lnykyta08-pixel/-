@@ -430,14 +430,15 @@ ul {
 
 .hero {
     position: relative;
-    min-height: 100vh;
-    min-height: 100dvh;
+    /* Фіксована висота відносно ширини екрана — на відміну від vh/dvh,
+       vw НЕ змінюється при появі/зникненні адресного рядка мобільного
+       браузера під час скролу, тому hero більше не "стрибає" по висоті. */
+    min-height: 216vw;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    transition: min-height 0.4s cubic-bezier(.22,1,.36,1), padding 0.4s cubic-bezier(.22,1,.36,1);
 }
 
 .hero-bg {
@@ -537,6 +538,13 @@ ul {
 /* Ноут-версія */
 
 @media (min-width: 768px) {
+    .hero {
+        /* На десктопі/ноуті адресний рядок браузера не ховається при скролі,
+           тому проблеми "стрибків" немає — можна безпечно рахувати від висоти. */
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
     .hero-content {
         padding: 0 24px;
     }
