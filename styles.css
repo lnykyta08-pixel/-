@@ -430,7 +430,7 @@ ul {
 
 .hero {
     position: relative;
-    min-height: 180vw;
+    min-height: 178vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1210,10 +1210,14 @@ footer {
 
 .footer-contacts-col {
     order: 2;
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding-top: 32px;
 }
 
 .footer-links-col {
     order: 3;
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding-top: 24px;
 }
 
 .footer-logo {
@@ -1268,7 +1272,8 @@ footer {
     transform: scale(0.92);
 }
 
-.footer-col h4 {
+.footer-col h4,
+.footer-links-details summary {
     color: var(--white);
     font-size: .85rem;
     font-weight: 600;
@@ -1276,6 +1281,32 @@ footer {
     text-transform: uppercase;
     margin-bottom: 16px;
     text-align: center;
+}
+
+.footer-links-details summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.footer-links-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.footer-links-details summary::after {
+    content: '❯';
+    display: inline-block;
+    font-size: .65rem;
+    color: var(--emerald);
+    transform: rotate(90deg);
+    transition: transform .2s;
+}
+
+.footer-links-details[open] summary::after {
+    transform: rotate(270deg);
 }
 
 .footer-col ul {
@@ -1306,8 +1337,12 @@ footer {
 .footer-contacts-col li {
     font-size: .85rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 8px;
+}
+
+.footer-contacts-col li:first-child {
+    align-items: flex-start;
 }
 
 .footer-contacts-col li span:first-child {
@@ -1365,7 +1400,7 @@ footer {
 
     .footer-grid {
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 40px;
+        gap: 0;
         padding-bottom: 48px;
         text-align: center;
         align-items: start;
@@ -1373,14 +1408,32 @@ footer {
 
     .footer-contacts-col {
         order: 1;
+        border-top: none;
+        padding-top: 0;
+        border-right: 1px solid rgba(255,255,255,.08);
+        padding-right: 32px;
     }
 
     .footer-brand-col {
         order: 2;
+        border-right: 1px solid rgba(255,255,255,.08);
+        padding: 0 32px;
     }
 
     .footer-links-col {
         order: 3;
+        border-top: none;
+        padding-top: 0;
+        padding-left: 32px;
+    }
+
+    .footer-links-details summary {
+        cursor: default;
+        pointer-events: none;
+    }
+
+    .footer-links-details summary::after {
+        display: none;
     }
 
     .footer-logo {
@@ -1410,7 +1463,8 @@ footer {
         height: 36px;
     }
 
-    .footer-col h4 {
+    .footer-col h4,
+    .footer-links-details summary {
         text-align: center;
         margin-top: 48px;
         margin-bottom: 18px;
