@@ -60,40 +60,31 @@ body {
     overscroll-behavior: none;
 }
 
-/* Базові налаштування html */
+/* Повзунок сайту */
 
 html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--emerald) var(--sand);
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 16px
 }
 
-/* Повзунок сайту — тільки на ноутбуці */
+::-webkit-scrollbar {
+    width: 12px;
+}
 
-@media (min-width: 768px) {
+::-webkit-scrollbar-track {
+    background: var(--sand);
+}
 
-    html {
-        scrollbar-width: thin;
-        scrollbar-color: var(--emerald) var(--sand);
-    }
+::-webkit-scrollbar-thumb {
+    background: var(--emerald);
+    border-radius: 10px;
+    border: 2px solid var(--sand);
+}
 
-    ::-webkit-scrollbar {
-        width: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: var(--sand);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: var(--emerald);
-        border-radius: 10px;
-        border: 2px solid var(--sand);
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: var(--forest-mid);
-    }
-
+::-webkit-scrollbar-thumb:hover {
+    background: var(--forest-mid);
 }
 
 img {
