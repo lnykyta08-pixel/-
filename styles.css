@@ -1470,8 +1470,8 @@ footer {
     .footer-col h4,
     .footer-links-details summary {
         text-align: center;
-        margin-top: 48px;
-        margin-bottom: 18px;
+        margin-top: 5px;
+        margin-bottom: 45px;
     }
 
     .footer-col ul {
