@@ -257,6 +257,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 18px;
     width: 100%;
     position: relative;
 }
@@ -309,6 +310,7 @@ ul {
     width: 36px;
     height: 36px;
     padding: 4px;
+    margin-left: auto;
 }
 
 .hamburger span {
@@ -1328,7 +1330,8 @@ footer {
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    text-align: left;
     gap: 6px;
 }
 
@@ -1341,7 +1344,7 @@ footer {
     grid-template-columns: repeat(2, auto);
     grid-auto-flow: column;
     grid-template-rows: repeat(3, auto);
-    justify-content: center;
+    justify-content: start;
     justify-items: start;
     text-align: left;
     column-gap: 32px;
@@ -1391,7 +1394,6 @@ footer {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    border: 1px solid rgba(255,255,255,.15);
     display: grid;
     place-items: center;
     color: var(--emerald);
