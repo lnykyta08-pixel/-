@@ -430,7 +430,7 @@ ul {
 
 .hero {
     position: relative;
-    min-height: 178vw;
+    min-height: 176vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -536,8 +536,6 @@ ul {
 
 @media (min-width: 768px) {
     .hero {
-        /* На десктопі/ноуті адресний рядок браузера не ховається при скролі,
-           тому проблеми "стрибків" немає — можна безпечно рахувати від висоти. */
         min-height: 100vh;
         min-height: 100dvh;
     }
@@ -1309,11 +1307,14 @@ footer {
     transform: rotate(270deg);
 }
 
-.footer-col ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+.footer-col ul.footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+    justify-content: center;
+    column-gap: 32px;
+    row-gap: 10px;
 }
 
 .footer-col ul li a {
