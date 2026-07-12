@@ -885,7 +885,7 @@ ul {
     position: relative;
     max-width: 340px;
     margin: 0 auto;
-    margin-top: -16px;
+    margin-top: -40px;
     order: 2;
 }
 
@@ -934,7 +934,7 @@ ul {
 .about-header-block {
     text-align: center;
     margin-bottom: 20px;
-    margin-top: -20px;
+    margin-top: -48px;
     order: 1;
 }
 
@@ -944,7 +944,7 @@ ul {
 
 .about-text {
     order: 3;
-    margin-top: -12px;
+    margin-top: -28px;
 }
 
 .about-text .section-eyebrow {
