@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Пакування для букетів — крафт-папір, декоративний папір, стрічки, коробки та кашпо від квіткового магазину Квіти у Запоріжжі." />
+    <title>Пакування — Квіти</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page-about">
+
+<!-- Навігація -->
+
+<nav class="nav scrolled" id="navbar" aria-label="Головна навігація">
+    <div class="container">
+        <a href="index.html" class="nav-logo" aria-label="Квіти — на початок">
+            <div class="nav-logo-icon" aria-hidden="true">🌿</div>
+            Квіти
+        </a>
+        <ul class="nav-links" role="list">
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="index.html#kvity">Квіти</a></li>
+            <li><a href="packaging.html">Пакування</a></li>
+            <li><a href="toys.html">Іграшки</a></li>
+            <li><a href="balloons.html">Кульки</a></li>
+            <li><a href="about.html">Про нас</a></li>
+            <li><a href="#contacts">Контакти</a></li>
+        </ul>
+        <button class="cart-btn" id="cart-btn" aria-label="Відкрити кошик" aria-haspopup="dialog">
+            <svg class="cart-icon" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" fill="#064E3B"/><path d="M35 44 L65 44 L62.5 78 Q62.3 81 59 81 L41 81 Q37.7 81 37.5 78 Z" fill="#10B981" stroke="#053f30" stroke-width="1.5"/><path d="M39 44 L39 37 Q39 27 50 27 Q61 27 61 37 L61 44" fill="none" stroke="#D1FAE5" stroke-width="3" stroke-linecap="round"/><circle cx="45" cy="52" r="2.6" fill="#053f30"/><circle cx="55" cy="52" r="2.6" fill="#053f30"/><path d="M43 60 Q50 66 57 60" fill="none" stroke="#053f30" stroke-width="2" stroke-linecap="round"/></svg>
+            <span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Мобільне меню -->
+
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Мобільне меню">
+    <a href="index.html" class="mobile-link">Головна</a>
+    <a href="index.html#kvity" class="mobile-link">Квіти</a>
+    <a href="packaging.html" class="mobile-link">Пакування</a>
+    <a href="toys.html" class="mobile-link">Іграшки</a>
+    <a href="balloons.html" class="mobile-link">Кульки</a>
+    <a href="about.html" class="mobile-link">Про нас</a>
+    <a href="#contacts" class="mobile-link">Контакти</a>
+    <a href="tel:+380665160627" class="btn btn-primary" style="margin-top:8px;">📞 +38 066 516 06 27</a>
+</div>
+
+<!-- Кошик -->
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Кошик">
+    <div class="cart-header">
+        <h3><span aria-hidden="true">🛍️</span> <span>Ваш кошик</span></h3>
+        <button class="cart-close" id="cart-close" aria-label="Закрити кошик">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+        <div class="cart-empty" id="cart-empty">
+            <span>🌷</span>
+            <p>Кошик поки порожній</p>
+        </div>
+    </div>
+    <div class="cart-footer" id="cart-footer">
+        <div class="cart-total-row">
+            <span>Разом:</span>
+            <strong id="cart-total">0 ₴</strong>
+        </div>
+        <a href="tel:+380665160627" class="btn btn-primary cart-checkout" id="cart-checkout">
+            <span aria-hidden="true">📞</span> <span>Оформити замовлення</span>
+        </a>
+        <p class="cart-hint">Зателефонуйте нам — назвіть товари з кошика, і ми все підготуємо</p>
+    </div>
+</aside>
+
+<!-- Пакування -->
+
+<section class="about" id="pakuvannya" aria-labelledby="pakuvannya-title" style="padding-top:calc(var(--nav-h) + 48px);">
+    <div class="container">
+
+        <div class="about-grid">
+            <div class="about-img-stack reveal-left">
+                <img
+                    src="https://images.unsplash.com/photo-1487070183336-b863922373d4?w=600&h=750&fit=crop&auto=format"
+                    alt="Букет у крафт-папері"
+                    class="about-img-main"
+                    loading="lazy"
+                />
+                <img
+                    src="https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=300&h=300&fit=crop&auto=format"
+                    alt="Атласна стрічка для оформлення букета"
+                    class="about-img-accent"
+                    loading="lazy"
+                />
+                <div class="about-badge" aria-label="5 видів пакування">
+                    <strong>5+</strong>
+                    <span>видів<br>пакування</span>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <div class="section-header reveal-right">
+                    <h2 class="section-title" id="pakuvannya-title">Пакування,<br/>що завершує образ</h2>
+                    <span class="section-eyebrow">📦 Пакування</span>
+                </div>
+                <p class="about-body reveal-right" style="transition-delay:.1s">
+                    Гарне пакування — це остання деталь, яка робить букет по-справжньому цілісним. Ми пропонуємо різні варіанти оформлення: від природного крафт-паперу до щільного декоративного паперу з візерунком, атласних стрічок та подарункових коробок.
+                </p>
+                <p class="about-body reveal-right" style="transition-delay:.15s">
+                    Якщо у вас є своє бачення — покажіть нам фото чи опишіть ідею, і ми підберемо пакування, яке підкреслить саме ваш букет.
+                </p>
+                <div class="about-features">
+                    <div class="about-feat reveal-right" style="transition-delay:.2s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Крафт-папір та декоративний папір</strong>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal-right" style="transition-delay:.25s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Атласні стрічки та банти</strong>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal-right" style="transition-delay:.3s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Подарункові коробки-скриньки</strong>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal-right" style="transition-delay:.3s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Плетені кашпо для композицій</strong>
+                        </div>
+                    </div>
+                    <div class="about-feat reveal-right" style="transition-delay:.3s">
+                        <div class="about-feat-icon" aria-hidden="true">✓</div>
+                        <div class="about-feat-text">
+                            <strong>Індивідуальне оформлення за побажанням</strong>
+                        </div>
+                    </div>
+                </div>
+                <a href="#tovary" class="btn btn-dark reveal-right" style="transition-delay:.35s;margin-top:8px;">
+                    <span aria-hidden="true">📦</span> <span>Переглянути варіанти</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Товари: Пакування -->
+
+<section class="kvity" id="tovary" aria-labelledby="tovary-title" style="background:var(--sand);">
+    <div class="container">
+        <div class="section-header reveal">
+            <h2 class="section-title" id="tovary-title">Обрати пакування</h2>
+            <p class="section-sub">Додайте до замовлення разом із букетом</p>
+        </div>
+        <div class="products-grid">
+
+            <div class="product-card reveal">
+                <div class="product-img-wrap">
+                    <span class="product-badge">Хіт</span>
+                    <img src="https://images.unsplash.com/photo-1487070183336-b863922373d4?w=500&h=375&fit=crop&auto=format" alt="Букет у крафт-папері" loading="lazy" />
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Крафт-папір</div>
+                    <p class="product-desc">Класичне природне пакування, підкреслює живі квіти</p>
+                    <div class="product-footer">
+                        <div class="product-price">80 ₴ <span>/ шт.</span></div>
+                        <button class="product-btn" aria-label="Додати «Крафт-папір» до кошика" onclick="addToCart('Крафт-папір', 80)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=500&h=375&fit=crop&auto=format" alt="Букет у декоративному папері з візерунком" loading="lazy" />
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Декоративний папір</div>
+                    <p class="product-desc">Щільний папір з візерунком, різні кольори на вибір</p>
+                    <div class="product-footer">
+                        <div class="product-price">120 ₴ <span>/ шт.</span></div>
+                        <button class="product-btn" aria-label="Додати «Декоративний папір» до кошика" onclick="addToCart('Декоративний папір', 120)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=500&h=375&fit=crop&auto=format" alt="Атласна стрічка для букета" loading="lazy" />
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Атласна стрічка</div>
+                    <p class="product-desc">Широка стрічка з бантом, доповнить будь-яке пакування</p>
+                    <div class="product-footer">
+                        <div class="product-price">50 ₴ <span>/ шт.</span></div>
+                        <button class="product-btn" aria-label="Додати «Атласна стрічка» до кошика" onclick="addToCart('Атласна стрічка', 50)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1509587584298-0f3b3a3a1797?w=500&h=375&fit=crop&auto=format" alt="Подарункова коробка для квітів" loading="lazy" />
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Подарункова коробка</div>
+                    <p class="product-desc">Стильна коробка-скринька — букет у ефектному оформленні</p>
+                    <div class="product-footer">
+                        <div class="product-price">250 ₴ <span>/ шт.</span></div>
+                        <button class="product-btn" aria-label="Додати «Подарункова коробка» до кошика" onclick="addToCart('Подарункова коробка', 250)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card reveal">
+                <div class="product-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=500&h=375&fit=crop&auto=format" alt="Плетене кашпо для квітів" loading="lazy" />
+                </div>
+                <div class="product-body">
+                    <div class="product-name">Кашпо плетене</div>
+                    <p class="product-desc">Натуральне плетене кашпо для композицій та вазонів</p>
+                    <div class="product-footer">
+                        <div class="product-price">180 ₴ <span>/ шт.</span></div>
+                        <button class="product-btn" aria-label="Додати «Кашпо плетене» до кошика" onclick="addToCart('Кашпо плетене', 180)">+</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Футер -->
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon" aria-hidden="true">🌿</div>
+                    Квіти
+                </div>
+                <div class="footer-social" aria-label="Соціальні мережі">
+                    <a href="https://www.instagram.com/lipinskayanatalya/" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="viber://chat?number=%2B380665160627" class="social-btn" target="_blank" rel="noopener" aria-label="Viber">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.03 2C6.9 2 3.02 5.6 3.02 10.2c0 2.6 1.28 4.9 3.28 6.42-.1.9-.4 2.35-.9 3.38-.06.13.04.28.18.26 1.5-.22 2.98-.86 3.78-1.28.9.24 1.86.36 2.87.36 5.13 0 9-3.6 9-8.14C21.23 5.6 17.36 2 12.24 2h-.21zm4.9 11.02c-.13.36-.75.7-1.05.75-.27.04-.6.06-.97-.06-.22-.07-.5-.16-.86-.32-1.52-.66-2.5-2.2-2.58-2.3-.08-.1-.6-.8-.6-1.52 0-.72.38-1.08.52-1.22.13-.14.3-.17.4-.17.1 0 .2 0 .28.01.09 0 .2-.03.32.25.13.3.44 1.03.48 1.1.04.08.06.17.01.27-.05.1-.08.16-.15.25-.08.1-.16.21-.23.28-.08.08-.16.16-.07.32.09.16.4.68.87 1.1.6.55 1.1.72 1.27.8.16.08.26.07.36-.04.1-.11.4-.47.5-.63.1-.16.2-.13.34-.08.13.05.87.42 1.02.5.15.08.25.12.28.18.03.07.03.4-.1.76zM12.03 4.4c3.9 0 7.06 2.94 7.06 6.55 0 3.42-2.9 6.2-6.5 6.55-.4.04-.8.02-.98-.03-.36-.1-1.02-.4-1.5-.6-.32-.13-.6-.02-.78.03-.4.12-1.02.32-1.55.44.14-.42.32-1.1.36-1.5.03-.28-.05-.5-.2-.66-1.5-1.28-2.4-3-2.4-4.88C5.54 7.24 8.4 4.4 12.03 4.4z"/><path d="M12.1 6.3c-.28 0-.5.22-.5.5s.22.5.5.5c2.1.05 3.7 1.5 3.75 3.7 0 .27.22.5.5.5.27 0 .5-.23.49-.5-.06-2.7-2.02-4.6-4.74-4.7z"/><path d="M12.15 7.85c-.27-.01-.5.2-.51.48-.01.28.2.5.48.51 1.14.05 1.7.63 1.76 1.83.01.28.24.5.51.48.28-.01.49-.25.48-.52-.08-1.65-1.02-2.72-2.72-2.78z"/></svg>
+                    </a>
+                    <a href="https://t.me/nataliyassg" class="social-btn" target="_blank" rel="noopener" aria-label="Telegram">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 13.988 4.28 13.08c-.656-.204-.67-.656.136-.97l10.3-3.97c.545-.197 1.02.133.843.97l.335-.889z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col footer-contacts-col" id="contacts">
+                <h4>Контакти</h4>
+                <ul class="footer-contact">
+                    <li><span>📍</span><span>вул. Професора Толока, 29а, м. Запоріжжя</span></li>
+                    <li id="footer-phone"><span>📞</span><a href="tel:+380665160627" style="color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--emerald)'" onmouseout="this.style.color='inherit'">+38 066 516 06 27</a></li>
+                    <li><span>📧</span><a href="mailto:lipinskaia8309@gmail.com" style="color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--emerald)'" onmouseout="this.style.color='inherit'">lipinskaia8309@gmail.com</a></li>
+                    <li><span>🕐</span><span>Пн–Нд: 08:00–18:00</span></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Квіти. Усі права захищені.</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Кнопка Нагору -->
+
+<button id="back-to-top" aria-label="Повернутись на початок">↑</button>
+
+<!-- Спливаюче повідомлення кошика -->
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
