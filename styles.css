@@ -874,6 +874,7 @@ ul {
     position: relative;
     max-width: 340px;
     margin: 0 auto;
+    order: 1;
 }
 
 .about-img-main {
@@ -919,17 +920,25 @@ ul {
     opacity: .85;
 }
 
-.about-text .section-header {
+.about-header-block {
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
+    order: 2;
 }
 
-.about-text .section-title {
+.about-header-block .section-title {
     margin-bottom: 8px;
 }
 
+.about-text {
+    order: 3;
+}
+
 .about-text .section-eyebrow {
-    margin-bottom: 0;
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 .about-body {
@@ -982,12 +991,29 @@ ul {
 @media (min-width: 900px) {
     .about-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 64px;
+        grid-template-areas:
+            "header text"
+            "image  text";
+        grid-template-rows: auto 1fr;
+        gap: 24px 64px;
+    }
+
+    .about-header-block {
+        grid-area: header;
+        text-align: center;
+        margin-bottom: 0;
+        align-self: end;
     }
 
     .about-img-stack {
+        grid-area: image;
         max-width: none;
         margin: 0;
+        align-self: start;
+    }
+
+    .about-text {
+        grid-area: text;
     }
 
     .about-img-accent {
@@ -1011,14 +1037,15 @@ ul {
         font-size: .75rem;
     }
 
-    .about-text .section-header {
-        text-align: left;
-    }
-
     .about-body {
         line-height: 1.8;
         margin-bottom: 16px;
         text-indent: 32px;
+    }
+
+    .about-text .section-eyebrow {
+        font-size: 1.1rem;
+        margin-bottom: 14px;
     }
 
     .about-features {
