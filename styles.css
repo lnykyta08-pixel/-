@@ -258,6 +258,7 @@ ul {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    position: relative;
 }
 
 .nav.scrolled,
@@ -407,8 +408,15 @@ ul {
 /* Ноут-версія (від 768px) */
 
 @media (min-width: 768px) {
+    .nav .container {
+        max-width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
     .nav-logo {
         font-size: 1.45rem;
+        margin-right: auto;
     }
 
     .nav-logo-icon {
@@ -423,6 +431,12 @@ ul {
 
     .nav-links {
         display: flex;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        white-space: nowrap;
     }
 }
 
@@ -1301,6 +1315,8 @@ footer {
     grid-auto-flow: column;
     grid-template-rows: repeat(3, auto);
     justify-content: center;
+    justify-items: start;
+    text-align: left;
     column-gap: 32px;
     row-gap: 10px;
 }
