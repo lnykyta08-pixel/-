@@ -430,10 +430,7 @@ ul {
 
 .hero {
     position: relative;
-    /* Фіксована висота відносно ширини екрана — на відміну від vh/dvh,
-       vw НЕ змінюється при появі/зникненні адресного рядка мобільного
-       браузера під час скролу, тому hero більше не "стрибає" по висоті. */
-    min-height: 216vw;
+    min-height: 146vw;
     display: flex;
     align-items: center;
     justify-content: center;
