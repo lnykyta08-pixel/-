@@ -6,7 +6,7 @@ const navbar = document.getElementById('navbar');
 const backTop = document.getElementById('back-to-top');
 
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    navbar.classList.toggle('scrolled', window.scrollY > 150);
     backTop.classList.toggle('visible', window.scrollY > 400);
 }, { passive: true });
 
