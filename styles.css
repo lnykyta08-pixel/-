@@ -60,28 +60,20 @@ body {
     overscroll-behavior: none;
 }
 
-/* Повзунок сайту */
+/* Базові налаштування html */
 
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    scrollbar-width: none; /* явно вимикаємо кастомний скролбар на мобільному (Firefox) */
 }
 
-html::-webkit-scrollbar {
-    display: none; /* явно вимикаємо кастомний скролбар на мобільному (Chrome/Safari) */
-}
-
-/* Повзунок сайту — тільки на ноуті, на телефоні браузери ігнорують ці стилі */
+/* Повзунок сайту — тільки на ноутбуці */
 
 @media (min-width: 768px) {
+
     html {
         scrollbar-width: thin;
         scrollbar-color: var(--emerald) var(--sand);
-    }
-
-    html::-webkit-scrollbar {
-        display: block;
     }
 
     ::-webkit-scrollbar {
@@ -101,6 +93,7 @@ html::-webkit-scrollbar {
     ::-webkit-scrollbar-thumb:hover {
         background: var(--forest-mid);
     }
+
 }
 
 img {
@@ -216,7 +209,7 @@ ul {
 .reveal-left,
 .reveal-right {
     opacity: 1;
-    transition: none;
+    transform: none;
 }
 
 /* Анімація появи елементів на ноуті*/
