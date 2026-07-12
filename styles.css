@@ -200,7 +200,7 @@ ul {
 .reveal-left,
 .reveal-right {
     opacity: 1;
-    transform: none;
+    transition: none;
 }
 
 /* Анімація появи елементів на ноуті*/
@@ -249,6 +249,8 @@ ul {
     display: flex;
     align-items: center;
     transition: background .35s, box-shadow .35s;
+    will-change: background;
+    transform: translateZ(0);
 }
 
 .nav .container {
@@ -428,7 +430,8 @@ ul {
 
 .hero {
     position: relative;
-    min-height: 100svh;
+    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
