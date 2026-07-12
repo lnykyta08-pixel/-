@@ -885,7 +885,7 @@ ul {
     position: relative;
     max-width: 340px;
     margin: 0 auto;
-    order: 1;
+    order: 2;
 }
 
 .about-img-main {
@@ -904,8 +904,8 @@ ul {
     border-radius: var(--radius-md);
     aspect-ratio: 1;
     object-fit: cover;
-    border: 2.5px solid var(--white);
-    box-shadow: var(--shadow-md);
+    border: 2px solid var(--emerald);
+    box-shadow: 0 8px 20px rgba(6,95,70,.25);
 }
 
 .about-badge {
@@ -934,7 +934,7 @@ ul {
 .about-header-block {
     text-align: center;
     margin-bottom: 20px;
-    order: 2;
+    order: 1;
 }
 
 .about-header-block .section-title {
@@ -1028,10 +1028,12 @@ ul {
     }
 
     .about-img-accent {
-        bottom: -24px;
+        bottom: -34px;
         right: -24px;
         width: 48%;
-        border-width: 6px;
+        border-width: 2px;
+        border-color: var(--emerald);
+        box-shadow: 0 10px 26px rgba(6,95,70,.28);
     }
 
     .about-badge {
@@ -1061,6 +1063,12 @@ ul {
 
     .about-features {
         margin: 24px 0;
+    }
+}
+
+@media (max-width: 899px) {
+    .about-text .section-eyebrow {
+        text-align: left;
     }
 }
 
