@@ -1352,6 +1352,16 @@ footer {
     flex-shrink: 0;
 }
 
+.contact-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--emerald);
+    flex-shrink: 0;
+}
+
 #footer-phone {
     border-radius: 6px;
     padding: 4px 8px;
@@ -1467,8 +1477,8 @@ footer {
     .footer-col h4,
     .footer-links-details summary {
         text-align: center;
-        margin-top: 48px;
-        margin-bottom: 18px;
+        margin-top: 5px;
+        margin-bottom: 45px;
     }
 
     .footer-col ul {
