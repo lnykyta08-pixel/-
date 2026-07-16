@@ -1575,6 +1575,10 @@ footer {
     flex-shrink: 0;
 }
 
+.footer-contacts-col li:last-child span:last-child {
+    text-align: left;
+}
+
 #footer-phone {
     border-radius: 6px;
     padding: 4px 8px;
