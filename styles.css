@@ -273,6 +273,10 @@ ul {
     position: relative;
 }
 
+.nav .container > * {
+    align-self: center;
+}
+
 .nav.scrolled,
 .page-about .nav,
 .page-catalog .nav {
@@ -507,9 +511,8 @@ ul {
 
 .mobile-menu.open .btn.btn-primary { opacity: 1; transform: translateY(0); }
 
-/* Коли мобільне меню відкрите — ховаємо все у навбарі, крім лого й гамбургера */
+/* Коли мобільне меню відкрите — ховаємо посилання, крім лого, кошика й гамбургера */
 
-.nav:has(~ .mobile-menu.open) .cart-btn,
 .nav:has(~ .mobile-menu.open) .nav-links {
     opacity: 0;
     pointer-events: none;
@@ -542,7 +545,7 @@ ul {
 
     .mobile-link:hover {
         background: rgba(255,255,255,.1);
-        color: var(--leaf);
+        color: var(--white);
     }
 }
 
