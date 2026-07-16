@@ -454,6 +454,29 @@ ul {
 
 .mobile-menu.open .btn.btn-primary { opacity: 1; transform: translateY(0); }
 
+/* Коли мобільне меню відкрите — ховаємо все у навбарі, крім лого й гамбургера */
+
+.nav:has(~ .mobile-menu.open) .cart-btn,
+.nav:has(~ .mobile-menu.open) .nav-links {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s;
+}
+
+.nav:has(~ .mobile-menu.open) {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.nav:has(~ .mobile-menu.open) .nav-logo,
+.nav:has(~ .mobile-menu.open) .cart-icon {
+    color: var(--white);
+}
+
+.nav:has(~ .mobile-menu.open) .hamburger span {
+    background: var(--white);
+}
+
 /* Hover-ефекти — тільки для пристроїв з мишею */
 
 @media (hover: hover) {
@@ -471,6 +494,24 @@ ul {
 }
 
 .mobile-link:active { background: rgba(255,255,255,.16); }
+
+/* Рядок "телефон + іконки" в гамбургер-меню */
+
+.mobile-menu-phone-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: nowrap;
+}
+
+.mobile-menu-phone-row .mobile-menu-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
 
 /* Ноут-версія (від 768px) */
 
