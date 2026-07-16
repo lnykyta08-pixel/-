@@ -403,6 +403,12 @@ ul {
     overflow-y: auto;
 }
 
+.mobile-menu-logo {
+    display: block;
+    margin: -130px auto 0;
+    height: 70px;
+}
+
 .mobile-menu.open {
     opacity: 1;
     transform: translateX(0);
@@ -468,7 +474,7 @@ ul {
     box-shadow: none !important;
 }
 
-.nav:has(~ .mobile-menu.open) .nav-logo,
+.nav:has(~ .mobile-menu.open) .nav-logo { display: none !important; }
 .nav:has(~ .mobile-menu.open) .cart-icon {
     color: var(--white);
 }
