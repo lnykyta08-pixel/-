@@ -1392,6 +1392,11 @@ footer {
     gap: 8px;
 }
 
+.footer-contacts-col li span:last-child,
+.footer-contacts-col li a {
+    line-height: 2;
+}
+
 .footer-contacts-col li:first-child {
     align-items: flex-start;
 }

@@ -165,14 +165,16 @@ cartOverlay?.addEventListener('click', closeCart);
 
 // Скрол до футера (контакти)
 
-document.getElementById('contact-us-btn')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    const phone = document.getElementById('footer-phone');
-    phone?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setTimeout(() => {
-        phone?.classList.add('phone-blink');
-        setTimeout(() => phone?.classList.remove('phone-blink'), 1000);
-    }, 500);
+document.querySelectorAll('.contact-us-link').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const phone = document.getElementById('footer-phone');
+        phone?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+            phone?.classList.add('phone-blink');
+            setTimeout(() => phone?.classList.remove('phone-blink'), 1000);
+        }, 500);
+    });
 });
 
 renderCart();
