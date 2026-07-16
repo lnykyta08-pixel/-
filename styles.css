@@ -300,6 +300,11 @@ ul {
     display: block;
 }
 
+.nav-logo-img-large {
+    height: 54px;
+    max-width: 160px;
+}
+
 .nav.scrolled .nav-logo,
 .page-about .nav-logo,
 .page-catalog .nav-logo {
