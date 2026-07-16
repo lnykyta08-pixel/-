@@ -311,6 +311,12 @@ ul {
     color: var(--forest);
 }
 
+.nav.scrolled .nav-logo-img,
+.page-about .nav-logo-img,
+.page-catalog .nav-logo-img {
+    content: url('logo_kvity_green.webp');
+}
+
 .cart-icon {
     color: var(--white);
     transition: color .35s;
@@ -1440,6 +1446,12 @@ footer {
     font-size: .95rem;
 }
 
+.footer-logo-img {
+    height: 38px;
+    width: auto;
+    display: block;
+}
+
 .footer-desc {
     font-size: .85rem;
     line-height: 1.65;
@@ -1658,6 +1670,10 @@ footer {
         width: 34px;
         height: 34px;
         font-size: 1rem;
+    }
+
+    .footer-logo-img {
+        height: 48px;
     }
 
     .footer-desc {
