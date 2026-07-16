@@ -8,6 +8,7 @@
     --leaf: #34D399;
     --cream: #FAFAF7;
     --sand: #F0EDE6;
+    --bg-main: #F6F8F5;
     --text-dark: #1A1A18;
     --text-mid: #4B5563;
     --text-light: #9CA3AF;
@@ -54,7 +55,7 @@
 body {
     font-family: var(--font-body);
     color: var(--text-dark);
-    background: var(--cream);
+    background: var(--bg-main);
     overflow-x: hidden;
     line-height: 1.6;
     overscroll-behavior: none;
@@ -275,7 +276,7 @@ ul {
 .nav.scrolled,
 .page-about .nav,
 .page-catalog .nav {
-    background: rgba(250,250,247,.96);
+    background: rgba(255,255,255,.96);
     backdrop-filter: blur(12px);
     box-shadow: var(--shadow-sm);
 }
@@ -296,6 +297,17 @@ ul {
 .nav.scrolled .nav-logo,
 .page-about .nav-logo,
 .page-catalog .nav-logo {
+    color: var(--forest);
+}
+
+.cart-icon {
+    color: var(--white);
+    transition: color .35s;
+}
+
+.nav.scrolled .cart-icon,
+.page-about .cart-icon,
+.page-catalog .cart-icon {
     color: var(--forest);
 }
 
@@ -657,7 +669,7 @@ ul {
     }
 }
 
-/* Смуга статистики — мобільна версія */
+/* Статистика — мобільна версія */
 
 .stats {
     background: var(--forest);
@@ -695,7 +707,7 @@ ul {
     margin-top: 6px;
 }
 
-/* Ноут-версія */
+/* Статистика ноут-версія */
 
 @media (min-width: 768px) {
     .stats {
@@ -817,6 +829,19 @@ ul {
     transform: scale(0.92);
 }
 
+/* Квіти ноут версія */
+
+@media (min-width: 1300px) {
+    .container:has(.products-grid) {
+        max-width: 1450px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+    }
+}
+
 /* Hover — тільки для пристроїв з мишею */
 
 @media (hover: hover) {
@@ -874,7 +899,6 @@ ul {
 /* Про нас */
 
 .about {
-    background: var(--sand);
     padding: var(--section-gap) 0;
 }
 
@@ -984,12 +1008,13 @@ ul {
 
 @media (min-width: 900px) {
     .about-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
         grid-template-areas:
-            "header text"
-            "image  text";
+            "header header header"
+            "imgMain text imgAccent";
         grid-template-rows: auto 1fr;
-        gap: 24px 64px;
+        gap: 24px 32px;
+        align-items: start;
     }
 
     .about-header-block {
@@ -997,27 +1022,34 @@ ul {
         text-align: center;
         margin-bottom: 0;
         margin-top: 0;
-        align-self: end;
-        transform: translateY(16px);
     }
 
     .about-img-stack {
-        grid-area: image;
-        max-width: none;
-        margin: 0;
-        align-self: start;
+        display: contents;
+    }
+
+    .about-img-main {
+        grid-area: imgMain;
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+    }
+
+    .about-img-accent {
+        grid-area: imgAccent;
+        position: static;
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        box-shadow: 0 16px 34px rgba(6,95,70,.3);
     }
 
     .about-text {
         grid-area: text;
         margin-top: 0;
-    }
-
-    .about-img-accent {
-        bottom: -34px;
-        right: -24px;
-        width: 48%;
-        box-shadow: 0 16px 34px rgba(6,95,70,.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .about-body {
@@ -1516,6 +1548,12 @@ footer {
         font-size: .8rem;
     }
 }
+    
+@media (min-width: 1300px) {
+    footer .container {
+        max-width: 1450px;
+    }
+}
 
 /* Кнопка нагору */
 
@@ -1580,8 +1618,8 @@ footer {
 }
 
 .cart-icon {
-    width: 36px;
-    height: 36px;
+    width: 27px;
+    height: 27px;
 }
 
 .cart-btn:active {
@@ -1655,7 +1693,7 @@ footer {
     width: 420px;
     max-width: 92vw;
     height: 100%;
-    background: var(--cream);
+    background: var(--white);
     box-shadow: var(--shadow-lg);
     display: flex;
     flex-direction: column;
