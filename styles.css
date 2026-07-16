@@ -403,6 +403,42 @@ ul {
     overflow-y: auto;
 }
 
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-h);
+    background: transparent;
+    z-index: 1001;
+    padding: 0 16px;
+}
+
+.mobile-menu-logo {
+    height: 38px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 0 4px;
+    line-height: 1;
+}
+
 .mobile-menu.open {
     opacity: 1;
     transform: translateX(0);
