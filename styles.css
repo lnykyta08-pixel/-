@@ -403,6 +403,31 @@ ul {
     overflow-y: auto;
 }
 
+.mobile-menu-close {
+    position: absolute;
+    top: -50px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Плавний рух з ефектом "відскоку" */
+}
+
+.mobile-menu.is-open .mobile-menu-close {
+    top: 20px;
+}
+
+.mobile-menu-close span {
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: white;
+    top: 14px;
+    left: 2px;
+}
+
+.mobile-menu-close span:nth-child(1) { transform: rotate(45deg); }
+.mobile-menu-close span:nth-child(2) { transform: rotate(-45deg); }
+
 .mobile-menu-logo {
     display: block;
     margin: -90px auto 0;
