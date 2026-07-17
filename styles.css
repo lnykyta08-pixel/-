@@ -1016,24 +1016,6 @@ ul {
     border: 1px solid rgba(0,0,0,.12);
 }
 
-/* Скляний зелений чіп – рекомендований папір */
-
-.product-paper {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 12px;
-    border-radius: var(--radius-pill);
-    background: rgba(16,185,129,.14);
-    border: 1px solid rgba(16,185,129,.35);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    color: var(--forest-mid);
-    font-size: .74rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-}
-
 /* Догляд */
 
 .product-care {
