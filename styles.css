@@ -1884,8 +1884,8 @@ footer {
     position: relative;
     display: grid;
     place-items: center;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     font-size: 1.15rem;
     flex-shrink: 0;
@@ -1894,8 +1894,8 @@ footer {
 }
 
 .cart-icon {
-    width: 27px;
-    height: 27px;
+    width: 26px;
+    height: 26px;
 }
 
 .cart-btn:active {
