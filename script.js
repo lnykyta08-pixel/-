@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const navbar = document.getElementById('navbar');
 const backTop = document.getElementById('back-to-top');
+const isFixedNavPage = document.body.classList.contains('page-about') || document.body.classList.contains('page-catalog');
 
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 150);
+    if (!isFixedNavPage) navbar.classList.toggle('scrolled', window.scrollY > 150);
     backTop.classList.toggle('visible', window.scrollY > 400);
 }, { passive: true });
 

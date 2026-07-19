@@ -6,7 +6,6 @@
     --forest-mid: #065F46;
     --forest-light: #D1FAE5;
     --leaf: #34D399;
-    --cream: #FAFAF7;
     --sand: #F0EDE6;
     --bg-main: #F6F8F5;
     --text-dark: #1A1A18;
@@ -17,7 +16,6 @@
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body:    'Inter', system-ui, sans-serif;
 
-    --radius-sm:  6px;
     --radius-md:  12px;
     --radius-lg:  24px;
     --radius-pill: 999px;
@@ -103,6 +101,9 @@ button {
     border: none;
     background: none; 
     font-family: inherit;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 ul {
@@ -312,11 +313,14 @@ ul {
     align-self: center;
 }
 
-.nav.scrolled,
+.nav.scrolled {
+    background: var(--forest);
+    box-shadow: var(--shadow-sm);
+}
+
 .page-about .nav,
 .page-catalog .nav {
-    background: rgba(255,255,255,.96);
-    backdrop-filter: blur(12px);
+    background: var(--forest);
     box-shadow: var(--shadow-sm);
 }
 
@@ -344,27 +348,9 @@ ul {
     max-width: 160px;
 }
 
-.nav.scrolled .nav-logo,
-.page-about .nav-logo,
-.page-catalog .nav-logo {
-    color: var(--forest);
-}
-
-.nav.scrolled .nav-logo-img,
-.page-about .nav-logo-img,
-.page-catalog .nav-logo-img {
-    content: url('logo_kvity_green.webp');
-}
-
 .cart-icon {
     color: var(--white);
     transition: color .35s;
-}
-
-.nav.scrolled .cart-icon,
-.page-about .cart-icon,
-.page-catalog .cart-icon {
-    color: var(--forest);
 }
 
 .nav-logo-icon {
@@ -398,12 +384,6 @@ ul {
     transition: transform .3s, opacity .3s, background .35s;
 }
 
-.nav.scrolled .hamburger span,
-.page-about .hamburger span,
-.page-catalog .hamburger span {
-    background: var(--forest);
-}
-
 .hamburger.open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
@@ -429,12 +409,6 @@ ul {
     font-weight: 500;
     color: rgba(255,255,255,.85);
     transition: color .2s;
-}
-
-.nav.scrolled .nav-links a,
-.page-about .nav-links a,
-.page-catalog .nav-links a {
-    color: var(--text-mid);
 }
 
 /* Мобільне меню на весь екран */
