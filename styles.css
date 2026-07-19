@@ -913,6 +913,13 @@ ul {
 
 .kvity {
     padding: var(--section-gap) 0;
+    padding-top: 28px;
+}
+
+@media (min-width: 768px) {
+    .kvity {
+        padding-top: var(--section-gap);
+    }
 }
 
 #tovary {
