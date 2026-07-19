@@ -1799,9 +1799,8 @@ footer {
 
 .footer-col ul.footer-links {
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-auto-flow: column;
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(3, auto);
+    grid-auto-flow: row;
     justify-content: start;
     justify-items: start;
     text-align: left;

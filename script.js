@@ -198,7 +198,10 @@ document.querySelectorAll('.product-qty').forEach(control => {
         const idx = cart.findIndex(i => i.name === name);
         if (idx === -1) return;
         cart[idx].qty -= 1;
-        if (cart[idx].qty <= 0) cart.splice(idx, 1);
+        if (cart[idx].qty <= 0) {
+            cart.splice(idx, 1);
+            showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${name}» видалено`);
+        }
         saveCart();
         renderCart();
     });
