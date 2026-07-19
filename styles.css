@@ -1268,7 +1268,7 @@ ul {
 
 .about {
     padding: var(--section-gap) 0;
-    padding-top: calc(var(--nav-h) + 20px);
+    padding-top: calc(var(--nav-h) + 25px);
 }
 
 .about-grid {
