@@ -867,7 +867,9 @@ ul {
 
 /* Менший відступ між заголовком і фільтром категорій (сторінка іграшок) */
 
-#igrashky .section-header {
+#igrashky .section-header,
+#kulky .section-header,
+#kvity .section-header {
     margin-bottom: 18px;
 }
 
@@ -2434,6 +2436,31 @@ footer {
 #toast.show {
     transform: translateY(0);
     opacity: 1;
+}
+
+.toast-check {
+    vertical-align: -4px;
+    margin-right: 4px;
+}
+
+.toast-check-circle {
+    stroke-dasharray: 63;
+    stroke-dashoffset: 63;
+    animation: toast-circle-draw .4s ease forwards;
+}
+
+.toast-check-mark {
+    stroke-dasharray: 16;
+    stroke-dashoffset: 16;
+    animation: toast-mark-draw .25s ease forwards .35s;
+}
+
+@keyframes toast-circle-draw {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes toast-mark-draw {
+    to { stroke-dashoffset: 0; }
 }
 
 /* Ноут-версія (від 768px) */

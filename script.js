@@ -153,7 +153,7 @@ window.addToCart = (name, price) => {
     saveCart();
     renderCart();
   
-    toast.textContent = `✅ «${name}» додано`;
+    toast.innerHTML = `<svg class="toast-check" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-check-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-check-mark" d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> «${name}» додано`;
     toast.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
