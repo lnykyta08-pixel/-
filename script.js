@@ -170,10 +170,17 @@ document.querySelectorAll('.contact-us-link').forEach(btn => {
         e.preventDefault();
         const phone = document.getElementById('footer-phone');
         phone?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => {
+
+        const blink = () => {
             phone?.classList.add('phone-blink');
             setTimeout(() => phone?.classList.remove('phone-blink'), 1000);
-        }, 500);
+        };
+
+        if (btn.dataset.instant === 'true') {
+            blink();
+        } else {
+            setTimeout(blink, 500);
+        }
     });
 });
 
