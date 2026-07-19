@@ -517,8 +517,6 @@ ul {
     display: grid;
     place-items: center;
     font-size: 1.05rem;
-    background: rgba(255,255,255,.12);
-    border-radius: 50%;
 }
 
 .mobile-menu.open .mobile-link { opacity: 1; transform: translateY(0); }
