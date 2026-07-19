@@ -850,6 +850,12 @@ ul {
     line-height: 1.65;
 }
 
+/* Менший відступ між заголовком і фільтром категорій (сторінка іграшок) */
+
+#igrashky .section-header {
+    margin-bottom: 18px;
+}
+
 /* Ноут-версія */
 
 @media (min-width: 768px) {
@@ -952,6 +958,8 @@ ul {
     box-shadow: var(--shadow-sm);
     transition: transform .3s, box-shadow .3s;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-img-wrap {
@@ -983,6 +991,9 @@ ul {
 
 .product-body {
     padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .product-name {
@@ -1073,6 +1084,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: auto;
 }
 
 .product-price {
@@ -1097,10 +1109,118 @@ ul {
     place-items: center;
     font-size: 1.1rem;
     transition: background .2s, color .2s, transform .2s;
+    position: relative;
 }
 
 .product-btn:active {
     transform: scale(0.92);
+}
+
+/* Індикатор "вже додано у кошик" (легасі кнопка на інших сторінках) */
+
+.product-btn.in-cart {
+    background: var(--emerald);
+    color: var(--white);
+}
+
+.product-btn.in-cart::after,
+.qty-btn.qty-plus.in-cart::after {
+    content: '✓';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: var(--white);
+    font-size: .6rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 2px var(--white);
+}
+
+/* Фільтр за категоріями (розмірами) над сіткою товарів */
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 4px 0 28px;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border-radius: var(--radius-pill);
+    background: var(--sand);
+    color: var(--forest);
+    font-size: .85rem;
+    font-weight: 600;
+    transition: background .2s, color .2s;
+}
+
+.filter-btn.active {
+    background: var(--emerald);
+    color: var(--white);
+}
+
+@media (hover: hover) {
+    .filter-btn:not(.active):hover {
+        background: var(--forest-light);
+    }
+}
+
+/* Степер кількості прямо на картці товару */
+
+.product-qty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-count {
+    min-width: 16px;
+    text-align: center;
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--forest);
+}
+
+.qty-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--forest-light);
+    color: var(--forest);
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: background .2s, color .2s, transform .2s, opacity .2s;
+    position: relative;
+}
+
+.qty-btn.qty-plus.in-cart {
+    background: var(--emerald);
+    color: var(--white);
+}
+
+.qty-btn.qty-minus:disabled {
+    opacity: .35;
+    cursor: default;
+}
+
+.qty-btn:active:not(:disabled) {
+    transform: scale(0.92);
+}
+
+@media (hover: hover) {
+    .qty-btn:not(:disabled):hover {
+        background: var(--emerald);
+        color: var(--white);
+    }
 }
 
 /* Квіти ноут версія */
