@@ -42,7 +42,8 @@ const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
         if (e.isIntersecting) {
             e.target.classList.add('visible');
-            revealObs.unobserve(e.target);
+        } else {
+            e.target.classList.remove('visible');
         }
     });
 }, { threshold: 0.12 });
@@ -146,17 +147,21 @@ function renderCart() {
     `).join('');
 }
 
+function showToast(html) {
+    toast.innerHTML = html;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
+}
+
 window.addToCart = (name, price) => {
     const existing = cart.find(i => i.name === name);
     if (existing) existing.qty += 1;
     else cart.push({ name, price: Number(price), qty: 1 });
     saveCart();
     renderCart();
-  
-    toast.innerHTML = `<svg class="toast-check" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-check-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-check-mark" d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> «${name}» додано`;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
+
+    showToast(`<svg class="toast-check" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-check-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-check-mark" d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> «${name}» додано`);
 };
 
 document.getElementById('cart-items')?.addEventListener('click', e => {
@@ -167,8 +172,14 @@ document.getElementById('cart-items')?.addEventListener('click', e => {
     if (action === 'inc') cart[index].qty += 1;
     else if (action === 'dec') {
         cart[index].qty -= 1;
-        if (cart[index].qty <= 0) cart.splice(index, 1);
-    } else if (action === 'remove') cart.splice(index, 1);
+        if (cart[index].qty <= 0) {
+            const [removed] = cart.splice(index, 1);
+            showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${removed.name}» видалено`);
+        }
+    } else if (action === 'remove') {
+        const [removed] = cart.splice(index, 1);
+        showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${removed.name}» видалено`);
+    }
     saveCart();
     renderCart();
 });
