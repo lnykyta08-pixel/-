@@ -417,6 +417,7 @@ ul {
     display: none;
     position: fixed;
     inset: 0;
+    height: 100dvh;
     z-index: 999;
     background: var(--forest);
     padding: calc(var(--nav-h) + 12px) 28px 32px;
@@ -495,6 +496,11 @@ ul {
     display: flex;
 }
 
+.mobile-menu-links {
+    margin-top: -32px;
+    margin-bottom: 8px;
+}
+
 .mobile-link {
     display: flex;
     align-items: center;
@@ -517,6 +523,15 @@ ul {
     display: grid;
     place-items: center;
     font-size: 1.05rem;
+}
+
+.mobile-link-arrow {
+    margin-left: auto;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    opacity: .55;
+    transition: opacity .2s ease, transform .2s ease;
 }
 
 .mobile-menu.open .mobile-link { opacity: 1; transform: translateY(0); }
@@ -596,7 +611,14 @@ ul {
     }
 }
 
-.mobile-link:active { background: rgba(255,255,255,.16); }
+.mobile-link:active {
+    background: rgba(255,255,255,.22);
+}
+
+.mobile-link:active .mobile-link-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+}
 
 /* Рядок "телефон + іконки" в гамбургер-меню */
 
@@ -605,6 +627,7 @@ ul {
     align-items: center;
     gap: 10px;
     flex-wrap: nowrap;
+    margin-top: 24px;
 }
 
 .mobile-menu-footer .mobile-call-btn {
@@ -1225,13 +1248,19 @@ ul {
 /* Квіти ноут версія */
 
 @media (min-width: 1300px) {
-    .container:has(.products-grid) {
+    .container:has(.products-grid),
+    .container:has(.about-grid) {
         max-width: 1450px;
     }
 
     .products-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 28px;
+    }
+
+    .about-img-main,
+    .about-img-accent {
+        height: 560px;
     }
 }
 
@@ -1406,7 +1435,7 @@ ul {
     }
 
     .about-grid {
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1.3fr 1.4fr 1.3fr;
         grid-template-areas:
             "header header header"
             "imgMain text imgAccent";
@@ -1428,16 +1457,16 @@ ul {
 
     .about-img-main {
         grid-area: imgMain;
-        width: 300px;
-        height: 400px;
+        width: 100%;
+        height: 480px;
         object-fit: cover;
     }
 
     .about-img-accent {
         grid-area: imgAccent;
         position: static;
-        width: 300px;
-        height: 400px;
+        width: 100%;
+        height: 480px;
         object-fit: cover;
         box-shadow: 0 16px 34px rgba(6,95,70,.3);
     }
