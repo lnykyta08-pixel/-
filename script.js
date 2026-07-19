@@ -77,10 +77,10 @@ document.querySelectorAll('.stat-number').forEach(el => statsObs.observe(el));
 const toast = document.getElementById('toast');
 let toastTimer;
 const CART_KEY = 'kvity-cart';
-let cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+let cart = JSON.parse(sessionStorage.getItem(CART_KEY) || '[]');
 
 function saveCart() {
-    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    sessionStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
 // Індикатор "вже додано у кошик" та степер кількості прямо на картці товару
@@ -196,7 +196,7 @@ document.querySelectorAll('.product-qty').forEach(control => {
 // Фільтр товарів за категорією (розміром)
 
 const filterBtns = document.querySelectorAll('.filter-btn');
-const filterableCards = document.querySelectorAll('.product-card[data-size]');
+const filterableCards = document.querySelectorAll('.product-card[data-category]');
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -204,7 +204,7 @@ filterBtns.forEach(btn => {
         btn.classList.add('active');
         const filter = btn.dataset.filter;
         filterableCards.forEach(card => {
-            const show = filter === 'all' || card.dataset.size === filter;
+            const show = filter === 'all' || card.dataset.category === filter;
             card.style.display = show ? '' : 'none';
         });
     });
