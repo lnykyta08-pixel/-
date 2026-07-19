@@ -501,6 +501,18 @@ ul {
     border-radius: 50%;
 }
 
+.mobile-link:nth-child(3) span:last-child,
+.mobile-link:nth-child(4) span:last-child,
+.mobile-link:nth-child(5) span:last-child {
+    position: relative;
+    top: 3px;
+}
+
+.mobile-link:nth-child(2) span:last-child {
+    position: relative;
+    top: -2px;
+}
+
 .mobile-menu.open .mobile-link { opacity: 1; transform: translateY(0); }
 
 .mobile-menu.open .mobile-link:nth-child(1) { transition-delay: .08s; }
