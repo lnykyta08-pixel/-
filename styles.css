@@ -1428,16 +1428,16 @@ ul {
 
     .about-img-main {
         grid-area: imgMain;
-        width: 100%;
-        aspect-ratio: 3/4;
+        width: 300px;
+        height: 400px;
         object-fit: cover;
     }
 
     .about-img-accent {
         grid-area: imgAccent;
         position: static;
-        width: 100%;
-        aspect-ratio: 3/4;
+        width: 300px;
+        height: 400px;
         object-fit: cover;
         box-shadow: 0 16px 34px rgba(6,95,70,.3);
     }
