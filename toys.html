@@ -91,11 +91,18 @@
                 <h2 class="section-title" id="igrashky-title">М'які іграшки</h2>
             </div>
         </div>
+
+    <div class="category-filters" role="tablist" aria-label="Фільтр за розміром">
+        <button class="filter-btn active" data-filter="all" type="button">Усі</button>
+        <button class="filter-btn" data-filter="small" type="button">Маленький</button>
+        <button class="filter-btn" data-filter="medium" type="button">Середній</button>
+    </div>
+
     <div class="products-grid">
 
 <!-- Продукт 1 -->
 
-<article class="product-card reveal">
+<article class="product-card reveal" data-size="small">
     <div class="product-img-wrap">
         <img src="white_small_bear.webp" alt="Білий маленький ведмедик" loading="lazy" />
     </div>
@@ -104,14 +111,18 @@
         <p class="product-desc">...</p>
         <div class="product-footer">
             <div class="product-price">350 ₴ <span>/ од.</span></div>
-            <button class="product-btn" onclick="addToCart('Ведмедик плюшевий', 350)">+</button>
+            <div class="product-qty" data-name="Білий ведмедик" data-price="350">
+                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
+                <span class="qty-count">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+            </div>
         </div>
     </div>
 </article>
 
 <!-- Продукт 2 -->
 
-<article class="product-card reveal">
+<article class="product-card reveal" data-size="small">
     <div class="product-img-wrap">
         <img src="temno_brown_small_bear.webp" alt="Темно-коричневий маленький ведмедик" loading="lazy" />
     </div>
@@ -120,14 +131,18 @@
         <p class="product-desc">...</p>
         <div class="product-footer">
             <div class="product-price">320 ₴ <span>/ од.</span></div>
-            <button class="product-btn" onclick="addToCart('Зайчик плюшевий', 320)">+</button>
+            <div class="product-qty" data-name="Світло-коричневий ведмедик" data-price="320">
+                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
+                <span class="qty-count">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+            </div>
         </div>
     </div>
 </article>
             
 <!-- Продукт 3 -->
 
-<article class="product-card reveal">
+<article class="product-card reveal" data-size="small">
     <div class="product-img-wrap">
         <img src="light_brown_small_bear.webp" alt="Світло-коричневий маленький ведмедик" loading="lazy" />
     </div>
@@ -136,30 +151,38 @@
         <p class="product-desc">...</p>
         <div class="product-footer">
             <div class="product-price">300 ₴ <span>/ од.</span></div>
-            <button class="product-btn" onclick="addToCart('Песик плюшевий', 300)">+</button>
+            <div class="product-qty" data-name="Світлий ведмедик" data-price="300">
+                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
+                <span class="qty-count">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+            </div>
         </div>
     </div>
 </article>
             
 <!-- Продукт 4 -->
 
-<article class="product-card reveal">
+<article class="product-card reveal" data-size="small">
     <div class="product-img-wrap">
         <img src="light_brown_puknastyy_small_bear.webp" alt="Світло-коричневий маленький пухнастий ведмедик" loading="lazy" />
     </div>
     <div class="product-body">
-        <div class="product-name">Світло пухнастий ведмедик</div>
+        <div class="product-name">Світло-пухнастий ведмедик</div>
         <p class="product-desc">...</p>
         <div class="product-footer">
             <div class="product-price">750 ₴ <span>/ од.</span></div>
-            <button class="product-btn" onclick="addToCart('Ведмідь великий (60 см)', 750)">+</button>
+            <div class="product-qty" data-name="Світло-пухнастий ведмедик" data-price="750">
+                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
+                <span class="qty-count">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+            </div>
         </div>
     </div>
 </article>
             
 <!-- Продукт 5 -->
 
-<article class="product-card reveal">
+<article class="product-card reveal" data-size="medium">
     <div class="product-img-wrap">
         <img src="big_blue_bear.webp" alt="Великий блакитний ведмедик" loading="lazy" />
     </div>
@@ -168,14 +191,18 @@
         <p class="product-desc">...</p>
         <div class="product-footer">
             <div class="product-price">320 ₴ <span>/ од.</span></div>
-            <button class="product-btn" onclick="addToCart('Кошеня плюшеве', 320)">+</button>
+            <div class="product-qty" data-name="Блакитний ведмедик" data-price="320">
+                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
+                <span class="qty-count">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+            </div>
         </div>
     </div>
 </article>
             
 <!-- Продукт 6 -->
 
-<article class="product-card reveal">
+<article class="product-card reveal" data-size="medium">
     <div class="product-img-wrap">
         <img src="big_purple_bear.webp" alt="Великий лавандовий ведмедик" loading="lazy" />
     </div>
@@ -184,7 +211,11 @@
         <p class="product-desc">...</p>
         <div class="product-footer">
             <div class="product-price">400 ₴ <span>/ од.</span></div>
-            <button class="product-btn" onclick="addToCart('Єдиноріг м’який', 400)">+</button>
+            <div class="product-qty" data-name="Лавандовий ведмедик" data-price="400">
+                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
+                <span class="qty-count">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+            </div>
         </div>
     </div>
 </article>
@@ -221,6 +252,7 @@
                     <li><span class="contact-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"/></svg></span><span>вул. Професора Толока, 29а, м. Запоріжжя</span></li>
                     <li id="footer-phone"><span class="contact-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"/></svg></span><a href="tel:+380665160627" style="color:inherit;transition:color .2s;" onmouseover="this.style.color='var(--emerald)'" onmouseout="this.style.color='inherit'">+38 066 516 06 27</a></li>
                     <li><span class="contact-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 14.5 14.5"/></svg></span><span>Пн-Сб: 8:00-18:00 <br>Нд: 8:00-16:00</span></li>
+                </ul>
             </div>
             <div class="footer-col footer-links-col">
                 <details class="footer-links-details" open>

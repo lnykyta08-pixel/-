@@ -82,6 +82,30 @@ function saveCart() {
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
+// Індикатор "вже додано у кошик" та степер кількості прямо на картці товару
+
+function updateProductIndicators() {
+    document.querySelectorAll('.product-btn[onclick^="addToCart"]').forEach(btn => {
+        const match = (btn.getAttribute('onclick') || '').match(/addToCart\('([^']+)'/);
+        if (!match) return;
+        const name = match[1];
+        const inCart = cart.some(i => i.name === name);
+        btn.classList.toggle('in-cart', inCart);
+    });
+
+    document.querySelectorAll('.product-qty').forEach(control => {
+        const name = control.dataset.name;
+        const item = cart.find(i => i.name === name);
+        const qty = item ? item.qty : 0;
+        const countEl = control.querySelector('.qty-count');
+        const minusBtn = control.querySelector('.qty-minus');
+        const plusBtn = control.querySelector('.qty-plus');
+        if (countEl) countEl.textContent = qty;
+        if (minusBtn) minusBtn.disabled = qty === 0;
+        if (plusBtn) plusBtn.classList.toggle('in-cart', qty > 0);
+    });
+}
+
 function renderCart() {
     const itemsEl = document.getElementById('cart-items');
     const footerEl = document.getElementById('cart-footer');
@@ -94,6 +118,8 @@ function renderCart() {
 
     countEl.textContent = totalQty;
     countEl.classList.toggle('show', totalQty > 0);
+
+    updateProductIndicators();
 
     if (cart.length === 0) {
         itemsEl.innerHTML = `<div class="cart-empty"><span>🌷</span><p>Кошик поки порожній</p></div>`;
@@ -144,6 +170,43 @@ document.getElementById('cart-items')?.addEventListener('click', e => {
     } else if (action === 'remove') cart.splice(index, 1);
     saveCart();
     renderCart();
+});
+
+// Степер кількості на картці товару (+/- поруч, без потреби відкривати кошик)
+
+document.querySelectorAll('.product-qty').forEach(control => {
+    const name = control.dataset.name;
+    const price = Number(control.dataset.price);
+    const minusBtn = control.querySelector('.qty-minus');
+    const plusBtn = control.querySelector('.qty-plus');
+
+    plusBtn?.addEventListener('click', () => addToCart(name, price));
+
+    minusBtn?.addEventListener('click', () => {
+        const idx = cart.findIndex(i => i.name === name);
+        if (idx === -1) return;
+        cart[idx].qty -= 1;
+        if (cart[idx].qty <= 0) cart.splice(idx, 1);
+        saveCart();
+        renderCart();
+    });
+});
+
+// Фільтр товарів за категорією (розміром)
+
+const filterBtns = document.querySelectorAll('.filter-btn');
+const filterableCards = document.querySelectorAll('.product-card[data-size]');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        filterableCards.forEach(card => {
+            const show = filter === 'all' || card.dataset.size === filter;
+            card.style.display = show ? '' : 'none';
+        });
+    });
 });
 
 // Відкриття/Закриття кошика
