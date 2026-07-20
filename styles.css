@@ -2589,3 +2589,374 @@ footer {
         max-width: 320px;
     }
 }
+/* Модальне вікно: листівка з побажанням */
+
+.card-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1400;
+    background: rgba(6,78,59,.45);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.card-modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.card-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1500;
+    width: 420px;
+    max-width: 88vw;
+    max-height: 86vh;
+    overflow-y: auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 32px 26px 26px;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(.92);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .25s;
+}
+
+.card-modal.open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.card-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--text-light);
+    font-size: .9rem;
+    transition: background .2s, color .2s;
+}
+
+.card-modal-close:active {
+    background: var(--sand);
+}
+
+.card-modal-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.card-modal-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--forest);
+    margin-bottom: 10px;
+}
+
+.card-modal-text {
+    font-size: .88rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-modal-text strong {
+    color: var(--forest);
+}
+
+.card-message-input {
+    width: 100%;
+    resize: vertical;
+    min-height: 90px;
+    border: 1.5px solid var(--sand);
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    font-family: var(--font-body);
+    font-size: .9rem;
+    color: var(--text-dark);
+    background: var(--bg-main);
+    margin-bottom: 18px;
+    transition: border-color .2s;
+}
+
+.card-message-input:focus {
+    outline: none;
+    border-color: var(--emerald);
+}
+
+.card-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-modal-actions .btn {
+    width: 100%;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text-mid);
+    min-height: 40px;
+    padding: 10px 20px;
+}
+
+@media (hover: hover) {
+    .card-modal-close:hover {
+        background: var(--sand);
+        color: var(--text-mid);
+    }
+
+    .btn-ghost:hover {
+        color: var(--forest);
+    }
+}
+
+@media (min-width: 768px) {
+    .card-modal {
+        padding: 38px 34px 30px;
+    }
+}
+
+/* Листівка як елемент кошика */
+
+.cart-item-card {
+    align-items: flex-start;
+}
+
+.cart-item-card .cart-item-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cart-item-card-message {
+    font-size: .8rem;
+    color: var(--text-mid);
+    font-style: italic;
+    line-height: 1.4;
+    margin: 4px 0 2px;
+    word-break: break-word;
+}
+
+.cart-item-card-message.is-empty {
+    color: var(--text-light);
+    font-style: normal;
+}
+
+.cart-item-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.cart-item-edit {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--text-light);
+    font-size: .9rem;
+    transition: background .2s, color .2s;
+}
+
+.cart-item-edit:active {
+    background: var(--forest-light);
+    color: var(--forest);
+}
+
+@media (hover: hover) {
+    .cart-item-edit:hover {
+        background: var(--forest-light);
+        color: var(--forest);
+    }
+}
+
+/* Модальне вікно: наповнення кульки (повітря / гелій) */
+
+.fill-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1400;
+    background: rgba(6,78,59,.45);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+}
+
+.fill-modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.fill-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1500;
+    width: 420px;
+    max-width: 88vw;
+    max-height: 86vh;
+    overflow-y: auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 32px 26px 30px;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(.92);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .25s;
+}
+
+.fill-modal.open {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.fill-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--text-light);
+    font-size: .9rem;
+    transition: background .2s, color .2s;
+}
+
+.fill-modal-close:active {
+    background: var(--sand);
+}
+
+.fill-modal-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.fill-modal-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--forest);
+    margin-bottom: 8px;
+}
+
+.fill-modal-text {
+    font-size: .88rem;
+    color: var(--text-mid);
+    margin-bottom: 20px;
+}
+
+.fill-modal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fill-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 68px;
+    text-align: left;
+    padding: 14px 16px;
+    border: 1.5px solid var(--sand);
+    border-radius: var(--radius-md);
+    background: var(--bg-main);
+    transition: border-color .2s, background .2s, transform .15s;
+}
+
+.fill-option:active {
+    transform: scale(.98);
+    border-color: var(--emerald);
+    background: var(--forest-light);
+}
+
+.fill-option-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+}
+
+.fill-option-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fill-option-label {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--forest);
+    display: block;
+}
+
+.fill-option-desc {
+    font-size: .78rem;
+    color: var(--text-mid);
+    display: block;
+    margin-top: 2px;
+}
+
+@media (hover: hover) {
+    .fill-modal-close:hover {
+        background: var(--sand);
+        color: var(--text-mid);
+    }
+
+    .fill-option:hover {
+        border-color: var(--emerald);
+        background: var(--forest-light);
+    }
+}
+
+@media (min-width: 768px) {
+    .fill-modal {
+        padding: 38px 34px 34px;
+    }
+
+    .fill-option {
+        padding: 16px 18px;
+    }
+}
+
+/* Позначка наповнення кульки у кошику */
+
+.cart-item-fill {
+    font-size: .78rem;
+    color: var(--text-mid);
+    margin: 2px 0;
+}
+
+.cart-item-fill-edit {
+    color: var(--emerald);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+@media (hover: hover) {
+    .cart-item-fill-edit:hover {
+        color: var(--forest-mid);
+    }
+}

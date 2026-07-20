@@ -83,6 +83,31 @@
     </div>
 </aside>
 
+<!-- Модальне вікно: наповнення кульки -->
+
+<div class="fill-modal-overlay" id="fill-modal-overlay"></div>
+<div class="fill-modal" id="fill-modal" role="dialog" aria-modal="true" aria-labelledby="fill-modal-title">
+    <button class="fill-modal-close" id="fill-modal-close" aria-label="Закрити">✕</button>
+    <h3 class="fill-modal-title" id="fill-modal-title">Оберіть наповнення</h3>
+    <p class="fill-modal-text" id="fill-modal-product-name"></p>
+    <div class="fill-modal-options">
+        <button class="fill-option" data-fill="Гелій" type="button">
+            <span class="fill-option-icon">🎈</span>
+            <span class="fill-option-text">
+                <span class="fill-option-label">Гелій</span>
+                <span class="fill-option-desc">Летить угору, тримається кілька днів</span>
+            </span>
+        </button>
+        <button class="fill-option" data-fill="Повітря" type="button">
+            <span class="fill-option-icon">💨</span>
+            <span class="fill-option-text">
+                <span class="fill-option-label">Повітря</span>
+                <span class="fill-option-desc">Не літає, зручно для декору та фотозон</span>
+            </span>
+        </button>
+    </div>
+</div>
+
 <!-- Товари: Кульки -->
 
 <section class="about kvity" id="kulky">
@@ -93,11 +118,6 @@
                 <p class="section-sub">Те, без чого свято не розпочнеться</p>
             </div>
         </div>
-    <div class="category-filters" role="tablist" aria-label="Фільтр за видом">
-        <button class="filter-btn active" data-filter="all" type="button">Усі</button>
-        <button class="filter-btn" data-filter="foil" type="button">Фольговані</button>
-        <button class="filter-btn" data-filter="latex" type="button">Латексні</button>
-    </div>
 
     <div class="products-grid">
 
@@ -113,7 +133,7 @@
         <p class="product-desc">Романтичний символ для освідчення чи річниці</p>
         <div class="product-footer">
             <div class="product-price">150 ₴ <span>/ од.</span></div>
-            <div class="product-qty" data-name="Фольгована кулька «Серце»" data-price="150">
+            <div class="product-qty" data-name="Фольгована кулька «Серце»" data-price="150" data-needs-fill="true">
                 <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
                 <span class="qty-count">0</span>
                 <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
@@ -131,7 +151,7 @@
         <p class="product-desc">Класична кругла кулька, більше 15 кольорів на вибір</p>
         <div class="product-footer">
             <div class="product-price">40 ₴ <span>/ од.</span></div>
-            <div class="product-qty" data-name="Латексна кулька" data-price="40">
+            <div class="product-qty" data-name="Латексна кулька" data-price="40" data-needs-fill="true">
                 <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
                 <span class="qty-count">0</span>
                 <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
@@ -149,7 +169,7 @@
         <p class="product-desc">Велика цифра на день народження чи ювілей (1 м)</p>
         <div class="product-footer">
             <div class="product-price">280 ₴ <span>/ од.</span></div>
-            <div class="product-qty" data-name="Цифра фольгована" data-price="280">
+            <div class="product-qty" data-name="Цифра фольгована" data-price="280" data-needs-fill="true">
                 <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
                 <span class="qty-count">0</span>
                 <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
@@ -167,7 +187,7 @@
         <p class="product-desc">Готова композиція з гелієвих кульок на стрічці</p>
         <div class="product-footer">
             <div class="product-price">320 ₴ <span>/ од.</span></div>
-            <div class="product-qty" data-name="Букет із кульок (5 шт.)" data-price="320">
+            <div class="product-qty" data-name="Букет із кульок (5 шт.)" data-price="320" data-needs-fill="true">
                 <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
                 <span class="qty-count">0</span>
                 <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>

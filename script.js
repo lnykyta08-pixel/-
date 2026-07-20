@@ -130,10 +130,27 @@ function renderCart() {
     footerEl.classList.add('show');
     totalEl.textContent = totalPrice.toLocaleString('uk-UA') + ' ₴';
 
-    itemsEl.innerHTML = cart.map((item, i) => `
+    itemsEl.innerHTML = cart.map((item, i) => {
+        if (item.isCard) {
+            const hasMessage = item.message && item.message.trim().length;
+            return `
+        <div class="cart-item cart-item-card" data-index="${i}">
+            <div class="cart-item-info">
+                <div class="cart-item-name"><span>💌</span><span>${item.name}</span></div>
+                <div class="cart-item-card-message${hasMessage ? '' : ' is-empty'}">${hasMessage ? '«' + escapeHtml(item.message) + '»' : 'Текст не додано'}</div>
+                <div class="cart-item-price">${item.price.toLocaleString('uk-UA')} ₴</div>
+            </div>
+            <div class="cart-item-card-actions">
+                <button class="cart-item-edit" data-action="edit-card" aria-label="Редагувати побажання">✎</button>
+                <button class="cart-item-remove" data-action="remove">✕</button>
+            </div>
+        </div>`;
+        }
+        return `
         <div class="cart-item" data-index="${i}">
             <div class="cart-item-info">
                 <div class="cart-item-name">${item.name}</div>
+                ${item.fill ? `<div class="cart-item-fill">${item.fill === 'Гелій' ? '🎈' : '💨'} ${item.fill} · <button class="cart-item-fill-edit" data-action="edit-fill" type="button">змінити</button></div>` : ''}
                 <div class="cart-item-price">${item.price.toLocaleString('uk-UA')} ₴ за шт.</div>
             </div>
             <div class="cart-item-qty">
@@ -142,8 +159,14 @@ function renderCart() {
                 <button class="cart-qty-btn" data-action="inc">+</button>
             </div>
             <button class="cart-item-remove" data-action="remove">✕</button>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
+}
+
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
 }
 
 const MAX_TOASTS = 3;
@@ -182,13 +205,181 @@ window.addToCart = (name, price) => {
     renderCart();
 
     showToast(`<svg class="toast-check" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-check-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-check-mark" d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> «${name}» додано`);
+
+    maybeOfferCard();
 };
+
+// Листівка з побажанням до букета
+
+const CARD_NAME = 'Листівка з побажанням';
+const CARD_PRICE = 5;
+const CARD_OFFERED_KEY = 'kvity-card-offered';
+
+const cardModal = document.getElementById('card-modal');
+const cardModalOverlay = document.getElementById('card-modal-overlay');
+const cardModalOffer = document.getElementById('card-modal-offer');
+const cardModalForm = document.getElementById('card-modal-form');
+const cardMessageInput = document.getElementById('card-message-input');
+
+let editingCardIndex = null;
+
+// Приклади побажань — один випадковий підставляється як підказка в полі вводу
+
+const CARD_MESSAGE_EXAMPLES = [
+    "З Днем народження! Бажаю щастя, здоров'я та здійснення мрій. З любов'ю, Олена",
+    "Найкращій мамі на світі — дякую за твою любов і турботу!",
+    "Вітаю з ювілеєм! Нехай кожен день дарує тільки радість.",
+    "Коханню, з яким я хочу зустрічати кожен ранок ❤",
+    "Вітаю з весіллям! Нехай ваш союз буде міцним і щасливим.",
+    "Дякую, що ти є в моєму житті. Люблю тебе!",
+    "З 8 Березня! Будь завжди такою ж чарівною та щасливою.",
+    "Нехай цей букет нагадує, як сильно я тебе ціную.",
+    "Вітаю з народженням доньки! Щастя вашій родині.",
+    "Пробач мене. Ти найдорожча людина в моєму житті."
+];
+
+function randomCardPlaceholder() {
+    return CARD_MESSAGE_EXAMPLES[Math.floor(Math.random() * CARD_MESSAGE_EXAMPLES.length)];
+}
+
+function openCardModal(step = 'offer') {
+    if (!cardModal) return;
+    cardModal.classList.add('open');
+    cardModalOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (step === 'form') {
+        cardModalOffer.style.display = 'none';
+        cardModalForm.style.display = '';
+        cardMessageInput.value = editingCardIndex !== null ? (cart[editingCardIndex].message || '') : '';
+        cardMessageInput.placeholder = 'Наприклад: «' + randomCardPlaceholder() + '»';
+        setTimeout(() => cardMessageInput.focus(), 150);
+    } else {
+        cardModalOffer.style.display = '';
+        cardModalForm.style.display = 'none';
+    }
+}
+
+function closeCardModal() {
+    if (!cardModal) return;
+    cardModal.classList.remove('open');
+    cardModalOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    editingCardIndex = null;
+}
+
+function maybeOfferCard() {
+    if (!cardModal) return;
+    if (sessionStorage.getItem(CARD_OFFERED_KEY)) return;
+    if (cart.some(i => i.isCard)) return;
+    openCardModal('offer');
+}
+
+document.getElementById('card-modal-yes')?.addEventListener('click', () => openCardModal('form'));
+
+document.getElementById('card-modal-no')?.addEventListener('click', () => {
+    sessionStorage.setItem(CARD_OFFERED_KEY, '1');
+    closeCardModal();
+});
+
+document.getElementById('card-modal-skip')?.addEventListener('click', () => {
+    sessionStorage.setItem(CARD_OFFERED_KEY, '1');
+    closeCardModal();
+});
+
+document.getElementById('card-modal-close')?.addEventListener('click', () => {
+    sessionStorage.setItem(CARD_OFFERED_KEY, '1');
+    closeCardModal();
+});
+
+cardModalOverlay?.addEventListener('click', () => {
+    sessionStorage.setItem(CARD_OFFERED_KEY, '1');
+    closeCardModal();
+});
+
+document.getElementById('card-modal-save')?.addEventListener('click', () => {
+    const message = cardMessageInput.value.trim();
+    if (editingCardIndex !== null) {
+        cart[editingCardIndex].message = message;
+    } else {
+        cart.push({ name: CARD_NAME, price: CARD_PRICE, qty: 1, isCard: true, message });
+        showToast(`<svg class="toast-check" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-check-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-check-mark" d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> «${CARD_NAME}» додано`);
+    }
+    sessionStorage.setItem(CARD_OFFERED_KEY, '1');
+    saveCart();
+    renderCart();
+    closeCardModal();
+});
+
+// Вибір наповнення кульки (повітря / гелій)
+
+const fillModal = document.getElementById('fill-modal');
+const fillModalOverlay = document.getElementById('fill-modal-overlay');
+const fillModalProductName = document.getElementById('fill-modal-product-name');
+
+let pendingBalloon = null;
+let editingFillIndex = null;
+
+function openFillModal(name, price) {
+    if (!fillModal) return;
+    pendingBalloon = { name, price };
+    editingFillIndex = null;
+    if (fillModalProductName) fillModalProductName.textContent = `«${name}»`;
+    fillModal.classList.add('open');
+    fillModalOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function openFillModalForEdit(index) {
+    if (!fillModal) return;
+    pendingBalloon = null;
+    editingFillIndex = index;
+    if (fillModalProductName) fillModalProductName.textContent = `«${cart[index].name}»`;
+    fillModal.classList.add('open');
+    fillModalOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeFillModal() {
+    if (!fillModal) return;
+    fillModal.classList.remove('open');
+    fillModalOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    pendingBalloon = null;
+    editingFillIndex = null;
+}
+
+document.querySelectorAll('.fill-option').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const fill = btn.dataset.fill;
+        if (editingFillIndex !== null) {
+            cart[editingFillIndex].fill = fill;
+        } else if (pendingBalloon) {
+            cart.push({ name: pendingBalloon.name, price: pendingBalloon.price, qty: 1, fill });
+            showToast(`<svg class="toast-check" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-check-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-check-mark" d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> «${pendingBalloon.name}» додано`);
+        }
+        saveCart();
+        renderCart();
+        closeFillModal();
+    });
+});
+
+document.getElementById('fill-modal-close')?.addEventListener('click', closeFillModal);
+fillModalOverlay?.addEventListener('click', closeFillModal);
 
 document.getElementById('cart-items')?.addEventListener('click', e => {
     const btn = e.target.closest('button[data-action]');
     if (!btn) return;
     const index = Number(btn.closest('.cart-item').dataset.index);
     const action = btn.dataset.action;
+    if (action === 'edit-card') {
+        editingCardIndex = index;
+        openCardModal('form');
+        return;
+    }
+    if (action === 'edit-fill') {
+        openFillModalForEdit(index);
+        return;
+    }
     if (action === 'inc') cart[index].qty += 1;
     else if (action === 'dec') {
         cart[index].qty -= 1;
@@ -208,10 +399,18 @@ document.getElementById('cart-items')?.addEventListener('click', e => {
 document.querySelectorAll('.product-qty').forEach(control => {
     const name = control.dataset.name;
     const price = Number(control.dataset.price);
+    const needsFill = control.dataset.needsFill === 'true';
     const minusBtn = control.querySelector('.qty-minus');
     const plusBtn = control.querySelector('.qty-plus');
 
-    plusBtn?.addEventListener('click', () => addToCart(name, price));
+    plusBtn?.addEventListener('click', () => {
+        const existing = cart.find(i => i.name === name);
+        if (needsFill && !existing) {
+            openFillModal(name, price);
+        } else {
+            addToCart(name, price);
+        }
+    });
 
     minusBtn?.addEventListener('click', () => {
         const idx = cart.findIndex(i => i.name === name);

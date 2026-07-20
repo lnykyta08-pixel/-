@@ -82,6 +82,34 @@
     </div>
 </aside>
 
+<!-- Модальне вікно: листівка з побажанням -->
+
+<div class="card-modal-overlay" id="card-modal-overlay"></div>
+<div class="card-modal" id="card-modal" role="dialog" aria-modal="true" aria-labelledby="card-modal-title">
+    <button class="card-modal-close" id="card-modal-close" aria-label="Закрити">✕</button>
+
+    <div class="card-modal-step" id="card-modal-offer">
+        <div class="card-modal-icon">💌</div>
+        <h3 class="card-modal-title" id="card-modal-title">Додати листівку з побажанням?</h3>
+        <p class="card-modal-text">Ми вкладемо у букет невеличку листівку з вашими побажаннями.</p>
+        <div class="card-modal-actions">
+            <button class="btn btn-primary" id="card-modal-yes"><span>💌</span> <span>Так, додати</span></button>
+            <button class="btn btn-ghost" id="card-modal-no">Ні, дякую</button>
+        </div>
+    </div>
+
+    <div class="card-modal-step" id="card-modal-form" style="display:none;">
+        <div class="card-modal-icon">✍️</div>
+        <h3 class="card-modal-title">Ваше побажання</h3>
+        <p class="card-modal-text">Напишіть текст, який буде на листівці, а ми акуратно перепишемо його від руки.</p>
+        <textarea id="card-message-input" class="card-message-input" maxlength="200" rows="4" placeholder="Наприклад: Нехай цей букет нагадує, як сильно я тебе ціную"></textarea>
+        <div class="card-modal-actions">
+            <button class="btn btn-primary" id="card-modal-save"><span>✓</span> <span>Додати до кошика – 5 ₴</span></button>
+            <button class="btn btn-ghost" id="card-modal-skip">Пропустити</button>
+        </div>
+    </div>
+</div>
+
 <!-- Головний блок -->
 
 <section class="hero" id="hero">
