@@ -75,8 +75,7 @@ document.querySelectorAll('.stat-number').forEach(el => statsObs.observe(el));
 
 // Кошик (Логіка)
 
-const toast = document.getElementById('toast');
-let toastTimer;
+const toastContainer = document.getElementById('toast-container');
 const CART_KEY = 'kvity-cart';
 let cart = JSON.parse(sessionStorage.getItem(CART_KEY) || '[]');
 
@@ -147,11 +146,32 @@ function renderCart() {
     `).join('');
 }
 
+const MAX_TOASTS = 3;
+
 function showToast(html) {
-    toast.innerHTML = html;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
+    if (!toastContainer) return;
+
+    const item = document.createElement('div');
+    item.className = 'toast-item';
+    item.innerHTML = html;
+    toastContainer.appendChild(item);
+
+    // Не даємо накопичувати більше MAX_TOASTS штук одночасно
+    while (toastContainer.children.length > MAX_TOASTS) {
+        toastContainer.removeChild(toastContainer.firstElementChild);
+    }
+
+    // Примусовий reflow, щоб браузер точно зафіксував початковий (прихований)
+    // стан ДО додавання класу 'show' — інакше transition іноді "з'їдається"
+    void item.offsetWidth;
+    item.classList.add('show');
+
+    setTimeout(() => {
+        item.classList.remove('show');
+        item.addEventListener('transitionend', () => item.remove(), { once: true });
+        // На випадок якщо transitionend не спрацює (наприклад елемент вже видалено)
+        setTimeout(() => item.remove(), 400);
+    }, 2800);
 }
 
 window.addToCart = (name, price) => {
@@ -172,10 +192,9 @@ document.getElementById('cart-items')?.addEventListener('click', e => {
     if (action === 'inc') cart[index].qty += 1;
     else if (action === 'dec') {
         cart[index].qty -= 1;
-        if (cart[index].qty <= 0) {
-            const [removed] = cart.splice(index, 1);
-            showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${removed.name}» видалено`);
-        }
+        const name = cart[index].name;
+        if (cart[index].qty <= 0) cart.splice(index, 1);
+        showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${name}» видалено`);
     } else if (action === 'remove') {
         const [removed] = cart.splice(index, 1);
         showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${removed.name}» видалено`);
@@ -198,10 +217,8 @@ document.querySelectorAll('.product-qty').forEach(control => {
         const idx = cart.findIndex(i => i.name === name);
         if (idx === -1) return;
         cart[idx].qty -= 1;
-        if (cart[idx].qty <= 0) {
-            cart.splice(idx, 1);
-            showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${name}» видалено`);
-        }
+        if (cart[idx].qty <= 0) cart.splice(idx, 1);
+        showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${name}» видалено`);
         saveCart();
         renderCart();
     });
@@ -223,6 +240,49 @@ filterBtns.forEach(btn => {
         });
     });
 });
+
+// Фільтр квітів за ціною (повзунок бюджету)
+
+const priceSlider = document.getElementById('price-filter-slider');
+const priceValueEl = document.getElementById('price-filter-value');
+const priceMinEl = document.getElementById('price-filter-min');
+const priceMaxEl = document.getElementById('price-filter-max');
+const priceCards = document.querySelectorAll('.kvity .product-card');
+
+if (priceSlider && priceCards.length) {
+    const prices = Array.from(priceCards).map(card => Number(card.querySelector('.product-qty')?.dataset.price || 0));
+    const minPrice = 0;
+    const maxPrice = Math.max(...prices);
+
+    priceSlider.min = minPrice;
+    priceSlider.max = maxPrice;
+    priceSlider.value = maxPrice;
+    if (priceMinEl) priceMinEl.textContent = `${minPrice} ₴`;
+    if (priceMaxEl) priceMaxEl.textContent = `${maxPrice} ₴`;
+
+    // Допуск "близькості" до обраного бюджету — щоб рекомендувати схожі за ціною
+    // букети, а не показувати лише ті, що строго дешевші за вибрану суму
+    const tolerance = Math.max(15, Math.round((maxPrice - minPrice) * 0.25));
+
+    function applyPriceFilter() {
+        const limit = Number(priceSlider.value);
+        if (priceValueEl) priceValueEl.textContent = limit;
+
+        const percent = maxPrice > minPrice ? ((limit - minPrice) / (maxPrice - minPrice)) * 100 : 100;
+        priceSlider.style.background = `linear-gradient(to right, var(--emerald) 0%, var(--emerald) ${percent}%, var(--white) ${percent}%, var(--white) 100%)`;
+
+        priceCards.forEach(card => {
+            const price = Number(card.querySelector('.product-qty')?.dataset.price || 0);
+            const diff = Math.abs(price - limit);
+            card.style.display = diff <= tolerance ? '' : 'none';
+            // Що ближче ціна до бюджету — то вище картка в сітці
+            card.style.order = diff;
+        });
+    }
+
+    priceSlider.addEventListener('input', applyPriceFilter);
+    applyPriceFilter();
+}
 
 // Відкриття/Закриття кошика
 

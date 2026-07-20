@@ -120,7 +120,7 @@
                 <div class="stat-label">Час доставки</div>
             </div>
             <div class="stat-item reveal" style="transition-delay:.3s">
-                <strong class="stat-number" data-target="17">0</strong><span class="stat-min">+</span>
+                <strong class="stat-number" data-target="18">0</strong><span class="stat-min">+</span>
                 <div class="stat-label">Товарів у каталозі</div>
             </div>
         </div>
@@ -135,13 +135,16 @@
             <h2 class="section-title" id="kvity-title">Квіти</h2>
             <p class="section-sub">Те, без чого свято не буде самим собою</p>
         </div>
-    <div class="category-filters" role="tablist" aria-label="Фільтр за видом">
-        <button class="filter-btn active" data-filter="all" type="button">Усі</button>
-        <button class="filter-btn" data-filter="diantus" type="button">Діантус</button>
-        <button class="filter-btn" data-filter="roses" type="button">Троянди</button>
-        <button class="filter-btn" data-filter="eustoma" type="button">Еустома</button>
-        <button class="filter-btn" data-filter="chrysanthemum" type="button">Хризантема</button>
-        <button class="filter-btn" data-filter="alstroemeria" type="button">Айстрамерія</button>
+    <div class="price-filter" role="group" aria-label="Фільтр за ціною">
+        <div class="price-filter-top">
+            <span class="price-filter-label">Бюджет:</span>
+            <span class="price-filter-value">бюджет ~<span id="price-filter-value">—</span> ₴</span>
+        </div>
+        <input type="range" id="price-filter-slider" class="price-filter-slider" min="0" max="0" step="1" value="0">
+        <div class="price-filter-scale">
+            <span id="price-filter-min">0 ₴</span>
+            <span id="price-filter-max">0 ₴</span>
+        </div>
     </div>
 
     <div class="products-grid">
@@ -339,7 +342,7 @@
 
 <!-- Спливаюче повідомлення -->
 
-<div id="toast"></div>
+<div id="toast-container" class="toast-container"></div>
 
     <script src="script.js"></script>
 </body>

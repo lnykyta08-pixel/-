@@ -1198,6 +1198,80 @@ ul {
     color: var(--white);
 }
 
+/* Фільтр за ціною (квіти) — повзунок бюджету */
+
+.price-filter {
+    background: var(--sand);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px 14px;
+    margin: 4px 0 28px;
+}
+
+.price-filter-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+    font-size: .9rem;
+}
+
+.price-filter-label {
+    color: var(--text-mid);
+    font-weight: 500;
+}
+
+.price-filter-value {
+    font-weight: 700;
+    color: var(--forest);
+}
+
+.price-filter-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(to right, var(--emerald) 0%, var(--emerald) 100%, var(--white) 100%, var(--white) 100%);
+    outline: none;
+    cursor: pointer;
+}
+
+.price-filter-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--emerald);
+    border: 3px solid var(--white);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+}
+
+.price-filter-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--emerald);
+    border: 3px solid var(--white);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+}
+
+.price-filter-slider::-moz-range-track {
+    height: 6px;
+    border-radius: var(--radius-pill);
+    background: var(--white);
+}
+
+.price-filter-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: .75rem;
+    color: var(--text-light);
+}
+
 @media (hover: hover) {
     .filter-btn:not(.active):hover {
         background: var(--forest-light);
@@ -2419,14 +2493,21 @@ footer {
     }
 }
 
-/* Спливаюче повідомлення кошика */
+/* Спливаючі повідомлення кошика (стек з кількох плашок) */
 
-#toast {
+.toast-container {
     position: fixed;
-    bottom: 78px;
+    bottom: 25px;
     left: 16px;
     right: 16px;
-    z-index: 800;
+    z-index: 950;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast-item {
     background: var(--forest);
     color: var(--white);
     padding: 12px 18px;
@@ -2437,10 +2518,9 @@ footer {
     transform: translateY(12px);
     opacity: 0;
     transition: transform .3s, opacity .3s;
-    pointer-events: none;
 }
 
-#toast.show {
+.toast-item.show {
     transform: translateY(0);
     opacity: 1;
 }
@@ -2495,10 +2575,14 @@ footer {
 /* Ноут-версія (від 768px) */
 
 @media (min-width: 768px) {
-    #toast {
-        bottom: 88px;
+    .toast-container {
+        bottom: 25px;
         left: auto;
         right: 28px;
+        align-items: flex-end;
+    }
+
+    .toast-item {
         padding: 12px 20px;
         font-size: .88rem;
         text-align: left;
