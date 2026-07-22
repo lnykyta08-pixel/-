@@ -150,7 +150,6 @@ function renderCart() {
         <div class="cart-item" data-index="${i}">
             <div class="cart-item-info">
                 <div class="cart-item-name">${item.name}</div>
-                ${item.fill ? `<div class="cart-item-fill">${item.fill === 'Гелій' ? '🎈' : '💨'} ${item.fill} · <button class="cart-item-fill-edit" data-action="edit-fill" type="button">змінити</button></div>` : ''}
                 <div class="cart-item-price">${item.price.toLocaleString('uk-UA')} ₴ за шт.</div>
             </div>
             <div class="cart-item-qty">
@@ -223,19 +222,10 @@ const cardMessageInput = document.getElementById('card-message-input');
 
 let editingCardIndex = null;
 
-// Приклади побажань — один випадковий підставляється як підказка в полі вводу
+// Приклад побажання — підставляється як підказка в полі вводу
 
 const CARD_MESSAGE_EXAMPLES = [
-    "З Днем народження! Бажаю щастя, здоров'я та здійснення мрій. З любов'ю, Олена",
-    "Найкращій мамі на світі — дякую за твою любов і турботу!",
-    "Вітаю з ювілеєм! Нехай кожен день дарує тільки радість.",
-    "Коханню, з яким я хочу зустрічати кожен ранок ❤",
-    "Вітаю з весіллям! Нехай ваш союз буде міцним і щасливим.",
-    "Дякую, що ти є в моєму житті. Люблю тебе!",
-    "З 8 Березня! Будь завжди такою ж чарівною та щасливою.",
-    "Нехай цей букет нагадує, як сильно я тебе ціную.",
-    "Вітаю з народженням доньки! Щастя вашій родині.",
-    "Пробач мене. Ти найдорожча людина в моєму житті."
+    "Нехай цей букет нагадує, як сильно я тебе ціную."
 ];
 
 function randomCardPlaceholder() {
@@ -310,62 +300,6 @@ document.getElementById('card-modal-save')?.addEventListener('click', () => {
     closeCardModal();
 });
 
-// Вибір наповнення кульки (повітря / гелій)
-
-const fillModal = document.getElementById('fill-modal');
-const fillModalOverlay = document.getElementById('fill-modal-overlay');
-const fillModalProductName = document.getElementById('fill-modal-product-name');
-
-let pendingBalloon = null;
-let editingFillIndex = null;
-
-function openFillModal(name, price) {
-    if (!fillModal) return;
-    pendingBalloon = { name, price };
-    editingFillIndex = null;
-    if (fillModalProductName) fillModalProductName.textContent = `«${name}»`;
-    fillModal.classList.add('open');
-    fillModalOverlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-}
-
-function openFillModalForEdit(index) {
-    if (!fillModal) return;
-    pendingBalloon = null;
-    editingFillIndex = index;
-    if (fillModalProductName) fillModalProductName.textContent = `«${cart[index].name}»`;
-    fillModal.classList.add('open');
-    fillModalOverlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeFillModal() {
-    if (!fillModal) return;
-    fillModal.classList.remove('open');
-    fillModalOverlay.classList.remove('open');
-    document.body.style.overflow = '';
-    pendingBalloon = null;
-    editingFillIndex = null;
-}
-
-document.querySelectorAll('.fill-option').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const fill = btn.dataset.fill;
-        if (editingFillIndex !== null) {
-            cart[editingFillIndex].fill = fill;
-        } else if (pendingBalloon) {
-            cart.push({ name: pendingBalloon.name, price: pendingBalloon.price, qty: 1, fill });
-            showToast(`<svg class="toast-check" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-check-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-check-mark" d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> «${pendingBalloon.name}» додано`);
-        }
-        saveCart();
-        renderCart();
-        closeFillModal();
-    });
-});
-
-document.getElementById('fill-modal-close')?.addEventListener('click', closeFillModal);
-fillModalOverlay?.addEventListener('click', closeFillModal);
-
 document.getElementById('cart-items')?.addEventListener('click', e => {
     const btn = e.target.closest('button[data-action]');
     if (!btn) return;
@@ -374,10 +308,6 @@ document.getElementById('cart-items')?.addEventListener('click', e => {
     if (action === 'edit-card') {
         editingCardIndex = index;
         openCardModal('form');
-        return;
-    }
-    if (action === 'edit-fill') {
-        openFillModalForEdit(index);
         return;
     }
     if (action === 'inc') cart[index].qty += 1;
@@ -399,18 +329,10 @@ document.getElementById('cart-items')?.addEventListener('click', e => {
 document.querySelectorAll('.product-qty').forEach(control => {
     const name = control.dataset.name;
     const price = Number(control.dataset.price);
-    const needsFill = control.dataset.needsFill === 'true';
     const minusBtn = control.querySelector('.qty-minus');
     const plusBtn = control.querySelector('.qty-plus');
 
-    plusBtn?.addEventListener('click', () => {
-        const existing = cart.find(i => i.name === name);
-        if (needsFill && !existing) {
-            openFillModal(name, price);
-        } else {
-            addToCart(name, price);
-        }
-    });
+    plusBtn?.addEventListener('click', () => addToCart(name, price));
 
     minusBtn?.addEventListener('click', () => {
         const idx = cart.findIndex(i => i.name === name);
@@ -449,9 +371,8 @@ const priceMaxEl = document.getElementById('price-filter-max');
 const priceCards = document.querySelectorAll('.kvity .product-card');
 
 if (priceSlider && priceCards.length) {
-    const prices = Array.from(priceCards).map(card => Number(card.querySelector('.product-qty')?.dataset.price || 0));
     const minPrice = 0;
-    const maxPrice = Math.max(...prices);
+    const maxPrice = 3500;
 
     priceSlider.min = minPrice;
     priceSlider.max = maxPrice;
