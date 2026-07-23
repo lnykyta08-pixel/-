@@ -971,13 +971,13 @@ ul {
 
 .products-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 .product-card {
     background: var(--white);
-    border-radius: 32px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: transform .3s, box-shadow .3s;
@@ -989,12 +989,12 @@ ul {
 .product-img-wrap {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4/3;
+    aspect-ratio: 1/1;
 }
 
 .product-img-wrap img {
-    width: 100%;
-    height: 100%;
+    width:100%;
+    height: 110%;
     object-fit: cover;
     transition: transform .5s;
 }
@@ -1014,7 +1014,7 @@ ul {
 }
 
 .product-body {
-    padding: 16px 18px 18px;
+    padding: 8px 8px 10px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -1022,10 +1022,16 @@ ul {
 
 .product-name {
     font-family: var(--font-display);
-    font-size: 1.05rem;
+    font-size: .78rem;
     font-weight: 600;
     color: var(--forest);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .product-desc {
@@ -1106,13 +1112,14 @@ ul {
 
 .product-footer {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
     margin-top: auto;
 }
 
 .product-price {
-    font-size: 1.05rem;
+    font-size: .85rem;
     font-weight: 700;
     color: var(--forest);
 }
@@ -1198,80 +1205,6 @@ ul {
     color: var(--white);
 }
 
-/* Фільтр за ціною (квіти) — повзунок бюджету */
-
-.price-filter {
-    background: var(--sand);
-    border-radius: var(--radius-lg);
-    padding: 16px 20px 14px;
-    margin: 4px 0 28px;
-}
-
-.price-filter-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 10px;
-    font-size: .9rem;
-}
-
-.price-filter-label {
-    color: var(--text-mid);
-    font-weight: 500;
-}
-
-.price-filter-value {
-    font-weight: 700;
-    color: var(--forest);
-}
-
-.price-filter-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 6px;
-    border-radius: var(--radius-pill);
-    background: linear-gradient(to right, var(--emerald) 0%, var(--emerald) 100%, var(--white) 100%, var(--white) 100%);
-    outline: none;
-    cursor: pointer;
-}
-
-.price-filter-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--emerald);
-    border: 3px solid var(--white);
-    box-shadow: var(--shadow-md);
-    cursor: pointer;
-}
-
-.price-filter-slider::-moz-range-thumb {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--emerald);
-    border: 3px solid var(--white);
-    box-shadow: var(--shadow-md);
-    cursor: pointer;
-}
-
-.price-filter-slider::-moz-range-track {
-    height: 6px;
-    border-radius: var(--radius-pill);
-    background: var(--white);
-}
-
-.price-filter-scale {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 8px;
-    font-size: .75rem;
-    color: var(--text-light);
-}
-
 @media (hover: hover) {
     .filter-btn:not(.active):hover {
         background: var(--forest-light);
@@ -1283,29 +1216,203 @@ ul {
 .product-qty {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+/* Виділена (більша) картка товару — букет зі змінною кількістю квітів.
+   Займає всю ширину на мобільному та половину сітки від планшета. */
+
+.product-card-featured {
+    grid-column: 1 / -1;
+}
+
+@media (min-width: 480px) {
+    .product-card-featured {
+        grid-column: span 2;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .product-card-featured .product-img-wrap {
+        width: 42%;
+        flex-shrink: 0;
+        aspect-ratio: auto;
+    }
+
+    .product-card-featured .product-img-wrap img {
+        height: 100%;
+    }
+
+    .product-card-featured .product-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 20px 20px;
+        gap: 4px;
+    }
+
+    .product-card-featured .product-name {
+        font-size: 1.05rem;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+    }
+
+    .product-card-featured .product-desc {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .product-card-featured .product-name {
+        font-size: 1.25rem;
+    }
+
+    .product-card-featured .product-desc {
+        font-size: .92rem;
+    }
+}
+
+/* Пропозиція додати листівку з побажанням прямо в картці товару */
+
+.card-offer-inline {
+    display: flex;
+    align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    background: var(--sand);
+    transition: background .2s;
+}
+
+.card-offer-inline-icon {
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+
+.card-offer-inline-text {
+    flex: 1 1 auto;
+    font-size: .8rem;
+    color: var(--text-mid);
+    line-height: 1.35;
+    min-width: 120px;
+}
+
+.card-offer-inline-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.card-offer-inline-btn {
+    flex-shrink: 0;
+    background: var(--emerald);
+    color: var(--white);
+    font-size: .78rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
+    transition: background .2s, transform .2s;
+}
+
+.card-offer-inline-btn:active {
+    transform: scale(0.96);
+}
+
+.card-offer-inline-remove {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: .85rem;
+    transition: background .2s, color .2s, transform .2s;
+}
+
+.card-offer-inline-remove:active {
+    transform: scale(0.9);
+}
+
+@media (hover: hover) {
+    .card-offer-inline-btn:hover {
+        background: var(--forest);
+    }
+
+    .card-offer-inline-remove:hover {
+        background: rgba(180, 40, 40, .12);
+        color: #b42828;
+    }
+}
+
+.card-offer-inline.is-added {
+    background: var(--forest-light);
+}
+
+.card-offer-inline.is-added .card-offer-inline-text {
+    color: var(--forest);
+    font-weight: 600;
+}
+
+.card-offer-inline.is-added .card-offer-inline-btn {
+    background: transparent;
+    color: var(--forest);
+    padding: 8px 10px;
+}
+
+@media (hover: hover) {
+    .card-offer-inline.is-added .card-offer-inline-btn:hover {
+        background: rgba(6, 78, 59, .1);
+    }
 }
 
 .qty-count {
     min-width: 16px;
     text-align: center;
     font-weight: 600;
-    font-size: .95rem;
+    font-size: .85rem;
     color: var(--forest);
 }
 
+/* Обгортка лічильника з підписом "троянд кущових" (тільки перша картка) */
+
+.qty-count-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.15;
+}
+
+.qty-label {
+    font-size: .62rem;
+    font-weight: 500;
+    color: var(--forest);
+    opacity: .65;
+    white-space: nowrap;
+}
+
+.product-qty-bouquet {
+    justify-content: space-between;
+}
+
 .qty-btn {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: var(--forest-light);
     color: var(--forest);
     display: grid;
     place-items: center;
-    font-size: 1.1rem;
+    font-size: .95rem;
     line-height: 1;
     transition: background .2s, color .2s, transform .2s, opacity .2s;
     position: relative;
+    flex-shrink: 0;
 }
 
 .qty-btn.qty-plus.in-cart {
@@ -1371,7 +1478,8 @@ ul {
 
 @media (min-width: 480px) {
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
     }
 }
 
@@ -1379,7 +1487,7 @@ ul {
 
 @media (min-width: 768px) {
     .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
         gap: 28px;
     }
 
@@ -1389,9 +1497,35 @@ ul {
 
     .product-name {
         font-size: 1.1rem;
+        -webkit-line-clamp: unset;
+        line-clamp: unset;
+    }
+
+    .product-footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .product-price {
+        font-size: 1.1rem;
+    }
+
+    .product-qty {
+        justify-content: flex-start;
+    }
+
+    .qty-count {
+        font-size: .95rem;
+    }
+
+    .qty-label {
+        font-size: .68rem;
+    }
+
+    .qty-btn {
+        width: 36px;
+        height: 36px;
         font-size: 1.1rem;
     }
 

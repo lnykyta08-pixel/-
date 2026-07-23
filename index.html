@@ -82,31 +82,19 @@
     </div>
 </aside>
 
-<!-- Модальне вікно: листівка з побажанням -->
+<!-- Модальне вікно: листівка з побажанням (відкривається тільки після кліку в картці товару) -->
 
 <div class="card-modal-overlay" id="card-modal-overlay"></div>
 <div class="card-modal" id="card-modal" role="dialog" aria-modal="true" aria-labelledby="card-modal-title">
     <button class="card-modal-close" id="card-modal-close" aria-label="Закрити">✕</button>
 
-    <div class="card-modal-step" id="card-modal-offer">
-        <div class="card-modal-icon">💌</div>
-        <h3 class="card-modal-title" id="card-modal-title">Додати листівку з побажанням?</h3>
-        <p class="card-modal-text">Ми вкладемо у букет невеличку листівку з вашими побажаннями.</p>
-        <div class="card-modal-actions">
-            <button class="btn btn-primary" id="card-modal-yes"><span>💌</span> <span>Так, додати</span></button>
-            <button class="btn btn-ghost" id="card-modal-no">Ні, дякую</button>
-        </div>
-    </div>
-
-    <div class="card-modal-step" id="card-modal-form" style="display:none;">
-        <div class="card-modal-icon">✍️</div>
-        <h3 class="card-modal-title">Ваше побажання</h3>
-        <p class="card-modal-text">Напишіть текст, який буде на листівці, а ми акуратно перепишемо його від руки.</p>
-        <textarea id="card-message-input" class="card-message-input" maxlength="200" rows="4" placeholder="Наприклад: Нехай цей букет нагадує, як сильно я тебе ціную"></textarea>
-        <div class="card-modal-actions">
-            <button class="btn btn-primary" id="card-modal-save"><span>✓</span> <span>Додати до кошика – 5 ₴</span></button>
-            <button class="btn btn-ghost" id="card-modal-skip">Пропустити</button>
-        </div>
+    <div class="card-modal-icon">✍️</div>
+    <h3 class="card-modal-title" id="card-modal-title">Листівка з побажанням</h3>
+    <p class="card-modal-text">Напишіть текст, який буде на листівці, а ми акуратно перепишемо його від руки.</p>
+    <textarea id="card-message-input" class="card-message-input" maxlength="200" rows="4" placeholder="Наприклад: Нехай цей букет нагадує, як сильно я тебе ціную"></textarea>
+    <div class="card-modal-actions">
+        <button class="btn btn-primary" id="card-modal-save"><span>✓</span> <span>Додати до кошика – 5 ₴</span></button>
+        <button class="btn btn-ghost" id="card-modal-skip">Скасувати</button>
     </div>
 </div>
 
@@ -149,7 +137,7 @@
                 <div class="stat-label">Час доставки</div>
             </div>
             <div class="stat-item reveal" style="transition-delay:.3s">
-                <strong class="stat-number" data-target="19">0</strong><span class="stat-min">+</span>
+                <strong class="stat-number" data-target="20">0</strong><span class="stat-min">+</span>
                 <div class="stat-label">Товарів у каталозі</div>
             </div>
         </div>
@@ -164,34 +152,34 @@
             <h2 class="section-title" id="kvity-title">Квіти</h2>
             <p class="section-sub">Те, без чого свято не буде самим собою</p>
         </div>
-    <div class="price-filter" role="group" aria-label="Фільтр за ціною">
-        <div class="price-filter-top">
-            <span class="price-filter-label">Бюджет:</span>
-            <span class="price-filter-value">бюджет ~<span id="price-filter-value">—</span> ₴</span>
-        </div>
-        <input type="range" id="price-filter-slider" class="price-filter-slider" min="0" max="0" step="1" value="0">
-        <div class="price-filter-scale">
-            <span id="price-filter-min">0 ₴</span>
-            <span id="price-filter-max">0 ₴</span>
-        </div>
-    </div>
-
     <div class="products-grid">
 
 <!-- Продукт 1 -->
 
-<article class="product-card reveal" data-category="diantus" style="transition-delay:.05s">
+<article class="product-card product-card-featured reveal" data-category="diantus" style="transition-delay:.05s">
     <div class="product-img-wrap">
-        <img src="diantus_pink.webp" alt="Гвоздика рожева – зрізана квітка" />
+        <img src="kvity_product_1.webp" alt="Букет з кущових троянд" />
     </div>
     <div class="product-body">
-        <h3 class="product-name">Діантус рожевий</h3>
+        <h3 class="product-name">Букет з кущових троянд</h3>
+        <p class="product-desc">Букет із 31 кущової троянди в теплій кольоровій гамі — від ніжно-рожевого до бордового відтінку. Точний склад і пропорції кольорів уточнюємо при оформленні замовлення.</p>
         <div class="product-footer">
-            <span class="product-price">18 ₴</span>
-            <div class="product-qty" data-name="Гвоздика рожева" data-price="18">
-                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
-                <span class="qty-count">0</span>
-                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+            <span class="product-price">4000 ₴</span>
+            <div class="product-qty product-qty-bouquet" data-name="Букет з кущових троянд" data-price="4000" data-base-count="31" data-step-price="120">
+                <button class="qty-btn qty-minus" type="button" aria-label="Прибрати одну квітку з букета" disabled>−</button>
+                <span class="qty-count-wrap">
+                    <span class="qty-count" title="Кількість троянд кущових у букеті">31</span>
+                    <span class="qty-label">троянд кущових</span>
+                </span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати ще квітку в букет">+</button>
+            </div>
+        </div>
+        <div class="card-offer-inline" id="card-offer-inline">
+            <span class="card-offer-inline-icon">💌</span>
+            <span class="card-offer-inline-text" id="card-offer-inline-text">Додати листівку з побажанням до букета?</span>
+            <div class="card-offer-inline-actions">
+                <button type="button" class="card-offer-inline-btn" id="card-offer-inline-btn">Додати · 5 ₴</button>
+                <button type="button" class="card-offer-inline-remove" id="card-offer-inline-remove" aria-label="Видалити листівку" style="display:none;">✕</button>
             </div>
         </div>
     </div>
@@ -208,9 +196,9 @@
         <div class="product-footer">
             <span class="product-price">18 ₴</span>
             <div class="product-qty" data-name="Гвоздика ніжно-рожева" data-price="18">
-                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
-                <span class="qty-count">0</span>
-                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+                <button class="qty-btn qty-minus" type="button" aria-label="Прибрати одну штуку" disabled>−</button>
+                <span class="qty-count" title="У кошику">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати ще одну штуку">+</button>
             </div>
         </div>
     </div>
@@ -227,9 +215,9 @@
         <div class="product-footer">
             <span class="product-price">18 ₴</span>
             <div class="product-qty" data-name="Гвоздика фіолетова" data-price="18">
-                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
-                <span class="qty-count">0</span>
-                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+                <button class="qty-btn qty-minus" type="button" aria-label="Прибрати одну штуку" disabled>−</button>
+                <span class="qty-count" title="У кошику">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати ще одну штуку">+</button>
             </div>
         </div>
     </div>
@@ -246,9 +234,9 @@
         <div class="product-footer">
             <span class="product-price">18 ₴</span>
             <div class="product-qty" data-name="Гвоздика середньо-фіолетова" data-price="18">
-                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
-                <span class="qty-count">0</span>
-                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+                <button class="qty-btn qty-minus" type="button" aria-label="Прибрати одну штуку" disabled>−</button>
+                <span class="qty-count" title="У кошику">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати ще одну штуку">+</button>
             </div>
         </div>
     </div>
@@ -265,9 +253,9 @@
         <div class="product-footer">
             <span class="product-price">18 ₴</span>
             <div class="product-qty" data-name="Гвоздика темно-фіолетова" data-price="18">
-                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
-                <span class="qty-count">0</span>
-                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+                <button class="qty-btn qty-minus" type="button" aria-label="Прибрати одну штуку" disabled>−</button>
+                <span class="qty-count" title="У кошику">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати ще одну штуку">+</button>
             </div>
         </div>
     </div>
@@ -284,9 +272,9 @@
         <div class="product-footer">
             <span class="product-price">18 ₴</span>
             <div class="product-qty" data-name="Гвоздика червона" data-price="18">
-                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
-                <span class="qty-count">0</span>
-                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+                <button class="qty-btn qty-minus" type="button" aria-label="Прибрати одну штуку" disabled>−</button>
+                <span class="qty-count" title="У кошику">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати ще одну штуку">+</button>
             </div>
         </div>
     </div>
@@ -303,9 +291,9 @@
         <div class="product-footer">
             <span class="product-price">18 ₴</span>
             <div class="product-qty" data-name="Гвоздика біла" data-price="18">
-                <button class="qty-btn qty-minus" type="button" aria-label="Зменшити кількість">−</button>
-                <span class="qty-count">0</span>
-                <button class="qty-btn qty-plus" type="button" aria-label="Додати в кошик">+</button>
+                <button class="qty-btn qty-minus" type="button" aria-label="Прибрати одну штуку" disabled>−</button>
+                <span class="qty-count" title="У кошику">0</span>
+                <button class="qty-btn qty-plus" type="button" aria-label="Додати ще одну штуку">+</button>
             </div>
         </div>
     </div>
