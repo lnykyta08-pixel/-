@@ -1225,50 +1225,9 @@ ul {
     gap: 6px;
 }
 
-/* Виділена (більша) картка товару — букет зі змінною кількістю квітів.
-   Займає всю ширину на мобільному та половину сітки від планшета. */
-
-.product-card-featured {
-    grid-column: 1 / -1;
-}
-
-@media (min-width: 768px) {
-    .product-card-featured {
-        grid-column: span 2;
-        flex-direction: row;
-        align-items: stretch;
-    }
-
-    .product-card-featured .product-img-wrap {
-        width: 42%;
-        flex-shrink: 0;
-        aspect-ratio: auto;
-    }
-
-    .product-card-featured .product-img-wrap img {
-        height: 100%;
-    }
-
-    .product-card-featured .product-body {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 18px 20px 20px;
-        gap: 4px;
-    }
-
-    .product-card-featured .product-name {
-        font-size: 1.25rem;
-        -webkit-line-clamp: unset;
-        line-clamp: unset;
-    }
-
-    .product-card-featured .product-desc {
-        font-size: .92rem;
-        margin-bottom: 10px;
-    }
-}
+/* Раніше картка-букет була широкою (фото зліва, інфо справа).
+   Тепер вона поводиться як звичайна картка: фото зверху, інфо знизу,
+   і бере участь у загальній сітці (4 в ряд на ноуті, 1 в ряд на мобільному). */
 
 /* Пропозиція додати листівку з побажанням прямо в картці товару */
 
