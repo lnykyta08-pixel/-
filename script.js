@@ -237,10 +237,7 @@ const cardModal = document.getElementById('card-modal');
 const cardModalOverlay = document.getElementById('card-modal-overlay');
 const cardMessageInput = document.getElementById('card-message-input');
 
-const cardOfferInline = document.getElementById('card-offer-inline');
-const cardOfferInlineText = document.getElementById('card-offer-inline-text');
-const cardOfferInlineBtn = document.getElementById('card-offer-inline-btn');
-const cardOfferInlineRemove = document.getElementById('card-offer-inline-remove');
+const cardOfferInlines = document.querySelectorAll('.card-offer-inline');
 
 let editingCardIndex = null;
 
@@ -272,38 +269,50 @@ function closeCardModal() {
     editingCardIndex = null;
 }
 
-// Оновлює вигляд пропозиції листівки прямо в картці букета:
+// Оновлює вигляд пропозиції листівки прямо в картці букета (на всіх картках одразу):
 // якщо листівку вже додано до кошика — показуємо "додано" з кнопкою редагування,
 // інакше — початкову пропозицію додати її.
 
 function updateCardOfferInline() {
-    if (!cardOfferInline) return;
     const inCartIndex = cart.findIndex(i => i.isCard);
-    cardOfferInline.classList.toggle('is-added', inCartIndex !== -1);
-    if (inCartIndex !== -1) {
-        cardOfferInlineText.textContent = 'Листівку додано до кошика';
-        cardOfferInlineBtn.textContent = 'Редагувати';
-        if (cardOfferInlineRemove) cardOfferInlineRemove.style.display = '';
-    } else {
-        cardOfferInlineText.textContent = 'Додати листівку з побажанням до букета?';
-        cardOfferInlineBtn.textContent = 'Додати · 5 ₴';
-        if (cardOfferInlineRemove) cardOfferInlineRemove.style.display = 'none';
-    }
+
+    cardOfferInlines.forEach(offer => {
+        const text = offer.querySelector('.card-offer-inline-text');
+        const btn = offer.querySelector('.card-offer-inline-btn');
+        const removeBtn = offer.querySelector('.card-offer-inline-remove');
+
+        offer.classList.toggle('is-added', inCartIndex !== -1);
+        if (inCartIndex !== -1) {
+            if (text) text.textContent = 'Листівку додано до кошика';
+            if (btn) btn.textContent = 'Редагувати';
+            if (removeBtn) removeBtn.style.display = '';
+        } else {
+            if (text) text.textContent = 'Листівка з побажанням · 5 ₴';
+            if (btn) btn.textContent = 'Додати';
+            if (removeBtn) removeBtn.style.display = 'none';
+        }
+    });
 }
 
-cardOfferInlineBtn?.addEventListener('click', () => {
-    const inCartIndex = cart.findIndex(i => i.isCard);
-    editingCardIndex = inCartIndex === -1 ? null : inCartIndex;
-    openCardModal();
-});
+// Делегування кліків: працює для будь-якої кількості карток з пропозицією листівки,
+// навіть тих, що додадуться на сторінку пізніше.
 
-cardOfferInlineRemove?.addEventListener('click', () => {
-    const inCartIndex = cart.findIndex(i => i.isCard);
-    if (inCartIndex === -1) return;
-    cart.splice(inCartIndex, 1);
-    saveCart();
-    renderCart();
-    showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${CARD_NAME}» видалено`);
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.card-offer-inline-btn')) {
+        const inCartIndex = cart.findIndex(i => i.isCard);
+        editingCardIndex = inCartIndex === -1 ? null : inCartIndex;
+        openCardModal();
+        return;
+    }
+
+    if (e.target.closest('.card-offer-inline-remove')) {
+        const inCartIndex = cart.findIndex(i => i.isCard);
+        if (inCartIndex === -1) return;
+        cart.splice(inCartIndex, 1);
+        saveCart();
+        renderCart();
+        showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${CARD_NAME}» видалено`);
+    }
 });
 
 document.getElementById('card-modal-skip')?.addEventListener('click', closeCardModal);
