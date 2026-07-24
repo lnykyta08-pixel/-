@@ -97,25 +97,9 @@ function updateProductIndicators() {
     document.querySelectorAll('.product-qty').forEach(control => {
         const name = control.dataset.name;
         const item = cart.find(i => i.name === name);
-        const baseCount = control.dataset.baseCount ? Number(control.dataset.baseCount) : null;
         const countEl = control.querySelector('.qty-count');
         const plusBtn = control.querySelector('.qty-plus');
         const minusBtn = control.querySelector('.qty-minus');
-        const priceEl = control.closest('.product-footer')?.querySelector('.product-price');
-
-        if (baseCount !== null) {
-            // Товар-букет зі змінною кількістю квітів (напр. троянди): лічильник
-            // показує кількість квітів у букеті, а не кількість букетів у кошику.
-            // Ціна на картці оновлюється в реальному часі разом із кількістю.
-            const count = item ? item.flowerCount : baseCount;
-            const price = item ? item.price : Number(control.dataset.price);
-            if (countEl) countEl.textContent = count;
-            if (priceEl) priceEl.textContent = price.toLocaleString('uk-UA') + ' ₴';
-            if (plusBtn) plusBtn.classList.toggle('in-cart', !!item);
-            // Мінус завжди присутній, але неактивний, коли дійшли до мінімуму (baseCount)
-            if (minusBtn) minusBtn.disabled = count <= baseCount;
-            return;
-        }
 
         const qty = item ? item.qty : 0;
         if (countEl) countEl.textContent = qty;
@@ -163,21 +147,6 @@ function renderCart() {
                 <button class="cart-item-edit" data-action="edit-card" aria-label="Редагувати побажання">✎</button>
                 <button class="cart-item-remove" data-action="remove">✕</button>
             </div>
-        </div>`;
-        }
-        if (item.flowerCount) {
-            return `
-        <div class="cart-item" data-index="${i}">
-            <div class="cart-item-info">
-                <div class="cart-item-name">${item.name}</div>
-                <div class="cart-item-price">${item.flowerCount} троянд у букеті · ${item.price.toLocaleString('uk-UA')} ₴</div>
-            </div>
-            <div class="cart-item-qty">
-                <button class="cart-qty-btn" data-action="dec">−</button>
-                <span>${item.flowerCount}</span>
-                <button class="cart-qty-btn" data-action="inc">+</button>
-            </div>
-            <button class="cart-item-remove" data-action="remove">✕</button>
         </div>`;
         }
         return `
@@ -238,43 +207,6 @@ window.addToCart = (name, price) => {
     renderCart();
 
     showToast(`<svg class="toast-check" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-check-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-check-mark" d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> «${name}» додано`);
-};
-
-// Додавання ще однієї квітки у букет зі змінною кількістю (напр. троянди):
-// на відміну від addToCart, тут "+" не додає новий букет у кошик, а збільшує
-// кількість квітів у ВЖЕ доданому букеті й підвищує його ціну на крок
-window.addBouquetFlower = (name, basePrice, stepPrice, baseCount) => {
-    const existing = cart.find(i => i.name === name);
-    if (existing) {
-        existing.flowerCount += 1;
-        existing.price += stepPrice;
-    } else {
-        cart.push({
-            name,
-            price: Number(basePrice),
-            qty: 1,
-            flowerCount: baseCount,
-            stepPrice: Number(stepPrice),
-            baseCount: Number(baseCount)
-        });
-    }
-    saveCart();
-    renderCart();
-
-    showToast(`<svg class="toast-check" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-check-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-check-mark" d="M7 12.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> «${name}» додано`);
-};
-
-// Зменшення кількості квітів у букеті зі змінною кількістю прямо на картці
-// (напр. троянди): не дає опуститись нижче базової кількості (напр. 31)
-
-window.removeBouquetFlower = (name, baseCount) => {
-    const existing = cart.find(i => i.name === name);
-    if (!existing || existing.flowerCount === undefined) return;
-    if (existing.flowerCount <= baseCount) return;
-    existing.flowerCount -= 1;
-    existing.price -= existing.stepPrice;
-    saveCart();
-    renderCart();
 };
 
 // Зменшення кількості звичайного товару прямо на картці (без кошика).
@@ -402,28 +334,12 @@ document.getElementById('cart-items')?.addEventListener('click', e => {
         return;
     }
     if (action === 'inc') {
-        if (cart[index].flowerCount) {
-            cart[index].flowerCount += 1;
-            cart[index].price += cart[index].stepPrice;
-        } else {
-            cart[index].qty += 1;
-        }
+        cart[index].qty += 1;
     } else if (action === 'dec') {
-        if (cart[index].flowerCount) {
-            if (cart[index].flowerCount > cart[index].baseCount) {
-                cart[index].flowerCount -= 1;
-                cart[index].price -= cart[index].stepPrice;
-            } else {
-                const name = cart[index].name;
-                cart.splice(index, 1);
-                showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${name}» видалено`);
-            }
-        } else {
-            cart[index].qty -= 1;
-            const name = cart[index].name;
-            if (cart[index].qty <= 0) cart.splice(index, 1);
-            showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${name}» видалено`);
-        }
+        cart[index].qty -= 1;
+        const name = cart[index].name;
+        if (cart[index].qty <= 0) cart.splice(index, 1);
+        showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${name}» видалено`);
     } else if (action === 'remove') {
         const [removed] = cart.splice(index, 1);
         showToast(`<svg class="toast-cross" viewBox="0 0 24 24" width="18" height="18"><circle class="toast-cross-circle" cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path class="toast-cross-line1" d="M8 8l8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="toast-cross-line2" d="M16 8l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> «${removed.name}» видалено`);
@@ -432,25 +348,17 @@ document.getElementById('cart-items')?.addEventListener('click', e => {
     renderCart();
 });
 
-// Степер кількості на картці товару: "+" додає, "−" прибирає.
-// Для букета зі змінною кількістю (напр. троянди) зменшення обмежене
-// базовою кількістю (напр. 31) — нижче цього мінус стає неактивним.
+// Степер кількості на картці товару: "+" додає товар (в т.ч. цілий букет)
+// у кошик, "−" прибирає одну штуку.
 
 document.querySelectorAll('.product-qty').forEach(control => {
     const name = control.dataset.name;
     const price = Number(control.dataset.price);
     const plusBtn = control.querySelector('.qty-plus');
     const minusBtn = control.querySelector('.qty-minus');
-    const baseCount = control.dataset.baseCount ? Number(control.dataset.baseCount) : null;
-    const stepPrice = control.dataset.stepPrice ? Number(control.dataset.stepPrice) : null;
 
-    if (baseCount !== null) {
-        plusBtn?.addEventListener('click', () => addBouquetFlower(name, price, stepPrice, baseCount));
-        minusBtn?.addEventListener('click', () => removeBouquetFlower(name, baseCount));
-    } else {
-        plusBtn?.addEventListener('click', () => addToCart(name, price));
-        minusBtn?.addEventListener('click', () => removeFromCart(name));
-    }
+    plusBtn?.addEventListener('click', () => addToCart(name, price));
+    minusBtn?.addEventListener('click', () => removeFromCart(name));
 });
 
 // Фільтр товарів за категорією (розміром)

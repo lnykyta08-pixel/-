@@ -895,6 +895,11 @@ ul {
         font-size: 1rem;
         line-height: 1.7;
     }
+
+    #kulky .section-header,
+    #kvity .section-header {
+        margin-bottom: 36px;
+    }
 }
 
 /* Статистика — мобільна версія */
@@ -971,8 +976,8 @@ ul {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 16px;
 }
 
 .product-card {
@@ -1227,7 +1232,7 @@ ul {
     grid-column: 1 / -1;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
     .product-card-featured {
         grid-column: span 2;
         flex-direction: row;
@@ -1254,23 +1259,14 @@ ul {
     }
 
     .product-card-featured .product-name {
-        font-size: 1.05rem;
+        font-size: 1.25rem;
         -webkit-line-clamp: unset;
         line-clamp: unset;
     }
 
     .product-card-featured .product-desc {
-        margin-bottom: 10px;
-    }
-}
-
-@media (min-width: 768px) {
-    .product-card-featured .product-name {
-        font-size: 1.25rem;
-    }
-
-    .product-card-featured .product-desc {
         font-size: .92rem;
+        margin-bottom: 10px;
     }
 }
 
@@ -1478,7 +1474,6 @@ ul {
 
 @media (min-width: 480px) {
     .products-grid {
-        grid-template-columns: repeat(4, 1fr);
         gap: 16px;
     }
 }
