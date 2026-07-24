@@ -1117,9 +1117,10 @@ ul {
 
 .product-footer {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 6px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     margin-top: auto;
 }
 
@@ -1221,8 +1222,14 @@ ul {
 .product-qty {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 6px;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.product-qty::before {
+    content: 'Кількість';
+    font-size: .78rem;
+    color: var(--text-mid);
 }
 
 /* Раніше картка-букет була широкою (фото зліва, інфо справа).
@@ -1237,15 +1244,16 @@ ul {
     gap: 8px;
     flex-wrap: wrap;
     margin-top: 12px;
-    padding: 10px 12px;
-    border-radius: var(--radius-md);
-    background: var(--sand);
+    padding-top: 12px;
+    border-top: 1px solid var(--sand);
     transition: background .2s;
 }
 
 .card-offer-inline-icon {
     font-size: 1.05rem;
     flex-shrink: 0;
+    color: var(--text-light);
+    display: flex;
 }
 
 .card-offer-inline-text {
@@ -1265,8 +1273,9 @@ ul {
 
 .card-offer-inline-btn {
     flex-shrink: 0;
-    background: var(--emerald);
-    color: var(--white);
+    background: transparent;
+    color: var(--forest);
+    border: 1px solid var(--sand-dark, var(--sand));
     font-size: .78rem;
     font-weight: 600;
     padding: 8px 14px;
@@ -1296,7 +1305,7 @@ ul {
 
 @media (hover: hover) {
     .card-offer-inline-btn:hover {
-        background: var(--forest);
+        background: var(--forest-light);
     }
 
     .card-offer-inline-remove:hover {
@@ -1455,18 +1464,8 @@ ul {
         line-clamp: unset;
     }
 
-    .product-footer {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
     .product-price {
         font-size: 1.1rem;
-    }
-
-    .product-qty {
-        justify-content: flex-start;
     }
 
     .qty-count {
