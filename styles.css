@@ -401,7 +401,7 @@ ul {
     background-image: url('mob_menu_photo.webp');
     background-size: cover;
     background-position: center;
-    filter: blur(6px);
+    filter: blur(3px);
     transform: scale(1.1);
 }
 
@@ -881,6 +881,10 @@ ul {
     object-position: center 10%;
 }
 
+.product-img-shift-right {
+    object-position: center 30%;
+}
+
 .product-card-balloon {
     flex-direction: row;
     align-items: stretch;
@@ -954,22 +958,6 @@ ul {
     color: var(--text-mid);
     line-height: 1.5;
     margin-bottom: 14px;
-}
-
-/* Посилання "зателефонувати нам" всередині опису */
-
-.balloon-types-call {
-    color: var(--emerald);
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    transition: color .2s;
-}
-
-@media (hover: hover) {
-    .balloon-types-call:hover {
-        color: var(--forest-mid);
-    }
 }
 
 /* Догляд */
