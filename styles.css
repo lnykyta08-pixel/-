@@ -96,6 +96,18 @@ a {
     text-decoration: none;
 }
 
+.balloon-types-call {
+    color: var(--emerald);
+    text-decoration: underline;
+    text-decoration-thickness: 1.2px;
+    text-underline-offset: 3px;
+    font-weight: 500;
+}
+
+.balloon-types-call:hover {
+    color: var(--forest);
+}
+
 button {
     cursor: pointer;
     border: none;
