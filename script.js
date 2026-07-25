@@ -86,14 +86,6 @@ function saveCart() {
 // Індикатор "вже додано у кошик" та степер кількості прямо на картці товару
 
 function updateProductIndicators() {
-    document.querySelectorAll('.product-btn[onclick^="addToCart"]').forEach(btn => {
-        const match = (btn.getAttribute('onclick') || '').match(/addToCart\('([^']+)'/);
-        if (!match) return;
-        const name = match[1];
-        const inCart = cart.some(i => i.name === name);
-        btn.classList.toggle('in-cart', inCart);
-    });
-
     document.querySelectorAll('.product-qty').forEach(control => {
         const name = control.dataset.name;
         const item = cart.find(i => i.name === name);
@@ -285,11 +277,11 @@ function updateCardOfferInline() {
         if (inCartIndex !== -1) {
             if (text) text.textContent = 'Листівку додано до кошика';
             if (btn) btn.textContent = 'Редагувати';
-            if (removeBtn) removeBtn.style.display = '';
+            if (removeBtn) removeBtn.classList.remove('is-hidden');
         } else {
             if (text) text.textContent = 'Листівка з побажанням · 5 ₴';
             if (btn) btn.textContent = 'Додати';
-            if (removeBtn) removeBtn.style.display = 'none';
+            if (removeBtn) removeBtn.classList.add('is-hidden');
         }
     });
 }

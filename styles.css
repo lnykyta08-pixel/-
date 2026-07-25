@@ -138,6 +138,10 @@ ul {
     white-space: nowrap;
 }
 
+.is-hidden {
+    display: none !important;
+}
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -228,6 +232,12 @@ ul {
         opacity: 1;
         transform: translateY(0);
     }
+
+    /* Затримки для покрокової появи елементів (замість inline transition-delay) */
+    .reveal-d1 { transition-delay: .05s; }
+    .reveal-d2 { transition-delay: .1s; }
+    .reveal-d3 { transition-delay: .2s; }
+    .reveal-d4 { transition-delay: .3s; }
 
     .reveal-left {
         opacity: 0;
@@ -535,10 +545,6 @@ ul {
     color: var(--white);
 }
 
-.nav:has(~ .mobile-menu.open) .nav-logo-img {
-    content: url('logo_kvity_white.webp');
-}
-
 /* Лого по центру, кошик зліва, хрестик (гамбургер) справа */
 
 .nav:has(~ .mobile-menu.open) .nav-logo {
@@ -729,16 +735,21 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     color: rgba(255,255,255,.6);
-    font-size: .7rem;
+    font-size: .6rem;
     letter-spacing: .1em;
     text-transform: uppercase;
     animation: bounce 2s infinite;
 }
 
 .hero-scroll span {
-    font-size: 1rem;
+    font-size: .8rem;
+}
+
+.hero-scroll-label {
+    font-size: .55rem;
+    letter-spacing: .12em;
 }
 
 @keyframes bounce {
@@ -785,11 +796,11 @@ ul {
 
     .hero-scroll {
         bottom: 32px;
-        font-size: .75rem;
+        font-size: .65rem;
     }
 
     .hero-scroll span {
-        font-size: 1.1rem;
+        font-size: .9rem;
     }
 }
 
@@ -2016,6 +2027,15 @@ footer {
 .footer-contacts-col li span:last-child,
 .footer-contacts-col li a {
     line-height: 2;
+}
+
+.footer-phone-link {
+    color: inherit;
+    transition: color .2s;
+}
+
+.footer-phone-link:hover {
+    color: var(--emerald);
 }
 
 .footer-contacts-col li:first-child {
